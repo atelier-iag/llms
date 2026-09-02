@@ -1,0 +1,3 @@
+[submodule "baseline/olmo3/OLMo-core"]
+	path = baseline/olmo3/OLMo-core
+	url = https://github.com/allenai/OLMo-core.git

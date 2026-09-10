@@ -4,8 +4,11 @@ State restored to the configuration used around the first machine crash.
 """
 
 import argparse
+import os
 from pathlib import Path
 from typing import List
+
+import rich
 
 from olmo_core.config import DType
 from olmo_core.data import (
@@ -16,11 +19,18 @@ from olmo_core.data import (
 )
 from olmo_core.distributed.parallel import DataParallelType
 from olmo_core.float8 import Float8Config
+from olmo_core.io import is_url
 from olmo_core.nn.attention import AttentionBackendName
 from olmo_core.nn.transformer import TransformerConfig
 from olmo_core.optim import CosWithWarmup, OptimGroupOverride, SkipStepAdamWConfig
-from olmo_core.script_utils import ExperimentConfig, main
-from olmo_core.train import Duration, TrainerConfig
+from olmo_core.script_utils import ExperimentConfig, get_cli_parser
+from olmo_core.script_utils import main as distributed_main
+from olmo_core.train import (
+    Duration,
+    TrainerConfig,
+    prepare_training_environment,
+    teardown_training_environment,
+)
 from olmo_core.train.callbacks import (
     CheckpointerCallback,
     CometCallback,
@@ -34,6 +44,7 @@ from olmo_core.train.train_module import (
     TransformerDataParallelWrappingStrategy,
     TransformerTrainModuleConfig,
 )
+from olmo_core.utils import prepare_cli_environment, seed_all
 
 DEFAULT_SEQUENCE_LENGTH = 1024
 GLOBAL_BATCH_SIZE = 1024
@@ -154,5 +165,50 @@ def build_config(opts: argparse.Namespace, overrides: List[str]) -> ExperimentCo
     ).merge(overrides)
 
 
+def main() -> None:
+    parser = get_cli_parser()
+    opts, overrides = parser.parse_known_args()
+    if not opts.train_single:
+        distributed_main(build_config, parser=parser)
+        return
+
+    if int(os.environ.get("WORLD_SIZE", "1")) != 1:
+        parser.error("--train-single requires one process; launch with python")
+
+    if opts.work_dir is None:
+        opts.work_dir = "/tmp/olmo-core/dataset-cache" if is_url(opts.save_folder) else opts.save_folder
+
+    config = build_config(opts, overrides)
+    config.train_module.dp_config = None
+    config.train_module.tp_config = None
+    if opts.dry_run:
+        prepare_cli_environment()
+        rich.print(config)
+        return
+
+    # The pinned upstream launcher still initializes NCCL with --train-single.
+    # GPU execution works without a process group; loss reduction then stays local.
+    prepare_training_environment(backend=None, shared_filesystem=not is_url(opts.save_folder))
+    try:
+        seed_all(config.init_seed)
+        model = config.model.build(init_device="meta")
+        train_module = config.train_module.build(model)
+        dataset = config.dataset.build()
+        data_loader = config.data_loader.build(dataset, dp_process_group=train_module.dp_process_group)
+        trainer = config.trainer.build(train_module, data_loader)
+
+        for callback in trainer.callbacks.values():
+            if isinstance(callback, ConfigSaverCallback):
+                callback.config = config.as_config_dict()
+                break
+
+        if not trainer.no_checkpoints and not trainer.maybe_load_checkpoint() and config.load_path:
+            trainer.load_checkpoint(config.load_path, load_trainer_state=False)
+
+        trainer.fit()
+    finally:
+        teardown_training_environment()
+
+
 if __name__ == "__main__":
-    main(build_config)
+    main()

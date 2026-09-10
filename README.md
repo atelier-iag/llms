@@ -47,3 +47,24 @@ Les scripts [prepare_data.py](baseline/olmo3/mini/prepare_data.py) et
 [train.py](baseline/olmo3/mini/train.py) utilisent le dossier
 [mini/data/](baseline/olmo3/mini/data). Les fichiers générés `train.npy` et
 `val.npy` y restent locaux et ignorés par Git.
+
+### Entraînement sur un GPU
+
+Depuis la racine du dépôt, dans le terminal WSL et avec l’environnement installé :
+
+```sh
+source .venv/bin/activate
+python baseline/olmo3/mini/train.py \
+  --save-folder runs/olmo3-60m-valtest \
+  --train-single
+```
+
+`--train-single` utilise directement le GPU sans initialiser de groupe distribué
+ni NCCL. Le lanceur local corrige ce comportement pour la version épinglée
+d’OLMo-core ; les lancements distribués utilisent toujours le lanceur amont.
+La configuration actuelle entraîne pendant 100 étapes, puis évalue sur la
+validation. Un checkpoint présent dans `--save-folder` est repris automatiquement ;
+choisir un nouveau dossier pour démarrer un nouvel entraînement.
+
+Vérifier la configuration sans lancer l’entraînement en ajoutant `--dry-run`.
+Les tests du lanceur se lancent avec `python -m pytest tests/test_mini_launcher.py`.

@@ -5,7 +5,7 @@ fonctionner une référence OLMo, en réimplémenter les mécanismes centraux, p
 mesurer les améliorations et leurs limites.
 
 Les objectifs et critères de maîtrise sont définis dans [PLAN.md](PLAN.md).
-Le [contrat commun des laboratoires](.github/LAB_CONTRACT.md) fixe la progression :
+Le [contrat commun des laboratoires](https://github.com/atelier-iag/.github/blob/main/LAB_CONTRACT.md), centralisé dans le dépôt `.github` de l’organisation, fixe la progression :
 
 **baseline → reimplementation → modern improvement → ablation → holdout.**
 
@@ -15,8 +15,6 @@ Le [contrat commun des laboratoires](.github/LAB_CONTRACT.md) fixe la progressio
 llms/
 ├── README.md                 # Point d’entrée du laboratoire
 ├── PLAN.md                   # Objectifs et critères de maîtrise
-├── .github/
-│   └── LAB_CONTRACT.md        # Contrat commun aux laboratoires AGI
 ├── baseline/                 # Implémentations de référence et mesures
 │   └── olmo3/
 │       ├── OLMo-core/        # Submodule Git de la référence AllenAI

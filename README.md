@@ -4,17 +4,76 @@ Ce laboratoire étudie les modèles de langage comme voie vers l’AGI : faire
 fonctionner une référence OLMo, en réimplémenter les mécanismes centraux, puis
 mesurer les améliorations et leurs limites.
 
-Les objectifs et critères de maîtrise sont définis dans [PLAN.md](PLAN.md).
+Ce README regroupe les objectifs, les [jalons du parcours](#jalons) et les critères de maîtrise.
 Le [contrat commun des laboratoires](https://github.com/atelier-iag/.github/blob/main/LAB_CONTRACT.md), centralisé dans le dépôt `.github` de l’organisation, fixe la progression :
 
 **baseline → reimplementation → modern improvement → ablation → holdout.**
+
+## Objectif
+
+S’approprier le fonctionnement pratique d’un petit modèle de fondation de type **OLMo-like**, de l’entraînement initial jusqu’au post-entraînement.
+
+## Jalons
+
+Les sept jalons (*milestones*) structurent le parcours « Modèles de fondation / scaling ».
+Chaque jalon est un objectif important, atteint grâce aux réalisations ci-dessous.
+
+### Jalon 1 — Faire tourner une baseline existante
+
+- entraîner un très petit modèle ;
+- comprendre le pipeline `données → tokens → batches → modèle → loss → optimisation`.
+
+### Jalon 2 — Réimplémenter le cœur du modèle
+
+- embeddings ;
+- self-attention causale ;
+- MLP ;
+- résidus + normalisation ;
+- Transformer decoder ;
+- boucle d’entraînement.
+
+### Jalon 3 — Ajouter les mécanismes modernes
+
+- RoPE ;
+- GQA ;
+- mixed precision ;
+- optimisations d’entraînement utiles.
+
+### Jalon 4 — Faire un mini-préentraînement propre
+
+- corpus préparé ;
+- splits train/dev/holdout ;
+- suivi de la loss, perplexité, temps et coût.
+
+### Jalon 5 — Étudier le scaling
+
+- faire varier taille du modèle, quantité de données et compute ;
+- comparer les courbes obtenues.
+
+### Jalon 6 — Pratiquer l’adaptation
+
+- continued pretraining ;
+- SFT ;
+- éventuellement une méthode simple de post-training.
+
+### Jalon 7 — Faire des ablations
+
+- retirer ou modifier certains mécanismes ;
+- mesurer leur effet ;
+- tester sur le holdout ;
+- documenter les échecs et différences observées.
+
+## Critère de maîtrise
+
+**Baseline → réimplémentation → amélioration moderne → ablation → holdout.**
+
+Le code produit servira ensuite de premier laboratoire à intégrer au **workbench commun**.
 
 ## Structure
 
 ```text
 llms/
-├── README.md                 # Point d’entrée du laboratoire
-├── PLAN.md                   # Objectifs et critères de maîtrise
+├── README.md                 # Point d’entrée, objectifs, jalons et critères de maîtrise
 ├── baseline/                 # Implémentations de référence et mesures
 │   └── olmo3/
 │       ├── OLMo-core/        # Submodule Git de la référence AllenAI
@@ -62,7 +121,7 @@ python baseline/olmo3/mini/train.py \
 `--train-single` utilise directement le GPU sans initialiser de groupe distribué
 ni NCCL. Le lanceur local corrige ce comportement pour la version épinglée
 d’OLMo-core ; les lancements distribués utilisent toujours le lanceur amont.
-La configuration actuelle entraîne pendant 100 étapes, puis évalue sur la
+La configuration actuelle entraîne pendant 100 pas d’optimisation, puis évalue sur la
 validation. Un checkpoint présent dans `--save-folder` est repris automatiquement ;
 choisir un nouveau dossier pour démarrer un nouvel entraînement.
 

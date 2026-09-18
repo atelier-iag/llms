@@ -69,7 +69,7 @@ Les 20 avertissements proviennent des dépendances existantes.
 
 ## Conclusion
 
-Le jalon 2 est atteint au niveau du cœur pédagogique et du pipeline exécutable.
+Le cœur pédagogique et le pipeline exécutable du jalon 2 sont validés.
 Nous savons désormais reconstruire et entraîner notre petit modèle causal,
 mesurer sa loss, récupérer ses poids et les utiliser pour générer.
 
@@ -78,6 +78,8 @@ du batch jouet ; elle ne prouve pas une bonne qualité linguistique ou une maît
 du corpus. Aucun objectif de qualité n’est atteint ici. Les scores ne sont pas
 directement comparables à ceux de la baseline, dont la taille et le protocole diffèrent.
 
-Suite : **jalon 3**, en commençant par RoPE pour ajouter une représentation
-explicite des positions dans l’attention. Le mini-préentraînement avec protocole
-train/dev/holdout complet demeure au jalon 4.
+Avant de passer au jalon 3, une [baseline du modèle simple](simple-baseline.md)
+doit être mesurée avec un modèle plus large et un passage complet sur le corpus.
+Ce run de 200 mises à jour reste un test de fonctionnement. Le jalon 3 comparera
+ensuite les mécanismes modernes à cette référence ; le mini-préentraînement avec
+protocole train/dev/holdout complet demeure au jalon 4.

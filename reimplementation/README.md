@@ -126,6 +126,64 @@ and [recorded metrics](../results/reimplementation-corpus.json).
 Run all laboratory checks with `python -m pytest tests/ -q`. The pipeline tests
 use tiny synthetic data and require neither a GPU nor a tokenizer download.
 
+## Simple model baseline before milestone 3
+
+The short 64-feature run above is a pipeline check. For the reference experiment,
+[train_baseline.py](train_baseline.py) reads [baseline_config.json](baseline_config.json):
+384 features, eight blocks, eight heads, a 1,536-feature MLP, context length 256,
+batch size eight, and **95,894,400 parameters**. The embedding table has shape
+`[100278, 384]`. The model still has no explicit positional encoding, Q/K
+normalization, GQA or mixed precision. It starts from random weights.
+
+```sh
+python -m reimplementation.train_baseline --device cuda
+```
+
+The script creates a new `runs/simple-baseline-*/` directory. It reads the existing
+data files without modifying them and visits every next-token target **once**:
+
+- divide the training file into consecutive windows of 256 targets;
+- shuffle those windows with seed zero to mix the corpus domains;
+- neighboring windows share one context token, but no target;
+- process any incomplete last batch and short final window without padding.
+
+For the existing 19-million-token file this gives **18,999,999 targets in 9,279
+updates**. Only the very first token has no preceding context and cannot be a
+target. The last window has 191 targets. Context does not carry between windows.
+Windows can cross document boundaries; the causal mask does not reset at EOS.
+
+The fixed recipe uses AdamW (peak learning rate `3e-4`, betas `(0.9, 0.95)`, weight
+decay `0.1` on all parameters), 100 warmup updates, cosine decay to `3e-5`, and
+gradient norm clipping at 1.0. The forward pass, loss and basic attention remain
+the same as the teaching implementation. The optional clipping argument in
+`train_step` leaves the earlier tiny-batch and short-corpus commands unchanged.
+
+Evaluation never updates weights:
+
+- before and after training: full validation, **999,999 targets**, including the
+  short final window;
+- at update zero, every 1,000 updates and at the end: the same 128 fixed windows
+  from each split, **32,768 targets per split**;
+- training logs every 100 updates report the token-weighted mean of losses
+  measured **before each update**, while weights change. These differ from the
+  fixed-model evaluations of the fixed train/validation samples.
+
+Run artifacts:
+
+- `config.json`: the exact recipe used;
+- `progress.jsonl`: incremental training and evaluation measurements;
+- `recovery.pt`: latest periodic model, optimizer, update count, data hashes and
+  Torch RNG states, written atomically; there is no automatic resume CLI yet;
+- `model.pt`: final inference checkpoint compatible with `reimplementation.generate`;
+- `metrics.json`: full results, evaluation offsets, data hashes, timing and three
+  greedy generations from the reloaded final checkpoint.
+
+The final checkpoint is checked for identical logits after reconstruction. The
+generation command is the same as above, with the new run's `model.pt` path.
+The [baseline report](../results/simple-baseline.md) records the measurements and
+limitations. Keep this recipe, tokenizer, data order, splits and token budget
+fixed when comparing the future RoPE variant; train each variant from scratch.
+
 This is a teaching implementation using FP32 and basic causal attention. Explicit
 positional encoding, Q/K normalization, GQA and mixed precision remain to be added
 in later milestones. The components depend on PyTorch; some tests also compare with

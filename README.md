@@ -32,13 +32,16 @@ Chaque jalon est un objectif important, atteint grâce aux réalisations ci-dess
 - Transformer decoder ;
 - boucle d’entraînement.
 
-**Atteint pour la réimplémentation pédagogique du cœur du modèle.** Le pipeline
+**Réimplémentation fonctionnelle.** Le pipeline
 entraîne notre modèle sur des tokens réels, mesure une validation séparée,
 sauvegarde et recharge les poids, puis génère du texte.
 Voir les [commandes](reimplementation/README.md#complete-pipeline-on-real-tokens)
 et les [résultats mesurés](results/reimplementation-corpus.md).
-Ce court test valide le fonctionnement ; la qualité du modèle et les mécanismes
-modernes restent à travailler dans les jalons suivants.
+Ce court test valide le fonctionnement. Avant le jalon 3, nous établissons aussi
+une **baseline de notre propre modèle simple** : dimension 384, 8 blocs et un
+passage complet sur le corpus existant. Voir le [protocole et les mesures](results/simple-baseline.md).
+Cette référence permettra de comparer les mécanismes modernes à taille, données
+et budget d’entraînement identiques.
 
 ### Jalon 3 — Ajouter les mécanismes modernes
 

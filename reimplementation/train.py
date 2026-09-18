@@ -14,7 +14,8 @@ from reimplementation.model import CausalLanguageModel
 
 
 def train_step(
-    model: nn.Module, optimizer: torch.optim.Optimizer, tokens: torch.Tensor
+    model: nn.Module, optimizer: torch.optim.Optimizer, tokens: torch.Tensor,
+    *, max_grad_norm: float | None = None,
 ) -> float:
     """Apply one weight update and return the loss measured before that update."""
     model.train()
@@ -25,6 +26,8 @@ def train_step(
     if not torch.isfinite(loss):
         raise FloatingPointError("Training loss is not finite")
     loss.backward()
+    if max_grad_norm is not None:
+        nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm, error_if_nonfinite=True)
     optimizer.step()
     return loss.detach().item()
 

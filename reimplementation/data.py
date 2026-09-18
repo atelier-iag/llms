@@ -56,6 +56,30 @@ class TokenFile:
             raise ValueError("num_windows must fit within the available start offsets")
         return np.linspace(0, self.num_starts - 1, num_windows, dtype=np.int64)
 
+    def epoch_batch_count(self, batch_size: int) -> int:
+        if batch_size < 1:
+            raise ValueError("batch_size must be positive")
+        full_windows, remainder = divmod(len(self.tokens) - 1, self.sequence_length)
+        return (full_windows + batch_size - 1) // batch_size + bool(remainder)
+
+    def epoch_batches(self, batch_size: int, rng: np.random.Generator | None = None):
+        """Score every token except the first exactly once, with no padding.
+
+        Adjacent windows share one boundary token as context, but never a target.
+        Shuffle full windows for training; keep file order when rng is None.
+        A short final window handles the remainder without discarding data.
+        """
+        self.epoch_batch_count(batch_size)  # Validate before iterating.
+        full_windows, remainder = divmod(len(self.tokens) - 1, self.sequence_length)
+        starts = np.arange(full_windows, dtype=np.int64) * self.sequence_length
+        if rng is not None:
+            rng.shuffle(starts)
+        for index in range(0, len(starts), batch_size):
+            yield self.batch(starts[index:index + batch_size])
+        if remainder:
+            tail = np.array(self.tokens[full_windows * self.sequence_length:], dtype=np.int64)
+            yield torch.from_numpy(tail).unsqueeze(0)
+
 
 def open_splits(data_dir: Path, sequence_length: int, vocab_size: int):
     train_path = Path(data_dir) / "train.npy"

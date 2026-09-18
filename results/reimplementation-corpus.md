@@ -78,8 +78,8 @@ du batch jouet ; elle ne prouve pas une bonne qualité linguistique ou une maît
 du corpus. Aucun objectif de qualité n’est atteint ici. Les scores ne sont pas
 directement comparables à ceux de la baseline, dont la taille et le protocole diffèrent.
 
-Avant de passer au jalon 3, une [baseline du modèle simple](simple-baseline.md)
-doit être mesurée avec un modèle plus large et un passage complet sur le corpus.
+Une [baseline du modèle simple](simple-baseline.md) a depuis été mesurée avec
+un modèle plus large et un passage complet sur le corpus, avant le jalon 3.
 Ce run de 200 mises à jour reste un test de fonctionnement. Le jalon 3 comparera
 ensuite les mécanismes modernes à cette référence ; le mini-préentraînement avec
 protocole train/dev/holdout complet demeure au jalon 4.

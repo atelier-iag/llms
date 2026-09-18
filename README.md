@@ -37,11 +37,12 @@ entraîne notre modèle sur des tokens réels, mesure une validation séparée,
 sauvegarde et recharge les poids, puis génère du texte.
 Voir les [commandes](reimplementation/README.md#complete-pipeline-on-real-tokens)
 et les [résultats mesurés](results/reimplementation-corpus.md).
-Ce court test valide le fonctionnement. Avant le jalon 3, nous établissons aussi
-une **baseline de notre propre modèle simple** : dimension 384, 8 blocs et un
-passage complet sur le corpus existant. Voir le [protocole et les mesures](results/simple-baseline.md).
-Cette référence permettra de comparer les mécanismes modernes à taille, données
-et budget d’entraînement identiques.
+Une **baseline de notre propre modèle simple est aussi mesurée** : dimension 384,
+8 blocs, 95,9 millions de paramètres et un passage complet sur le corpus existant.
+La loss sur la validation complète passe de **11,68 à 5,42** ; le texte généré reste
+fortement répétitif. Voir le [protocole, les courbes et les mesures](results/simple-baseline.md).
+Le jalon 2 dispose ainsi d’un code vérifié et d’une référence expérimentale pour
+comparer les mécanismes du jalon 3 à taille, données et budget identiques.
 
 ### Jalon 3 — Ajouter les mécanismes modernes
 

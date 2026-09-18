@@ -50,6 +50,11 @@ def main():
     for extension in ("png", "svg"):
         path = args.output_prefix.with_suffix(f".{extension}")
         fig.savefig(path, dpi=160)
+        if extension == "svg":
+            # Matplotlib emits trailing spaces inside path attributes; newlines
+            # already separate those coordinates, so keep the tracked SVG tidy.
+            lines = path.read_text(encoding="utf-8").splitlines()
+            path.write_text("\n".join(line.rstrip() for line in lines) + "\n", encoding="utf-8")
         print(path)
     plt.close(fig)
 

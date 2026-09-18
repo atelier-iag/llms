@@ -1,0 +1,44 @@
+{
+  "model_config": {
+    "vocab_size": 100278,
+    "d_model": 384,
+    "num_heads": 8,
+    "hidden_size": 1536,
+    "num_layers": 8
+  },
+  "measurements": [
+    {
+      "batch_size": 2,
+      "sequence_length": 256,
+      "measured_steps": 10,
+      "seconds": 1.4558648939992054,
+      "target_tokens_per_second": 3516.8098503533215,
+      "estimated_epoch_minutes": 90.0437271679196,
+      "peak_allocated_bytes": 2195906560,
+      "loss_first": 11.144464492797852,
+      "loss_last": 10.094358444213867
+    },
+    {
+      "batch_size": 4,
+      "sequence_length": 256,
+      "measured_steps": 10,
+      "seconds": 1.4369143220001206,
+      "target_tokens_per_second": 7126.381749571803,
+      "estimated_epoch_minutes": 44.43582701497768,
+      "peak_allocated_bytes": 3226433536,
+      "loss_first": 9.853050231933594,
+      "loss_last": 9.159236907958984
+    },
+    {
+      "batch_size": 8,
+      "sequence_length": 256,
+      "measured_steps": 20,
+      "seconds": 4.274335398000403,
+      "target_tokens_per_second": 9582.776311648751,
+      "estimated_epoch_minutes": 33.045398991702335,
+      "peak_allocated_bytes": 5283721216,
+      "loss_last": 8.743432998657227
+    }
+  ],
+  "note": "Short capacity tests only; their weights were discarded before the full run."
+}

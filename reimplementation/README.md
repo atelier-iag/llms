@@ -184,6 +184,20 @@ The [baseline report](../results/simple-baseline.md) records the measurements an
 limitations. Keep this recipe, tokenizer, data order, splits and token budget
 fixed when comparing the future RoPE variant; train each variant from scratch.
 
+The completed run processed all **18,999,999 training targets** and reduced full
+validation loss from **11.677568 to 5.419455** (perplexity **225.756**). It took
+36.09 minutes for the training loop and 38.44 minutes including the recorded
+evaluations, saves and generations. Greedy text remains strongly repetitive.
+The checkpoint reproduced identical logits and the first generation was also
+verified in a fresh Python process. See the [recorded metrics](../results/simple-baseline.json).
+
+Rebuild the published plots with Matplotlib:
+
+```sh
+python -m evaluation.plot_baseline results/simple-baseline.json \
+  --output-prefix results/simple-baseline-curves
+```
+
 This is a teaching implementation using FP32 and basic causal attention. Explicit
 positional encoding, Q/K normalization, GQA and mixed precision remain to be added
 in later milestones. The components depend on PyTorch; some tests also compare with

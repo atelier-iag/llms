@@ -1,5 +1,7 @@
 # RoPE: first mechanism in milestone 3
 
+Next learning step: [GQA and its executable sharing example](gqa.md).
+
 Implementation: [rope.py](../reimplementation/rope.py), called from
 [attention.py](../reimplementation/attention.py) after the Q/K projections and
 before their scaled dot products. V is not rotated. The causal mask, softmax,

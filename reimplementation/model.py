@@ -1,7 +1,7 @@
 """A basic causal language model, from token IDs to next-token scores.
 
-This educational version has no explicit positional encoding yet. Its modules
-use PyTorch directly and do not import OLMo-core.
+RoPE is optional so the original baseline and its checkpoints remain usable.
+The modules use PyTorch directly and do not import OLMo-core.
 """
 
 import torch
@@ -21,11 +21,13 @@ class CausalLanguageModel(nn.Module):
         hidden_size: int,
         num_layers: int,
         eps: float = 1e-6,
+        *,
+        rope_theta: float | None = None,
     ):
         super().__init__()
         self.embeddings = TokenEmbedding(vocab_size, d_model)
         self.decoder = TransformerDecoder(
-            d_model, num_heads, hidden_size, num_layers, eps=eps
+            d_model, num_heads, hidden_size, num_layers, eps=eps, rope_theta=rope_theta
         )
         self.lm_head = LMHead(d_model, vocab_size, eps=eps)
 

@@ -14,13 +14,15 @@ class TransformerDecoder(nn.Module):
         hidden_size: int,
         num_layers: int,
         eps: float = 1e-6,
+        *,
+        rope_theta: float | None = None,
     ):
         super().__init__()
         if num_layers < 1:
             raise ValueError("num_layers must be positive")
         self.blocks = nn.ModuleList(
             [
-                TransformerBlock(d_model, num_heads, hidden_size, eps=eps)
+                TransformerBlock(d_model, num_heads, hidden_size, eps=eps, rope_theta=rope_theta)
                 for _ in range(num_layers)
             ]
         )

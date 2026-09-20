@@ -1,0 +1,32 @@
+{
+  "name": "simple-384-rope",
+  "seed": 0,
+  "model": {
+    "vocab_size": 100278,
+    "d_model": 384,
+    "num_heads": 8,
+    "hidden_size": 1536,
+    "num_layers": 8,
+    "rope_theta": 10000.0
+  },
+  "sequence_length": 256,
+  "batch_size": 8,
+  "epochs": 1,
+  "optimizer": {
+    "lr": 0.0003,
+    "betas": [0.9, 0.95],
+    "weight_decay": 0.1
+  },
+  "warmup_updates": 100,
+  "min_lr_ratio": 0.1,
+  "max_grad_norm": 1.0,
+  "evaluation_windows": 128,
+  "evaluate_every": 1000,
+  "log_every": 100,
+  "prompts": [
+    "The purpose of science is",
+    "The history of the world",
+    "To write a Python function,"
+  ],
+  "max_new_tokens": 64
+}

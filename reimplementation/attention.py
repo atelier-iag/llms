@@ -3,11 +3,14 @@
 import torch
 from torch import nn
 
+from reimplementation.rope import RotaryPositionEmbedding
+
 
 class CausalAttentionHead(nn.Module):
-    def __init__(self, d_model: int, head_dim: int):
+    def __init__(self, d_model: int, head_dim: int, *, rope_theta: float | None = None):
         super().__init__()
         self.head_dim = head_dim
+        self.rope = RotaryPositionEmbedding(head_dim, rope_theta) if rope_theta is not None else None
         self.w_q = nn.Linear(d_model, head_dim, bias=False)
         self.w_k = nn.Linear(d_model, head_dim, bias=False)
         self.w_v = nn.Linear(d_model, head_dim, bias=False)
@@ -17,6 +20,11 @@ class CausalAttentionHead(nn.Module):
         q = self.w_q(x)
         k = self.w_k(x)
         v = self.w_v(x)
+
+        if self.rope is not None:
+            positions = torch.arange(x.shape[1], device=x.device)
+            q = self.rope(q, positions)
+            k = self.rope(k, positions)
 
         # Each query is compared with every key in the same sequence.
         scores = (q @ k.transpose(-2, -1)) / self.head_dim**0.5
@@ -32,13 +40,13 @@ class CausalAttentionHead(nn.Module):
 
 
 class MultiHeadCausalAttention(nn.Module):
-    def __init__(self, d_model: int, num_heads: int):
+    def __init__(self, d_model: int, num_heads: int, *, rope_theta: float | None = None):
         super().__init__()
         if d_model <= 0 or num_heads <= 0 or d_model % num_heads != 0:
             raise ValueError("d_model must be positive and divisible by a positive num_heads")
         head_dim = d_model // num_heads
         self.heads = nn.ModuleList(
-            [CausalAttentionHead(d_model, head_dim) for _ in range(num_heads)]
+            [CausalAttentionHead(d_model, head_dim, rope_theta=rope_theta) for _ in range(num_heads)]
         )
         self.w_out = nn.Linear(d_model, d_model, bias=False)
 

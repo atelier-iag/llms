@@ -1,3 +1,4 @@
+import pytest
 import torch
 import torch.nn.functional as F
 
@@ -24,8 +25,9 @@ def test_output_and_gradients_match_pytorch_causal_attention():
         torch.testing.assert_close(actual_gradient, expected_gradient)
 
 
-def test_future_tokens_cannot_affect_earlier_outputs():
-    attention = CausalAttentionHead(d_model=4, head_dim=2)
+@pytest.mark.parametrize("rope_theta", [None, 10000.0])
+def test_future_tokens_cannot_affect_earlier_outputs(rope_theta):
+    attention = CausalAttentionHead(d_model=4, head_dim=2, rope_theta=rope_theta)
     x = torch.randn(2, 3, 4)
     original, weights = attention(x)
     changed_x = x.clone()

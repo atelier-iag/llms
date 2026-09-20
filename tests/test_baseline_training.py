@@ -65,7 +65,8 @@ def test_optional_gradient_clipping_bounds_sgd_update():
     assert (after - before).norm().item() == pytest.approx(0.01, abs=1e-6)
 
 
-def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypatch):
+@pytest.mark.parametrize("rope_theta", [None, 10000.0])
+def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypatch, rope_theta):
     class TestTokenizer:
         def get_vocab_size(self):
             return 6
@@ -90,6 +91,8 @@ def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypat
         "evaluation_windows": 4, "evaluate_every": 5, "log_every": 3,
         "prompts": ["A prompt"], "max_new_tokens": 4,
     }
+    if rope_theta is not None:
+        config["model"]["rope_theta"] = rope_theta
     monkeypatch.setattr(train_baseline, "load_tokenizer", lambda _: TestTokenizer())
     run_dir = train_baseline.run(config, tmp_path, device="cpu", output_root=tmp_path / "runs")
     metrics = json.loads((run_dir / "metrics.json").read_text())
@@ -104,9 +107,20 @@ def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypat
     assert metrics["data_unchanged"]
     model, metadata = load_checkpoint(Path(metrics["checkpoint"]))
     assert metadata["step"] == 14
+    assert metadata["model_config"] == config["model"]
     assert model.embeddings.weight.shape == (6, 4)
     recovery = torch.load(run_dir / "recovery.pt", weights_only=True)
     assert recovery["training_target_tokens"] == 79
     assert recovery["step"] == 14
     assert len(recovery["optimizer_state"]["state"]) > 0
     assert not (run_dir / "recovery.tmp").exists()
+
+
+def test_rope_comparison_changes_only_position_encoding_and_experiment_name():
+    root = Path(__file__).resolve().parents[1]
+    baseline = json.loads((root / "reimplementation/baseline_config.json").read_text())
+    rope = json.loads((root / "experiments/rope_config.json").read_text())
+    assert rope.pop("name") == "simple-384-rope"
+    baseline.pop("name")
+    assert rope["model"].pop("rope_theta") == 10000.0
+    assert rope == baseline

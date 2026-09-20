@@ -10,6 +10,7 @@ Read the components in this order:
 
 1. [embeddings.py](embeddings.py): look up a learned vector for each token.
 2. [attention.py](attention.py): causal attention heads, concatenation and output projection.
+   Optional [rope.py](rope.py) rotates Q/K pairs using token positions (milestone 3).
 3. [normalization.py](normalization.py): RMSNorm.
 4. [feed_forward.py](feed_forward.py): the SwiGLU feed-forward network.
 5. [block.py](block.py): attention and feed-forward updates, each normalized before residual addition.
@@ -132,7 +133,7 @@ The short 64-feature run above is a pipeline check. For the reference experiment
 [train_baseline.py](train_baseline.py) reads [baseline_config.json](baseline_config.json):
 384 features, eight blocks, eight heads, a 1,536-feature MLP, context length 256,
 batch size eight, and **95,894,400 parameters**. The embedding table has shape
-`[100278, 384]`. The model still has no explicit positional encoding, Q/K
+`[100278, 384]`. This baseline configuration has no explicit positional encoding, Q/K
 normalization, GQA or mixed precision. It starts from random weights.
 
 ```sh
@@ -182,7 +183,7 @@ The final checkpoint is checked for identical logits after reconstruction. The
 generation command is the same as above, with the new run's `model.pt` path.
 The [baseline report](../results/simple-baseline.md) records the measurements and
 limitations. Keep this recipe, tokenizer, data order, splits and token budget
-fixed when comparing the future RoPE variant; train each variant from scratch.
+fixed when comparing the [RoPE variant](../experiments/README.md); train each variant from scratch.
 
 The completed run processed all **18,999,999 training targets** and reduced full
 validation loss from **11.677568 to 5.419455** (perplexity **225.756**). It took
@@ -198,7 +199,12 @@ python -m evaluation.plot_baseline results/simple-baseline.json \
   --output-prefix results/simple-baseline-curves
 ```
 
-This is a teaching implementation using FP32 and basic causal attention. Explicit
-positional encoding, Q/K normalization, GQA and mixed precision remain to be added
-in later milestones. The components depend on PyTorch; some tests also compare with
-the existing OLMo-core baseline.
+This is a teaching implementation using FP32 and basic causal attention. RoPE is
+now available via `rope_theta=10000.0`; the default `None` keeps the original NoPE
+baseline and its saved checkpoints compatible. See the [executable two-token demo
+and controlled comparison recipe](../experiments/README.md). The completed RoPE
+run reaches full-validation perplexity **199.103**, versus **225.756** without
+RoPE, with repetition still present; see the [comparison](../results/rope-baseline.md).
+Q/K normalization,
+GQA and mixed precision remain later work. The components depend on PyTorch; some
+tests also compare with the existing OLMo-core baseline.

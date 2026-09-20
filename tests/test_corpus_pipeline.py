@@ -101,16 +101,25 @@ def test_evaluation_weights_tokens_and_preserves_weights_gradients_and_mode():
     assert not model.training
 
 
-def test_checkpoint_reconstructs_architecture_and_identical_logits(tmp_path):
-    model = CausalLanguageModel(**CONFIG).eval()
+@pytest.mark.parametrize("rope_theta", [None, 12345.0])
+def test_checkpoint_reconstructs_architecture_and_identical_logits(tmp_path, rope_theta):
+    config = dict(CONFIG)
+    if rope_theta is not None:
+        config["rope_theta"] = rope_theta
+    model = CausalLanguageModel(**config).eval()
     path = tmp_path / "model.pt"
     tokenizer = {"repo_id": "test-tokenizer", "revision": "test-revision"}
-    save_checkpoint(path, model, CONFIG, step=7, context_length=3, tokenizer=tokenizer)
+    save_checkpoint(path, model, config, step=7, context_length=3, tokenizer=tokenizer)
     restored, metadata = load_checkpoint(path)
     inputs = torch.tensor([[2, 5, 2]])
     with torch.no_grad():
         torch.testing.assert_close(restored(inputs), model(inputs), rtol=0, atol=0)
-    assert metadata["model_config"] == CONFIG
+    assert metadata["model_config"] == config
+    for block in restored.decoder.blocks:
+        for head in block.attention.heads:
+            assert (head.rope is None) == (rope_theta is None)
+            if head.rope is not None:
+                assert head.rope.theta == rope_theta
     assert metadata["step"] == 7
     assert metadata["context_length"] == 3
     assert metadata["tokenizer"] == tokenizer

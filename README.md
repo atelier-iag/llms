@@ -51,6 +51,12 @@ comparer les mécanismes du jalon 3 à taille, données et budget identiques.
 - mixed precision ;
 - optimisations d’entraînement utiles.
 
+**RoPE est implémenté et mesuré.** À taille, données et budget identiques, la
+perplexité de validation passe de **225,76 à 199,10** (−11,81 %) sur cette seed.
+Le temps total passe de 38,44 à 55,44 minutes et les générations restent répétitives.
+Voir la [comparaison complète](results/rope-baseline.md) et la
+[démo RoPE](experiments/README.md). Le mécanisme suivant est GQA.
+
 ### Jalon 4 — Faire un mini-préentraînement propre
 
 - corpus préparé ;

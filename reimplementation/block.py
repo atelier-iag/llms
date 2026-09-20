@@ -1,7 +1,6 @@
 """A Transformer block using OLMo's normalization and residual order.
 
-Attention still uses our basic causal implementation; modern mechanisms such
-as RoPE and Q/K normalization are separate steps in the learning path.
+Attention uses our basic causal implementation with optional RoPE.
 """
 
 import torch
@@ -14,10 +13,11 @@ from reimplementation.normalization import RMSNorm
 
 class TransformerBlock(nn.Module):
     def __init__(
-        self, d_model: int, num_heads: int, hidden_size: int, eps: float = 1e-6
+        self, d_model: int, num_heads: int, hidden_size: int, eps: float = 1e-6,
+        *, rope_theta: float | None = None,
     ):
         super().__init__()
-        self.attention = MultiHeadCausalAttention(d_model, num_heads)
+        self.attention = MultiHeadCausalAttention(d_model, num_heads, rope_theta=rope_theta)
         self.attention_norm = RMSNorm(d_model, eps=eps)
         self.feed_forward = FeedForward(d_model, hidden_size)
         self.feed_forward_norm = RMSNorm(d_model, eps=eps)

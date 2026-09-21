@@ -101,8 +101,13 @@ The runner creates a fresh `runs/simple-baseline-*/` directory. Its configuratio
 identifies `simple-384-rope-gqa2`; final metrics and the inference checkpoint are
 saved there. Compare with the [completed RoPE reference](../results/rope-baseline.md).
 
-**Status: integrated, 96 laboratory tests passing; full training is the next
-measurement.** Tests compare outputs and all parameter gradients with PyTorch
+**Status: integrated, 96 laboratory tests passing; first full training launched
+on 2026-09-21.** Local run: `runs/simple-baseline-se1nrgls/`; console log, launch
+metadata and source snapshot: `runs/gqa-launch-fweigtsy/`. Training code commit:
+`3114f0c0c78febc3ffed318850e0fb64187938af`. The `complete` log event and final
+`metrics.json` establish completion; this note only records the launch.
+
+Tests compare outputs and all parameter gradients with PyTorch
 SDPA, verify that each K/V projection runs once, enforce causality, check the MHA
 limit, count real-model parameters, and exercise training/evaluation/checkpoint
 reload/generation on synthetic data. The saved NoPE and RoPE reference checkpoints

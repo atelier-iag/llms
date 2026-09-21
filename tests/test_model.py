@@ -6,9 +6,11 @@ from reimplementation.model import CausalLanguageModel
 
 
 @pytest.mark.parametrize("rope_theta", [None, 10000.0])
-def test_logits_depend_only_on_the_visible_prefix(rope_theta):
+@pytest.mark.parametrize("num_kv_heads", [None, 1])
+def test_logits_depend_only_on_the_visible_prefix(rope_theta, num_kv_heads):
     model = CausalLanguageModel(
-        vocab_size=6, d_model=4, num_heads=2, hidden_size=8, num_layers=2, rope_theta=rope_theta
+        vocab_size=6, d_model=4, num_heads=2, hidden_size=8, num_layers=2,
+        rope_theta=rope_theta, num_kv_heads=num_kv_heads,
     )
     tokens = torch.tensor([[2, 5, 2], [1, 4, 3]])
     changed_tokens = tokens.clone()
@@ -25,9 +27,11 @@ def test_logits_depend_only_on_the_visible_prefix(rope_theta):
 
 
 @pytest.mark.parametrize("rope_theta", [None, 10000.0])
-def test_next_token_loss_backpropagates_through_the_complete_model(rope_theta):
+@pytest.mark.parametrize("num_kv_heads", [None, 1])
+def test_next_token_loss_backpropagates_through_the_complete_model(rope_theta, num_kv_heads):
     model = CausalLanguageModel(
-        vocab_size=6, d_model=4, num_heads=2, hidden_size=8, num_layers=2, rope_theta=rope_theta
+        vocab_size=6, d_model=4, num_heads=2, hidden_size=8, num_layers=2,
+        rope_theta=rope_theta, num_kv_heads=num_kv_heads,
     )
     tokens = torch.tensor([[0, 1, 2, 3], [3, 2, 1, 0]])
     inputs, targets = make_next_token_batch(tokens)

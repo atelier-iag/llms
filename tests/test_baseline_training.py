@@ -66,7 +66,10 @@ def test_optional_gradient_clipping_bounds_sgd_update():
 
 
 @pytest.mark.parametrize("rope_theta", [None, 10000.0])
-def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypatch, rope_theta):
+@pytest.mark.parametrize("num_kv_heads", [None, 1])
+def test_full_baseline_run_records_coverage_curve_and_reload(
+    tmp_path, monkeypatch, rope_theta, num_kv_heads,
+):
     class TestTokenizer:
         def get_vocab_size(self):
             return 6
@@ -93,6 +96,8 @@ def test_full_baseline_run_records_coverage_curve_and_reload(tmp_path, monkeypat
     }
     if rope_theta is not None:
         config["model"]["rope_theta"] = rope_theta
+    if num_kv_heads is not None:
+        config["model"]["num_kv_heads"] = num_kv_heads
     monkeypatch.setattr(train_baseline, "load_tokenizer", lambda _: TestTokenizer())
     run_dir = train_baseline.run(config, tmp_path, device="cpu", output_root=tmp_path / "runs")
     metrics = json.loads((run_dir / "metrics.json").read_text())

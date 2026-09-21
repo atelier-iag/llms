@@ -1,6 +1,6 @@
 """A basic causal language model, from token IDs to next-token scores.
 
-RoPE is optional so the original baseline and its checkpoints remain usable.
+RoPE and GQA are optional so existing baselines and checkpoints remain usable.
 The modules use PyTorch directly and do not import OLMo-core.
 """
 
@@ -23,11 +23,13 @@ class CausalLanguageModel(nn.Module):
         eps: float = 1e-6,
         *,
         rope_theta: float | None = None,
+        num_kv_heads: int | None = None,
     ):
         super().__init__()
         self.embeddings = TokenEmbedding(vocab_size, d_model)
         self.decoder = TransformerDecoder(
-            d_model, num_heads, hidden_size, num_layers, eps=eps, rope_theta=rope_theta
+            d_model, num_heads, hidden_size, num_layers, eps=eps,
+            rope_theta=rope_theta, num_kv_heads=num_kv_heads,
         )
         self.lm_head = LMHead(d_model, vocab_size, eps=eps)
 

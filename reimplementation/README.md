@@ -11,6 +11,7 @@ Read the components in this order:
 1. [embeddings.py](embeddings.py): look up a learned vector for each token.
 2. [attention.py](attention.py): causal attention heads, concatenation and output projection.
    Optional [rope.py](rope.py) rotates Q/K pairs using token positions (milestone 3).
+   Optional [gqa.py](gqa.py) shares K/V projections between groups of query heads.
 3. [normalization.py](normalization.py): RMSNorm.
 4. [feed_forward.py](feed_forward.py): the SwiGLU feed-forward network.
 5. [block.py](block.py): attention and feed-forward updates, each normalized before residual addition.
@@ -205,6 +206,8 @@ baseline and its saved checkpoints compatible. See the [executable two-token dem
 and controlled comparison recipe](../experiments/README.md). The completed RoPE
 run reaches full-validation perplexity **199.103**, versus **225.756** without
 RoPE, with repetition still present; see the [comparison](../results/rope-baseline.md).
-Q/K normalization,
-GQA and mixed precision remain later work. The components depend on PyTorch; some
+GQA is available via `num_kv_heads=2`, keeping eight independent queries and two
+K/V groups per block; see the [implementation and comparison recipe](../experiments/gqa.md).
+Omitting that option preserves MHA and old checkpoints. Q/K normalization and
+mixed precision remain later work. The components depend on PyTorch; some
 tests also compare with the existing OLMo-core baseline.

@@ -1,6 +1,6 @@
 """A Transformer block using OLMo's normalization and residual order.
 
-Attention uses our basic causal implementation with optional RoPE.
+Attention uses our causal MHA or GQA implementation, with optional RoPE.
 """
 
 import torch
@@ -8,16 +8,23 @@ from torch import nn
 
 from reimplementation.attention import MultiHeadCausalAttention
 from reimplementation.feed_forward import FeedForward
+from reimplementation.gqa import GroupedQueryCausalAttention
 from reimplementation.normalization import RMSNorm
 
 
 class TransformerBlock(nn.Module):
     def __init__(
         self, d_model: int, num_heads: int, hidden_size: int, eps: float = 1e-6,
-        *, rope_theta: float | None = None,
+        *, rope_theta: float | None = None, num_kv_heads: int | None = None,
     ):
         super().__init__()
-        self.attention = MultiHeadCausalAttention(d_model, num_heads, rope_theta=rope_theta)
+        if num_kv_heads is None:
+            # Keep the original modules/state-dict keys for existing checkpoints.
+            self.attention = MultiHeadCausalAttention(d_model, num_heads, rope_theta=rope_theta)
+        else:
+            self.attention = GroupedQueryCausalAttention(
+                d_model, num_heads, num_kv_heads, rope_theta=rope_theta
+            )
         self.attention_norm = RMSNorm(d_model, eps=eps)
         self.feed_forward = FeedForward(d_model, hidden_size)
         self.feed_forward_norm = RMSNorm(d_model, eps=eps)

@@ -55,7 +55,11 @@ comparer les mécanismes du jalon 3 à taille, données et budget identiques.
 perplexité de validation passe de **225,76 à 199,10** (−11,81 %) sur cette seed.
 Le temps total passe de 38,44 à 55,44 minutes et les générations restent répétitives.
 Voir la [comparaison complète](results/rope-baseline.md) et la
-[démo RoPE](experiments/README.md). Le mécanisme suivant est GQA.
+[démo RoPE](experiments/README.md).
+
+**GQA est intégré et testé** : 8 têtes Q partagent 2 groupes K/V, avec RoPE conservé.
+La variante compte 94,12 millions de paramètres ; sa comparaison d'entraînement
+utilise le même budget de tokens. Voir le [code et le protocole GQA](experiments/gqa.md).
 
 ### Jalon 4 — Faire un mini-préentraînement propre
 

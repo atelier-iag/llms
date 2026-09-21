@@ -102,10 +102,13 @@ def test_evaluation_weights_tokens_and_preserves_weights_gradients_and_mode():
 
 
 @pytest.mark.parametrize("rope_theta", [None, 12345.0])
-def test_checkpoint_reconstructs_architecture_and_identical_logits(tmp_path, rope_theta):
+@pytest.mark.parametrize("num_kv_heads", [None, 1])
+def test_checkpoint_reconstructs_architecture_and_identical_logits(tmp_path, rope_theta, num_kv_heads):
     config = dict(CONFIG)
     if rope_theta is not None:
         config["rope_theta"] = rope_theta
+    if num_kv_heads is not None:
+        config["num_kv_heads"] = num_kv_heads
     model = CausalLanguageModel(**config).eval()
     path = tmp_path / "model.pt"
     tokenizer = {"repo_id": "test-tokenizer", "revision": "test-revision"}
@@ -116,10 +119,15 @@ def test_checkpoint_reconstructs_architecture_and_identical_logits(tmp_path, rop
         torch.testing.assert_close(restored(inputs), model(inputs), rtol=0, atol=0)
     assert metadata["model_config"] == config
     for block in restored.decoder.blocks:
-        for head in block.attention.heads:
-            assert (head.rope is None) == (rope_theta is None)
-            if head.rope is not None:
-                assert head.rope.theta == rope_theta
+        if num_kv_heads is None:
+            rotations = [head.rope for head in block.attention.heads]
+        else:
+            assert block.attention.num_kv_heads == num_kv_heads
+            rotations = [block.attention.rope]
+        for rotation in rotations:
+            assert (rotation is None) == (rope_theta is None)
+            if rotation is not None:
+                assert rotation.theta == rope_theta
     assert metadata["step"] == 7
     assert metadata["context_length"] == 3
     assert metadata["tokenizer"] == tokenizer

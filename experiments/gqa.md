@@ -107,6 +107,29 @@ metadata and source snapshot: `runs/gqa-launch-fweigtsy/`. Training code commit:
 `3114f0c0c78febc3ffed318850e0fb64187938af`. The `complete` log event and final
 `metrics.json` establish completion; this note only records the launch.
 
+The first run was interrupted by a computer crash. A fresh run,
+`runs/simple-baseline-vp_qv7vi/`, was then stopped on request after its update-7,000
+recovery checkpoint (14,336,000 training targets). On 2026-09-23 it was **resumed
+from that checkpoint**, keeping the model, AdamW state, RNG state, data order and
+learning-rate schedule. The continuation is `runs/simple-baseline-hm0xav7w/`;
+its console log, source snapshot and launch metadata are in
+`runs/gqa-resume-_nsars2l/`. It has 2,279 updates left at launch. These local
+directories are ignored by Git; the source checkpoint remains intact.
+
+The runner now accepts `--resume recovery.pt`; see the
+[resume instructions](../reimplementation/README.md#simple-model-baseline-before-milestone-3).
+All 105 laboratory tests pass, including exact CPU equality between continuous
+and interrupted/resumed training. Full validation quality remains comparable
+after resumption; full-run timing and peak memory cannot be recovered from the
+legacy checkpoint and will be left `null`, with continuation costs under `session`.
+**Completed on 2026-09-23:** the continuation recorded its `complete` event and
+final `metrics.json`, covering all **9,279 updates / 18,999,999 training targets**.
+Full-validation loss is **5.295368**, perplexity **199.410936**, versus **199.103016**
+for RoPE alone (+0.15% on this seed). The final checkpoint reload has zero logit
+error and the corpus hashes are unchanged. Generations remain repetitive.
+See the [comparison and limitations](../results/gqa-baseline.md) and the
+[archived full metrics](../results/gqa-baseline.json).
+
 Tests compare outputs and all parameter gradients with PyTorch
 SDPA, verify that each K/V projection runs once, enforce causality, check the MHA
 limit, count real-model parameters, and exercise training/evaluation/checkpoint

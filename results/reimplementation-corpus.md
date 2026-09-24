@@ -82,4 +82,4 @@ Une [baseline du modèle simple](simple-baseline.md) a depuis été mesurée ave
 un modèle plus large et un passage complet sur le corpus, avant le jalon 3.
 Ce run de 200 mises à jour reste un test de fonctionnement. Le jalon 3 comparera
 ensuite les mécanismes modernes à cette référence ; le mini-préentraînement avec
-protocole train/dev/holdout complet demeure au jalon 4.
+protocole train/dev/holdout complet demeure au jalon 5.

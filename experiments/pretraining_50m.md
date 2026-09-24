@@ -7,7 +7,8 @@ du protocole figé ; le runner d’entraînement ne l’ouvre pas.
 
 La préparation est terminée : voir l’[audit du corpus](../results/pretraining-50m-data.md)
 et le [manifeste exact](../results/pretraining-50m-data.json).
-Le [premier run](../results/pretraining-50m.md) est lancé le 24 septembre 2026.
+Le [premier run est terminé](../results/pretraining-50m.md) le 24 septembre 2026 :
+perplexité dev complète **184,21**, générations encore répétitives et holdout réservé.
 
 ## Préparation des données
 

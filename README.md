@@ -89,8 +89,10 @@ tokens train, 1 M dev et 1 M holdout** : sources et tokenizer épinglés, filtra
 minimal, déduplication exacte normalisée et séparation par document. Le modèle
 RoPE/GQA/BF16/SDPA repart de poids aléatoires. Le holdout reste réservé ; le
 changement de corpus ouvre une nouvelle référence expérimentale.
-Le [premier entraînement est lancé](results/pretraining-50m.md) le 24 septembre
-2026 ; les résultats finaux restent à mesurer.
+Le [premier entraînement est terminé](results/pretraining-50m.md) le 24 septembre
+2026 : **49 999 999 cibles**, loss dev complète **5,216053**, perplexité **184,21**.
+Le checkpoint est vérifié ; les générations restent répétitives et le holdout
+n’a pas été évalué.
 
 ### Jalon 5 — Étudier le scaling
 

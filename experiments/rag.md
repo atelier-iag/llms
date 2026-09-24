@@ -1,8 +1,47 @@
 # Jalon 4 — Les bases du RAG
 
-**Statut : parcours prévu, à commencer dès maintenant.** L’implémentation et les
-mesures restent à réaliser. Ce jalon peut être suivi en parallèle du jalon 3 ;
+**Statut : première démo de recherche et de construction du prompt disponible.**
+La génération par un LLM, la recherche par embeddings et l’évaluation du RAG
+complet restent à réaliser. Ce jalon peut être suivi en parallèle du jalon 3 ;
 il ne dépend pas de la fin du préentraînement de notre modèle.
+
+## Commencer avec les notes du laboratoire
+
+Depuis la racine du dépôt, avec Python (aucune dépendance supplémentaire) :
+
+```sh
+python -m experiments.rag_demo
+python -m experiments.rag_demo --question "Quelle perplexité obtient GQA ?" --k 1
+```
+
+La [démo](rag_demo.py) lit trois comptes rendus réels dans `results/` : la baseline
+simple, RoPE et GQA. Elle les découpe en passages de 80 mots avec 16 mots de
+chevauchement, puis affiche le classement et le prompt contenant les sources.
+Ces mots sont séparés par les espaces : ce ne sont pas les tokens du LLM.
+
+Le code central est dans [retrieval.py](../reimplementation/retrieval.py) :
+`chunk_document → TfidfIndex → search → build_prompt`. L’index est ici lexical :
+chaque dimension correspond à un terme, pondéré par sa fréquence et son IDF,
+puis les vecteurs sont normalisés pour une comparaison cosinus. Aucun encodeur
+neuronal n’est encore utilisé. Le vocabulaire et les IDF sont calculés sur les
+passages, avant de transformer la question dans le même espace.
+
+**Observer d’abord la sélection de l’information.** Pour la question par défaut,
+repérer le passage qui indique les 8 têtes Q et les 2 groupes K/V. Le LLM recevrait
+ce passage dans son prompt ; ses poids n’auraient pas besoin d’être modifiés pour
+exploiter ces nombres. Cette démo s’arrête au prompt et n’invente pas une sortie
+de modèle : l’appel au générateur sera l’étape suivante.
+
+Essayer ensuite une question contenant `GQA` mais demandant une information absente,
+par exemple son score sur un benchmark non mesuré. Des passages peuvent être
+retrouvés sans contenir la réponse : **pertinence lexicale et réponse justifiée
+sont deux vérifications différentes**. De même, cette recherche simple peut
+manquer un passage pertinent si la question utilise des synonymes.
+
+Ces exemples servent à comprendre le pipeline ; ils ne constituent pas le
+benchmark de vingt questions ni son holdout. À cette étape, le contexte contient
+au plus `k × 80` mots de passages ; un budget en tokens du générateur sera ajouté
+avec l’appel au LLM.
 
 ## Ce qu’il faut comprendre
 

@@ -87,6 +87,10 @@ un modèle déjà entraîné capable de suivre une consigne. Notre modèle péda
 reste encore trop répétitif pour servir de générateur principal à cet exercice.
 Voir le [parcours pratique, les livrables et les critères de maîtrise](experiments/rag.md).
 
+**Première démo disponible :** `python -m experiments.rag_demo` recherche des
+passages dans nos comptes rendus et affiche le prompt avec ses sources.
+Elle s’arrête avant l’appel au LLM ; la génération et l’évaluation restent à faire.
+
 Ce jalon couvre les bases du RAG dans le laboratoire LLM ; les recherches
 itératives pilotées par un agent et la mémoire persistante seront approfondies
 dans la voie « Agents et outils ».

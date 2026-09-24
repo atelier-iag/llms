@@ -33,7 +33,36 @@ def learning_rate(step: int, total_steps: int, peak: float, warmup: int, floor: 
     return peak * (floor + (1 - floor) * (1 + math.cos(math.pi * progress)) / 2)
 
 
-def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path:
+def recovery_history(checkpoint: dict, path: Path) -> dict:
+    """Read histories saved in new checkpoints, or beside a legacy checkpoint."""
+    if "run_state" in checkpoint:
+        return checkpoint["run_state"]
+    records = []
+    lines = path.with_name("progress.jsonl").read_text(encoding="utf-8").splitlines()
+    for index, line in enumerate(lines):
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError:
+            if index != len(lines) - 1:
+                raise
+            # A crash can leave the final log line incomplete.
+    step = checkpoint["step"]
+    initial = next(record for record in records if record["event"] == "initial")
+    history = [record for record in records
+               if record["event"] == "train" and record["step"] <= step]
+    evaluations = [{"step": 0, "target_tokens": 0, **initial["samples"]}]
+    evaluations.extend({key: value for key, value in record.items() if key != "event"}
+                       for record in records
+                       if record["event"] == "evaluation" and record["step"] <= step)
+    if not history or history[-1]["step"] != step or evaluations[-1]["step"] != step:
+        raise ValueError("legacy recovery requires a checkpoint at a completed logging boundary")
+    return {"initial_full_validation": initial["full_validation"],
+            "evaluation_history": evaluations, "training_history": history,
+            "window_nll": 0.0, "window_tokens": 0}
+
+
+def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
+        resume: Path | None = None) -> Path:
     torch.set_num_threads(1)
     torch.manual_seed(config["seed"])
     tokenizer = load_tokenizer(DOLMA_TOKENIZER)
@@ -56,11 +85,47 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
     offsets = {name: split.evaluation_starts(config["evaluation_windows"])
                for name, split in splits.items()}
     hashes = {name: file_sha256(split.path) for name, split in splits.items()}
+    recovery = restored_history = None
+    resume_step = resume_seen = 0
+    if resume is not None:
+        resume = Path(resume).resolve()
+        recovery = torch.load(resume, map_location="cpu", weights_only=True, mmap=True)
+        if recovery.get("format_version") != 1 or "optimizer_state" not in recovery:
+            raise ValueError("--resume requires a recovery checkpoint with optimizer state")
+        if (recovery["config"] != config or recovery["model_config"] != config["model"]
+                or recovery["context_length"] != config["sequence_length"]
+                or recovery["tokenizer"] != DOLMA_TOKENIZER):
+            raise ValueError("resume configuration/tokenizer differs from the checkpoint")
+        if recovery["data_sha256"] != hashes:
+            raise ValueError("resume data hashes differ from the checkpoint")
+        resume_step, resume_seen = recovery["step"], recovery["training_target_tokens"]
+        if not isinstance(resume_step, int) or not 0 < resume_step <= total_steps:
+            raise ValueError("invalid recovery update count")
+        epochs_done, batches_done = divmod(resume_step, train.epoch_batch_count(batch_size))
+        full_windows = (len(train.tokens) - 1) // config["sequence_length"]
+        expected_seen = (epochs_done * (len(train.tokens) - 1)
+                         + min(batches_done * batch_size, full_windows) * config["sequence_length"])
+        if resume_seen != expected_seen:
+            raise ValueError("recovery token count does not match the data order")
+        cuda_states = recovery["cuda_rng_states"]
+        if bool(cuda_states) != (device == "cuda") or (
+            device == "cuda" and len(cuda_states) != torch.cuda.device_count()
+        ):
+            raise ValueError("resume requires the same CPU/CUDA device configuration")
+        restored_history = recovery_history(recovery, resume)
     output_root.mkdir(parents=True, exist_ok=True)
     run_dir = Path(tempfile.mkdtemp(prefix="simple-baseline-", dir=output_root))
     (run_dir / "config.json").write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
     model = CausalLanguageModel(**config["model"]).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), **config["optimizer"])
+    if recovery is not None:
+        model.load_state_dict(recovery.pop("model_state"), strict=True)
+        optimizer.load_state_dict(recovery.pop("optimizer_state"))
+        # Model construction consumes RNG state; restore it only after loading.
+        torch.set_rng_state(recovery["torch_rng_state"])
+        if device == "cuda":
+            torch.cuda.set_rng_state_all(recovery["cuda_rng_states"])
+        del recovery
 
     def synchronize():
         if device == "cuda":
@@ -92,6 +157,11 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
             "data_sha256": hashes, "training_target_tokens": seen,
             "torch_rng_state": torch.get_rng_state(),
             "cuda_rng_states": torch.cuda.get_rng_state_all() if device == "cuda" else [],
+            "run_state": {
+                "initial_full_validation": initial_full_validation,
+                "evaluation_history": evaluations, "training_history": history,
+                "window_nll": window_nll, "window_tokens": window_tokens,
+            },
         }
         temporary = run_dir / "recovery.tmp"
         torch.save(state, temporary)
@@ -101,16 +171,25 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
     event({"event": "start", "run_dir": str(run_dir), "parameters": parameter_count,
            "total_updates": total_steps, "target_tokens": config["epochs"] * (len(train.tokens) - 1)})
     wall_start = time.perf_counter()
-    initial_samples = measure_samples()
-    event({"event": "validation_full_start"})
-    initial_full_validation = evaluate(model, val.epoch_batches(batch_size))
-    event({"event": "initial", "samples": initial_samples, "full_validation": initial_full_validation})
-    evaluations = [{"step": 0, "target_tokens": 0, **initial_samples}]
-    history = []
-    seen = step = 0
-    train_seconds = 0.0
     window_nll = 0.0
     window_tokens = 0
+    if restored_history is None:
+        initial_samples = measure_samples()
+        event({"event": "validation_full_start"})
+        initial_full_validation = evaluate(model, val.epoch_batches(batch_size))
+        event({"event": "initial", "samples": initial_samples, "full_validation": initial_full_validation})
+        evaluations = [{"step": 0, "target_tokens": 0, **initial_samples}]
+        history = []
+    else:
+        initial_full_validation = restored_history["initial_full_validation"]
+        evaluations = restored_history["evaluation_history"]
+        history = restored_history["training_history"]
+        window_nll = restored_history["window_nll"]
+        window_tokens = restored_history["window_tokens"]
+        event({"event": "resume", "checkpoint": str(resume), "step": resume_step,
+               "target_tokens": resume_seen, "remaining_updates": total_steps - resume_step})
+    seen, step = resume_seen, 0
+    train_seconds = 0.0
     if device == "cuda":
         torch.cuda.reset_peak_memory_stats()
     synchronize()
@@ -119,6 +198,9 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
         rng = np.random.default_rng(config["seed"] + epoch)
         for tokens in train.epoch_batches(batch_size, rng):
             step += 1
+            if step <= resume_step:
+                # Regenerate the same epoch permutation, without replaying updates.
+                continue
             lr = learning_rate(step, total_steps, config["optimizer"]["lr"],
                                config["warmup_updates"], config["min_lr_ratio"])
             for group in optimizer.param_groups:
@@ -132,6 +214,7 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
                 record = {"event": "train", "step": step, "target_tokens": seen,
                           "lr": lr, "mean_training_loss": window_nll / window_tokens,
                           "window_target_tokens": window_tokens,
+                          "session_start_step": resume_step,
                           "elapsed_seconds": time.perf_counter() - wall_start}
                 history.append(record)
                 event(record)
@@ -176,6 +259,14 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
                             "text": tokenizer.decode(output[0].tolist(), skip_special_tokens=True)})
     if hashes != {name: file_sha256(split.path) for name, split in splits.items()}:
         raise RuntimeError("source data changed during training")
+    session = {
+        "start_step": resume_step, "updates": step - resume_step,
+        "training_target_tokens": seen - resume_seen,
+        "training_seconds": train_seconds, "wall_seconds": time.perf_counter() - wall_start,
+        "training_target_tokens_per_second": ((seen - resume_seen) / train_seconds
+                                              if train_seconds > 0 else None),
+        "peak_cuda_allocated_bytes": peak_bytes,
+    }
     result = {
         "experiment": "simple-model-baseline", "config": config, "parameter_count": parameter_count,
         "embedding_parameters": model.embeddings.weight.numel(),
@@ -186,9 +277,13 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
         "data": {name: {"path": str(split.path), "tokens": len(split.tokens), "sha256": hashes[name],
                         "evaluation_offsets": offsets[name].tolist()} for name, split in splits.items()},
         "data_unchanged": True, "updates": step, "training_target_tokens": seen,
-        "training_seconds": train_seconds, "wall_seconds": time.perf_counter() - wall_start,
-        "training_target_tokens_per_second": seen / train_seconds,
-        "peak_cuda_allocated_bytes": peak_bytes, "evaluation_history": evaluations,
+        # Legacy recovery files do not contain complete timing/memory measurements.
+        # Never present a resumed session's cost as the cost of the whole run.
+        **{key: session[key] if resume is None else None for key in (
+            "training_seconds", "wall_seconds", "training_target_tokens_per_second",
+            "peak_cuda_allocated_bytes")},
+        "resume_from": str(resume) if resume is not None else None, "session": session,
+        "evaluation_history": evaluations,
         "training_history": history, "initial_full_validation": initial_full_validation,
         "final_full_validation": final_full_validation,
         "checkpoint": str(checkpoint), "checkpoint_reload_max_logit_error": reload_error,
@@ -196,20 +291,28 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path) -> Path
     }
     (run_dir / "metrics.json").write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     event({"event": "complete", "metrics": str(run_dir / "metrics.json"),
-           "full_validation": final_full_validation, "training_seconds": train_seconds})
+           "full_validation": final_full_validation, "session_training_seconds": train_seconds})
     return run_dir
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=Path(__file__).with_name("baseline_config.json"))
+    parser.add_argument("--config", type=Path)
+    parser.add_argument("--resume", type=Path, help="recovery.pt to continue in a new run directory")
     parser.add_argument("--data-dir", type=Path, default=ROOT / "baseline/olmo3/mini/data")
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
     args = parser.parse_args()
     if args.device == "cuda" and not torch.cuda.is_available():
         parser.error("CUDA is unavailable; use --device cpu for a CPU run")
-    config = json.loads(args.config.read_text(encoding="utf-8"))
-    run(config, args.data_dir, device=args.device, output_root=ROOT / "runs")
+    if args.config is not None:
+        config = json.loads(args.config.read_text(encoding="utf-8"))
+    elif args.resume is not None:
+        recovery = torch.load(args.resume, map_location="cpu", weights_only=True, mmap=True)
+        config = recovery["config"]
+        del recovery
+    else:
+        config = json.loads(Path(__file__).with_name("baseline_config.json").read_text(encoding="utf-8"))
+    run(config, args.data_dir, device=args.device, output_root=ROOT / "runs", resume=args.resume)
 
 
 if __name__ == "__main__":

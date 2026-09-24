@@ -129,3 +129,148 @@ def test_rope_comparison_changes_only_position_encoding_and_experiment_name():
     baseline.pop("name")
     assert rope["model"].pop("rope_theta") == 10000.0
     assert rope == baseline
+
+
+@pytest.fixture
+def resume_case(tmp_path, monkeypatch):
+    tokenizer = SimpleNamespace(
+        get_vocab_size=lambda: 6,
+        encode=lambda text, add_special_tokens: SimpleNamespace(ids=[2, 5, 2]),
+        token_to_id=lambda text: 0,
+        decode=lambda ids, skip_special_tokens: " ".join(map(str, ids)),
+    )
+    monkeypatch.setattr(train_baseline, "load_tokenizer", lambda _: tokenizer)
+    rng = np.random.default_rng(4)
+    for split, length in [("train", 80), ("val", 44)]:
+        rng.integers(6, size=length, dtype=np.uint32).tofile(tmp_path / f"{split}.npy")
+    return {
+        "name": "resume-test", "seed": 0,
+        "model": dict(vocab_size=6, d_model=4, num_heads=2, num_kv_heads=1,
+                      hidden_size=8, num_layers=2, rope_theta=10000.0),
+        "sequence_length": 3, "batch_size": 2, "epochs": 2,
+        "optimizer": dict(lr=0.01, betas=[0.9, 0.95], weight_decay=0.1),
+        "warmup_updates": 2, "min_lr_ratio": 0.1, "max_grad_norm": 1.0,
+        "evaluation_windows": 4, "evaluate_every": 5, "log_every": 3,
+        "prompts": ["A prompt"], "max_new_tokens": 4,
+    }
+
+
+def assert_nested_equal(actual, expected):
+    if isinstance(expected, torch.Tensor):
+        torch.testing.assert_close(actual, expected, rtol=0, atol=0)
+    elif isinstance(expected, dict):
+        assert actual.keys() == expected.keys()
+        for key in expected:
+            assert_nested_equal(actual[key], expected[key])
+    elif isinstance(expected, (list, tuple)):
+        assert len(actual) == len(expected)
+        for a, b in zip(actual, expected):
+            assert_nested_equal(a, b)
+    else:
+        assert actual == expected
+
+
+@pytest.mark.parametrize("checkpoint_step,legacy", [(5, False), (15, False), (15, True), (28, False)])
+def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_case, checkpoint_step, legacy):
+    batches = []
+    stop_after = None
+
+    def stochastic_step(model, optimizer, tokens, **kwargs):
+        if stop_after is not None and len(batches) == stop_after:
+            raise KeyboardInterrupt
+        batches.append(tokens.clone())
+        # Exercise RNG restoration as well as deterministic corpus permutations.
+        augmented = tokens.clone()
+        augmented[0, 0] = torch.randint(6, ())
+        return train_step(model, optimizer, augmented, **kwargs)
+
+    monkeypatch.setattr(train_baseline, "train_step", stochastic_step)
+    reference_dir = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "full")
+    reference_batches = batches.copy()
+    reference = torch.load(reference_dir / "recovery.pt", weights_only=True)
+    reference_metrics = json.loads((reference_dir / "metrics.json").read_text())
+
+    if checkpoint_step < 28:
+        batches.clear()
+        stop_after = checkpoint_step + 2  # Discard unsaved updates after the checkpoint.
+        with pytest.raises(KeyboardInterrupt):
+            train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "interrupted")
+        source_dir = next((tmp_path / "interrupted").iterdir())
+    else:
+        source_dir = reference_dir  # Finish evaluation/generation after a final recovery save.
+    source = source_dir / "recovery.pt"
+    saved = torch.load(source, weights_only=True)
+    assert saved["step"] == checkpoint_step
+    if legacy:
+        del saved["run_state"]
+        torch.save(saved, source)
+        with (source_dir / "progress.jsonl").open("a") as stream:
+            stream.write('{"event": "train",')  # A log line torn by the crash.
+    before = source.read_bytes()
+    batches.clear()
+    stop_after = None
+    resumed_dir = train_baseline.run(resume_case, tmp_path, device="cpu",
+                                      output_root=tmp_path / "resumed", resume=source)
+    actual = torch.load(resumed_dir / "recovery.pt", weights_only=True) if checkpoint_step < 28 else saved
+    actual_model, _ = load_checkpoint(resumed_dir / "model.pt")
+    assert_nested_equal(actual_model.state_dict(), reference["model_state"])
+    assert_nested_equal(actual["optimizer_state"], reference["optimizer_state"])
+    assert_nested_equal(actual["torch_rng_state"], reference["torch_rng_state"])
+    assert_nested_equal(batches, reference_batches[checkpoint_step:])
+    metrics = json.loads((resumed_dir / "metrics.json").read_text())
+    assert metrics["training_target_tokens"] == 158
+    assert metrics["updates"] == 28
+    assert metrics["session"]["updates"] == 28 - checkpoint_step
+    assert metrics["session"]["training_target_tokens"] == 158 - saved["training_target_tokens"]
+    for field in ["initial_full_validation", "final_full_validation", "evaluation_history", "generations"]:
+        assert metrics[field] == reference_metrics[field]
+    fields = ["step", "target_tokens", "lr", "mean_training_loss", "window_target_tokens"]
+    assert [[row[key] for key in fields] for row in metrics["training_history"]] == [
+        [row[key] for key in fields] for row in reference_metrics["training_history"]
+    ]
+    assert metrics["training_seconds"] is None  # No misleading full-run cost after resumption.
+    assert metrics["wall_seconds"] is None
+    assert metrics["peak_cuda_allocated_bytes"] is None
+    assert metrics["checkpoint_reload_max_logit_error"] == 0
+    assert source.read_bytes() == before
+    events = [json.loads(line)["event"] for line in (resumed_dir / "progress.jsonl").read_text().splitlines()]
+    assert "resume" in events
+    assert "initial" not in events
+
+
+@pytest.mark.parametrize("mismatch", ["config", "data", "count", "inference"])
+def test_resume_rejects_incompatible_checkpoint_before_creating_run(tmp_path, resume_case, mismatch):
+    source_dir = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "original")
+    source = source_dir / "recovery.pt"
+    state = torch.load(source, weights_only=True)
+    if mismatch == "config":
+        resume_case["seed"] += 1
+        message = "configuration/tokenizer"
+    elif mismatch == "data":
+        data_path = tmp_path / "train.npy"
+        tokens = np.fromfile(data_path, dtype=np.uint32)
+        tokens[0] = (tokens[0] + 1) % 6
+        tokens.tofile(data_path)
+        message = "data hashes"
+    elif mismatch == "count":
+        state["training_target_tokens"] -= 1
+        torch.save(state, source)
+        message = "token count"
+    else:
+        source = source_dir / "model.pt"
+        message = "optimizer state"
+    output_root = tmp_path / "must-not-exist"
+    with pytest.raises(ValueError, match=message):
+        train_baseline.run(resume_case, tmp_path, device="cpu", output_root=output_root, resume=source)
+    assert not output_root.exists()
+
+
+def test_resume_cli_uses_saved_configuration(tmp_path, monkeypatch, resume_case):
+    source_dir = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "original")
+    source = source_dir / "recovery.pt"
+    monkeypatch.setattr(train_baseline, "ROOT", tmp_path)
+    monkeypatch.setattr("sys.argv", ["train_baseline", "--device", "cpu", "--data-dir", str(tmp_path),
+                                    "--resume", str(source)])
+    train_baseline.main()
+    resumed_dir = next((tmp_path / "runs").iterdir())
+    assert json.loads((resumed_dir / "config.json").read_text()) == resume_case

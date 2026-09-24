@@ -175,10 +175,39 @@ Run artifacts:
 - `config.json`: the exact recipe used;
 - `progress.jsonl`: incremental training and evaluation measurements;
 - `recovery.pt`: latest periodic model, optimizer, update count, data hashes and
-  Torch RNG states, written atomically; there is no automatic resume CLI yet;
+  Torch RNG states, written atomically, with histories and partial logging windows;
 - `model.pt`: final inference checkpoint compatible with `reimplementation.generate`;
 - `metrics.json`: full results, evaluation offsets, data hashes, timing and three
   greedy generations from the reloaded final checkpoint.
+
+Resume an interrupted baseline, RoPE or GQA run from its last saved update:
+
+```sh
+python -m reimplementation.train_baseline --device cuda \
+  --resume runs/simple-baseline-REPLACE/recovery.pt
+```
+
+The checkpoint supplies the configuration; an explicit `--config` must match it.
+The runner verifies the tokenizer, data hashes and target count, restores the
+weights, AdamW state and Torch RNG states, then regenerates the seeded epoch
+permutations and skips the already completed batches. The learning-rate schedule
+continues at the next update. Use the same CPU/CUDA device configuration.
+A **new run directory** keeps the source checkpoint and its logs intact. Updates
+after the last saved checkpoint are repeated, never counted twice in the result.
+
+Older `recovery.pt` files need the adjacent `progress.jsonl` to recover the initial
+measurements and history. They are supported when the saved update coincides with
+a completed training-log boundary (as in the 1,000-update checkpoints of our runs).
+New checkpoints also preserve a partially filled logging window and need no old log.
+`model.pt` is for inference and cannot restore the optimizer.
+
+For a resumed run, `metrics.json` retains the complete evaluation/training histories
+and total token count, but reports timing, throughput and GPU peak memory for the
+new process under `session`. The corresponding top-level full-run cost fields
+are `null`: older checkpoints lack the measurements needed to reconstruct those
+totals reliably. Each new training-log record identifies its `session_start_step`;
+its elapsed time is measured within that process. Do not compare a resumed
+session's time with the full NoPE or RoPE training times.
 
 The final checkpoint is checked for identical logits after reconstruction. The
 generation command is the same as above, with the new run's `model.pt` path.

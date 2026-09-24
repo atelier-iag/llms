@@ -4,6 +4,7 @@ Question : à modèle fixé, que gagne-t-on en qualité de validation et de gén
 en doublant le budget de données et le calcul associé ? Le run
 [50 M terminé](../results/pretraining-50m.md) sert de référence. Un nouveau run
 25 M repart de poids aléatoires avec la même seed et le même modèle.
+Voir l’[état de la comparaison](../results/data-scaling-25m-50m.md).
 
 ## Données imbriquées et dev fixe
 

@@ -104,6 +104,8 @@ La [première comparaison](experiments/data_scaling.md) porte sur **25 M contre
 25 M est extrait du corpus de référence avec des quotas identiques par domaine ;
 le warmup et le cosinus suivent la durée propre à chaque budget. Voir l’[audit
 du sous-ensemble](results/pretraining-25m-data.md).
+Le [run 25 M est lancé](results/data-scaling-25m-50m.md) le 24 septembre 2026 ;
+la comparaison finale est en attente de ses résultats.
 
 ### Jalon 6 — Pratiquer l’adaptation
 

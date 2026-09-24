@@ -253,5 +253,8 @@ It additionally requires `requests` and `zstandard`. Follow the
 The runner checks a present corpus manifest and requires it for that configuration;
 incomplete or altered training data are rejected before creating a run. The
 reserved holdout is not read by the training runner.
+For a controlled data-budget comparison, [subset_corpus.py](subset_corpus.py)
+extracts a smaller balanced training set from a prepared corpus and copies dev
+and holdout byte-for-byte. See the [25M/50M protocol](../experiments/data_scaling.md).
 Q/K normalization remains later work. The components depend on PyTorch; some
 tests also compare with the existing OLMo-core baseline.

@@ -99,6 +99,12 @@ n’a pas été évalué.
 - faire varier taille du modèle, quantité de données et compute ;
 - comparer les courbes obtenues.
 
+La [première comparaison](experiments/data_scaling.md) porte sur **25 M contre
+50 M de tokens**, avec le même modèle et exactement le même dev. Le sous-ensemble
+25 M est extrait du corpus de référence avec des quotas identiques par domaine ;
+le warmup et le cosinus suivent la durée propre à chaque budget. Voir l’[audit
+du sous-ensemble](results/pretraining-25m-data.md).
+
 ### Jalon 6 — Pratiquer l’adaptation
 
 - continued pretraining ;

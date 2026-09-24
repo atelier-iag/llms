@@ -12,6 +12,7 @@ import torch
 
 from evaluation.language_model import evaluate
 from reimplementation.checkpoint import load_checkpoint, save_checkpoint
+from reimplementation.corpus_manifest import validate_manifest
 from reimplementation.data import open_splits
 from reimplementation.generate import generate
 from reimplementation.model import CausalLanguageModel
@@ -68,6 +69,11 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
     validate_precision(precision, device)
     torch.set_num_threads(1)
     torch.manual_seed(config["seed"])
+    corpus_config = config.get("corpus", {})
+    corpus_manifest = validate_manifest(
+        data_dir, tokenizer=DOLMA_TOKENIZER, vocab_size=config["model"]["vocab_size"],
+        required=corpus_config.get("require_manifest", False),
+    )
     tokenizer = load_tokenizer(DOLMA_TOKENIZER)
     if tokenizer.get_vocab_size() != config["model"]["vocab_size"]:
         raise ValueError("model vocabulary must match the tokenizer")
@@ -76,6 +82,10 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         raise ValueError("generation prompts must be nonempty")
     batch_size = config["batch_size"]
     train, val = open_splits(data_dir, config["sequence_length"], config["model"]["vocab_size"])
+    for name, split in (("train", train), ("validation", val)):
+        expected = corpus_config.get(f"{name}_tokens")
+        if expected is not None and len(split.tokens) != expected:
+            raise ValueError(f"unexpected {name} corpus token budget")
     total_steps = config["epochs"] * train.epoch_batch_count(batch_size)
     if config["epochs"] < 1 or not 0 <= config["warmup_updates"] < total_steps:
         raise ValueError("epochs must be positive and warmup shorter than the training run")
@@ -101,6 +111,9 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
             raise ValueError("resume configuration/tokenizer differs from the checkpoint")
         if recovery["data_sha256"] != hashes:
             raise ValueError("resume data hashes differ from the checkpoint")
+        manifest_hash = corpus_manifest["sha256"] if corpus_manifest else None
+        if recovery.get("corpus_manifest_sha256") != manifest_hash:
+            raise ValueError("resume corpus manifest differs from the checkpoint")
         resume_step, resume_seen = recovery["step"], recovery["training_target_tokens"]
         if not isinstance(resume_step, int) or not 0 < resume_step <= total_steps:
             raise ValueError("invalid recovery update count")
@@ -158,6 +171,7 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
             "context_length": config["sequence_length"], "tokenizer": DOLMA_TOKENIZER,
             "optimizer_state": optimizer.state_dict(), "config": config,
             "data_sha256": hashes, "training_target_tokens": seen,
+            "corpus_manifest_sha256": corpus_manifest["sha256"] if corpus_manifest else None,
             "torch_rng_state": torch.get_rng_state(),
             "cuda_rng_states": torch.cuda.get_rng_state_all() if device == "cuda" else [],
             "run_state": {
@@ -263,6 +277,8 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
                             "text": tokenizer.decode(output[0].tolist(), skip_special_tokens=True)})
     if hashes != {name: file_sha256(split.path) for name, split in splits.items()}:
         raise RuntimeError("source data changed during training")
+    if corpus_manifest and file_sha256(Path(corpus_manifest["path"])) != corpus_manifest["sha256"]:
+        raise RuntimeError("corpus manifest changed during training")
     session = {
         "start_step": resume_step, "updates": step - resume_step,
         "training_target_tokens": seen - resume_seen,
@@ -282,6 +298,7 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         "data": {name: {"path": str(split.path), "tokens": len(split.tokens), "sha256": hashes[name],
                         "evaluation_offsets": offsets[name].tolist()} for name, split in splits.items()},
         "data_unchanged": True, "updates": step, "training_target_tokens": seen,
+        "corpus_manifest": corpus_manifest,
         # Legacy recovery files do not contain complete timing/memory measurements.
         # Never present a resumed session's cost as the cost of the whole run.
         **{key: session[key] if resume is None else None for key in (

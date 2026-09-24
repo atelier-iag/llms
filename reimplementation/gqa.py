@@ -4,14 +4,17 @@ import torch
 from torch import nn
 
 from reimplementation.rope import RotaryPositionEmbedding
+from reimplementation.sdpa import causal_sdpa, project_heads, validate_attention_backend
 
 
 class GroupedQueryCausalAttention(nn.Module):
     def __init__(
         self, d_model: int, num_heads: int, num_kv_heads: int,
-        *, rope_theta: float | None = None,
+        *, rope_theta: float | None = None, attention_backend: str = "manual",
     ):
         super().__init__()
+        validate_attention_backend(attention_backend)
+        self.attention_backend = attention_backend
         if d_model <= 0 or num_heads <= 0 or d_model % num_heads:
             raise ValueError("d_model must be positive and divisible by a positive num_heads")
         if num_kv_heads <= 0 or num_heads % num_kv_heads:
@@ -35,7 +38,15 @@ class GroupedQueryCausalAttention(nn.Module):
         )
         self.w_out = nn.Linear(d_model, d_model, bias=False)
 
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor | None]:
+        if self.attention_backend == "sdpa":
+            q = project_heads(x, self.w_q)
+            k = project_heads(x, self.w_k)
+            v = project_heads(x, self.w_v)
+            heads = causal_sdpa(q, k, v, self.rope)
+            output = self.w_out(heads.transpose(1, 2).flatten(-2))
+            # SDPA does not materialize attention weights for inspection.
+            return output, None
         # x: [batch, token positions, d_model]. Compute shared K/V only once.
         keys = [projection(x) for projection in self.w_k]
         values = [projection(x) for projection in self.w_v]

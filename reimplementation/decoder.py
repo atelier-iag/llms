@@ -17,6 +17,7 @@ class TransformerDecoder(nn.Module):
         *,
         rope_theta: float | None = None,
         num_kv_heads: int | None = None,
+        attention_backend: str = "manual",
     ):
         super().__init__()
         if num_layers < 1:
@@ -26,6 +27,7 @@ class TransformerDecoder(nn.Module):
                 TransformerBlock(
                     d_model, num_heads, hidden_size, eps=eps,
                     rope_theta=rope_theta, num_kv_heads=num_kv_heads,
+                    attention_backend=attention_backend,
                 )
                 for _ in range(num_layers)
             ]

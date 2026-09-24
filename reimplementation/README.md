@@ -242,5 +242,16 @@ Omitting that option preserves MHA and old checkpoints. Optional training precis
 See the [mixed precision protocol](../experiments/mixed_precision.md) and
 [BF16 configuration](../experiments/bf16_config.json). The default remains FP32;
 recovery checkpoints preserve and validate the training precision.
+Optional `attention_backend="sdpa"` packs the existing head projections and uses
+PyTorch causal SDPA, including FlashAttention for the supported BF16 CUDA shapes.
+The default remains manual attention. See the [SDPA protocol](../experiments/sdpa.md).
+
+For milestone 4, [prepare_corpus.py](prepare_corpus.py) builds a new versioned
+train/dev/holdout corpus with pinned sources/tokenizer and document-level splits.
+It additionally requires `requests` and `zstandard`. Follow the
+[50M pretraining protocol](../experiments/pretraining_50m.md) to prepare and train.
+The runner checks a present corpus manifest and requires it for that configuration;
+incomplete or altered training data are rejected before creating a run. The
+reserved holdout is not read by the training runner.
 Q/K normalization remains later work. The components depend on PyTorch; some
 tests also compare with the existing OLMo-core baseline.

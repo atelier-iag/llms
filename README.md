@@ -72,11 +72,23 @@ L’[entraînement complet](results/bf16-baseline.md) atteint une perplexité de
 **198,77**, contre **199,41** pour GQA FP32, en 39,60 minutes au total.
 La qualité reste proche sur cette seed et les générations restent répétitives.
 
+**L’attention optimisée SDPA est intégrée et vérifiée**, avec FlashAttention
+confirmé sur le GPU local. Le [benchmark court](results/sdpa-benchmark.md), à
+précision BF16 fixe, mesure **+80,14 % de débit** et **−6,87 % de pic mémoire alloué**.
+Voir le [fonctionnement et les vérifications](experiments/sdpa.md). Cette mesure
+de performance ne constitue pas une comparaison longue de qualité.
+
 ### Jalon 4 — Faire un mini-préentraînement propre
 
 - corpus préparé ;
 - splits train/dev/holdout ;
 - suivi de la loss, perplexité, temps et coût.
+
+Le [protocole du premier essai](experiments/pretraining_50m.md) fixe **50 M de
+tokens train, 1 M dev et 1 M holdout** : sources et tokenizer épinglés, filtrage
+minimal, déduplication exacte normalisée et séparation par document. Le modèle
+RoPE/GQA/BF16/SDPA repart de poids aléatoires. Le holdout reste réservé ; le
+changement de corpus ouvre une nouvelle référence expérimentale.
 
 ### Jalon 5 — Étudier le scaling
 

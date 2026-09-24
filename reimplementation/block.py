@@ -16,14 +16,17 @@ class TransformerBlock(nn.Module):
     def __init__(
         self, d_model: int, num_heads: int, hidden_size: int, eps: float = 1e-6,
         *, rope_theta: float | None = None, num_kv_heads: int | None = None,
+        attention_backend: str = "manual",
     ):
         super().__init__()
         if num_kv_heads is None:
             # Keep the original modules/state-dict keys for existing checkpoints.
-            self.attention = MultiHeadCausalAttention(d_model, num_heads, rope_theta=rope_theta)
+            self.attention = MultiHeadCausalAttention(
+                d_model, num_heads, rope_theta=rope_theta, attention_backend=attention_backend)
         else:
             self.attention = GroupedQueryCausalAttention(
-                d_model, num_heads, num_kv_heads, rope_theta=rope_theta
+                d_model, num_heads, num_kv_heads, rope_theta=rope_theta,
+                attention_backend=attention_backend,
             )
         self.attention_norm = RMSNorm(d_model, eps=eps)
         self.feed_forward = FeedForward(d_model, hidden_size)

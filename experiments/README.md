@@ -1,6 +1,8 @@
 # RoPE: first mechanism in milestone 3
 
 Next mechanism: [GQA implementation, teaching example and comparison protocol](gqa.md).
+Then: [BF16 mixed precision](mixed_precision.md), [optimized SDPA attention](sdpa.md),
+and [50M-token pretraining with train/dev/holdout splits](pretraining_50m.md).
 
 Implementation: [rope.py](../reimplementation/rope.py), called from
 [attention.py](../reimplementation/attention.py) after the Q/K projections and

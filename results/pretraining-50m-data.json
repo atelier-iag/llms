@@ -1,0 +1,118 @@
+{
+  "format_version": 1,
+  "status": "complete",
+  "provenance": {
+    "dataset": {
+      "repo_id": "allenai/dolma3_pool",
+      "revision": "6462556697df1a8f5c953727e9c686629ad98b68"
+    },
+    "tokenizer": {
+      "repo_id": "allenai/dolma2-tokenizer",
+      "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+    }
+  },
+  "seed": 0,
+  "token_budget": {
+    "train": 50000000,
+    "val": 1000000,
+    "holdout": 1000000
+  },
+  "vocab_size": 100278,
+  "eos_token_id": 100257,
+  "format": "raw little-endian uint32; .npy is a legacy filename, no NumPy header",
+  "split_policy": "SHA-256 of normalized document text, salted with seed; 96/2/2 buckets",
+  "deduplication": "NFKC + collapsed whitespace; exact normalized text, globally across sources",
+  "filters": {
+    "min_characters": 100,
+    "max_characters": 2000000,
+    "min_alphabetic_fraction_of_nonspace": 0.2
+  },
+  "sources": {
+    "olmocr_science_pdfs-science_math_and_technology-part1": {
+      "visited": 1331,
+      "filtered": 3,
+      "duplicates": 0,
+      "truncated": 3,
+      "tokens": {
+        "train": 12500000,
+        "val": 250000,
+        "holdout": 250000
+      },
+      "documents": {
+        "train": 1269,
+        "val": 17,
+        "holdout": 20
+      }
+    },
+    "olmocr_science_pdfs-education_and_jobs": {
+      "visited": 2794,
+      "filtered": 2,
+      "duplicates": 0,
+      "truncated": 3,
+      "tokens": {
+        "train": 12500000,
+        "val": 250000,
+        "holdout": 250000
+      },
+      "documents": {
+        "train": 1996,
+        "val": 56,
+        "holdout": 45
+      }
+    },
+    "olmocr_science_pdfs-history_and_geography": {
+      "visited": 2037,
+      "filtered": 15,
+      "duplicates": 0,
+      "truncated": 3,
+      "tokens": {
+        "train": 12500000,
+        "val": 250000,
+        "holdout": 250000
+      },
+      "documents": {
+        "train": 925,
+        "val": 21,
+        "holdout": 36
+      }
+    },
+    "olmocr_science_pdfs-software_development": {
+      "visited": 912,
+      "filtered": 5,
+      "duplicates": 1,
+      "truncated": 3,
+      "tokens": {
+        "train": 12500000,
+        "val": 250000,
+        "holdout": 250000
+      },
+      "documents": {
+        "train": 872,
+        "val": 6,
+        "holdout": 11
+      }
+    }
+  },
+  "files": {
+    "train": {
+      "path": "train.npy",
+      "tokens": 50000000,
+      "documents": 5062,
+      "sha256": "237ec25dfff119fba11ccabc0c288c3a4b977efba5546fd01c5d4afcc740a2f7"
+    },
+    "val": {
+      "path": "val.npy",
+      "tokens": 1000000,
+      "documents": 100,
+      "sha256": "20f301c8571cae55a8ba03fa6806d58bfee7d9a6f06c6cd6c02bee757b714def"
+    },
+    "holdout": {
+      "path": "holdout.npy",
+      "tokens": 1000000,
+      "documents": 112,
+      "sha256": "58f706f214d8f71963c9d566c20c5568a2f8531c9c5738969034f0a48a71ba73"
+    }
+  },
+  "document_index_sha256": "b9c1761170a5e72594d1938150b963ec47c049b25ff94995fa609a2fe4faa8f1",
+  "normalized_document_overlap": 0
+}

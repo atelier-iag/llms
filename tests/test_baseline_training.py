@@ -68,8 +68,9 @@ def test_optional_gradient_clipping_bounds_sgd_update():
 @pytest.mark.parametrize("rope_theta", [None, 10000.0])
 @pytest.mark.parametrize("num_kv_heads", [None, 1])
 @pytest.mark.parametrize("precision", ["fp32", "bf16"])
+@pytest.mark.parametrize("attention_backend", ["manual", "sdpa"])
 def test_full_baseline_run_records_coverage_curve_and_reload(
-    tmp_path, monkeypatch, rope_theta, num_kv_heads, precision,
+    tmp_path, monkeypatch, rope_theta, num_kv_heads, precision, attention_backend,
 ):
     class TestTokenizer:
         def get_vocab_size(self):
@@ -101,6 +102,8 @@ def test_full_baseline_run_records_coverage_curve_and_reload(
         config["model"]["num_kv_heads"] = num_kv_heads
     if precision != "fp32":
         config["precision"] = precision
+    if attention_backend != "manual":
+        config["model"]["attention_backend"] = attention_backend
     monkeypatch.setattr(train_baseline, "load_tokenizer", lambda _: TestTokenizer())
     run_dir = train_baseline.run(config, tmp_path, device="cpu", output_root=tmp_path / "runs")
     metrics = json.loads((run_dir / "metrics.json").read_text())
@@ -176,10 +179,12 @@ def assert_nested_equal(actual, expected):
 
 
 @pytest.mark.parametrize("checkpoint_step,legacy", [(5, False), (15, False), (15, True), (28, False)])
-@pytest.mark.parametrize("precision", ["fp32", "bf16"])
-def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_case, checkpoint_step, legacy, precision):
+@pytest.mark.parametrize("precision,backend", [("fp32", "manual"), ("bf16", "manual"), ("bf16", "sdpa")])
+def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_case, checkpoint_step, legacy, precision, backend):
     if precision != "fp32":
         resume_case["precision"] = precision
+    if backend != "manual":
+        resume_case["model"]["attention_backend"] = backend
     batches = []
     stop_after = None
 
@@ -285,3 +290,33 @@ def test_resume_cli_uses_saved_configuration(tmp_path, monkeypatch, resume_case)
     train_baseline.main()
     resumed_dir = next((tmp_path / "runs").iterdir())
     assert json.loads((resumed_dir / "config.json").read_text()) == resume_case
+
+
+def test_versioned_corpus_training_and_resume_keep_manifest_identity(tmp_path, resume_case):
+    from reimplementation.tokenizer import DOLMA_TOKENIZER
+    from reimplementation.train_corpus import file_sha256
+
+    manifest = {"format_version": 1, "status": "complete", "vocab_size": 6,
+                "provenance": {"tokenizer": DOLMA_TOKENIZER}, "files": {}}
+    for name, count in (("train", 80), ("val", 44)):
+        manifest["files"][name] = {"path": f"{name}.npy", "tokens": count,
+                                   "sha256": file_sha256(tmp_path / f"{name}.npy")}
+    path = tmp_path / "manifest.json"
+    path.write_text(json.dumps(manifest))
+    resume_case["corpus"] = {"require_manifest": True, "train_tokens": 80, "validation_tokens": 44}
+    resume_case["model"]["attention_backend"] = "sdpa"
+    run = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "run")
+    metrics = json.loads((run / "metrics.json").read_text())
+    state = torch.load(run / "recovery.pt", weights_only=True)
+    assert metrics["corpus_manifest"]["sha256"] == state["corpus_manifest_sha256"] == file_sha256(path)
+    # No holdout file exists: a complete training run must not try to read it.
+    manifest["provenance"]["annotation"] = "changed"
+    path.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="resume corpus manifest differs"):
+        train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "bad",
+                           resume=run / "recovery.pt")
+    assert not (tmp_path / "bad").exists()
+    resume_case["corpus"]["train_tokens"] = 81
+    with pytest.raises(ValueError, match="corpus token budget"):
+        train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "bad")
+    assert not (tmp_path / "bad").exists()

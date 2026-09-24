@@ -4,6 +4,7 @@ import torch
 from torch import nn
 
 from reimplementation.rope import RotaryPositionEmbedding
+from reimplementation.sdpa import causal_sdpa, project_heads, validate_attention_backend
 
 
 class CausalAttentionHead(nn.Module):
@@ -42,8 +43,11 @@ class CausalAttentionHead(nn.Module):
 
 
 class MultiHeadCausalAttention(nn.Module):
-    def __init__(self, d_model: int, num_heads: int, *, rope_theta: float | None = None):
+    def __init__(self, d_model: int, num_heads: int, *, rope_theta: float | None = None,
+                 attention_backend: str = "manual"):
         super().__init__()
+        validate_attention_backend(attention_backend)
+        self.attention_backend = attention_backend
         if d_model <= 0 or num_heads <= 0 or d_model % num_heads != 0:
             raise ValueError("d_model must be positive and divisible by a positive num_heads")
         head_dim = d_model // num_heads
@@ -52,7 +56,12 @@ class MultiHeadCausalAttention(nn.Module):
         )
         self.w_out = nn.Linear(d_model, d_model, bias=False)
 
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor | None]:
+        if self.attention_backend == "sdpa":
+            q, k, v = [project_heads(x, [getattr(head, name) for head in self.heads])
+                       for name in ("w_q", "w_k", "w_v")]
+            heads = causal_sdpa(q, k, v, self.heads[0].rope)
+            return self.w_out(heads.transpose(1, 2).flatten(-2)), None
         head_outputs = []
         head_weights = []
         for head in self.heads:

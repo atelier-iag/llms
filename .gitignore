@@ -1,3 +1,4 @@
 baseline/olmo3/mini/data/*.npy
 runs/
+data/
 __pycache__/

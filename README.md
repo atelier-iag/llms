@@ -11,16 +11,12 @@ Le [contrat commun des laboratoires](https://github.com/atelier-iag/.github/blob
 
 ## Objectif
 
-S’approprier le fonctionnement pratique d’un petit modèle de fondation de type **OLMo-like**, de l’entraînement initial jusqu’au post-entraînement, et apprendre à utiliser un LLM avec des documents externes grâce au **RAG**.
+S’approprier le fonctionnement pratique d’un petit modèle de fondation de type **OLMo-like**, de l’entraînement initial jusqu’au post-entraînement.
 
 ## Jalons
 
-Les huit jalons (*milestones*) structurent le parcours « Modèles de fondation / scaling », complété par les bases du RAG.
+Les sept jalons (*milestones*) structurent le parcours « Modèles de fondation / scaling ».
 Chaque jalon est un objectif important, atteint grâce aux réalisations ci-dessous.
-
-Le **[jalon 4 — RAG minimal](#jalon-4--comprendre-et-construire-un-rag-minimal)**
-peut être commencé dès maintenant, en parallèle du jalon 3, sans attendre les
-expériences de préentraînement, de scaling ou d’adaptation.
 
 ### Jalon 1 — Faire tourner une baseline existante
 
@@ -67,52 +63,24 @@ budget de tokens, sa perplexité est de **199,41**, contre **199,10** avec RoPE 
 une qualité très proche sur cette seed. Voir la [comparaison complète](results/gqa-baseline.md)
 et le [code et le protocole GQA](experiments/gqa.md).
 
-### Jalon 4 — Comprendre et construire un RAG minimal
-
-Le **RAG** (*Retrieval-Augmented Generation*, génération augmentée par recherche)
-consiste à rechercher des passages dans des documents, puis à les fournir au LLM
-dans son contexte pour l’aider à répondre. Dans ce premier exercice, les poids
-du modèle restent fixes.
-
-- comprendre le pipeline `documents → passages → index → recherche → contexte → réponse avec sources` ;
-- distinguer RAG, fine-tuning et simple ajout de documents au prompt ;
-- préparer un petit corpus, découper les documents et conserver leurs références ;
-- construire une recherche lexicale simple, puis une recherche par embeddings de passages et similarité cosinus ;
-- assembler soi-même le contexte et le prompt, avec une réponse sourcée ou une abstention si les documents ne suffisent pas ;
-- comparer le même LLM sans recherche, avec RAG et avec les passages de référence, pour distinguer erreurs de recherche et de génération ;
-- mesurer la recherche et la qualité des réponses sur des questions de développement, puis sur un holdout réservé.
-
-**Exercice minimal :** une dizaine de documents, une vingtaine de questions et
-un modèle déjà entraîné capable de suivre une consigne. Notre modèle pédagogique
-reste encore trop répétitif pour servir de générateur principal à cet exercice.
-Voir le [parcours pratique, les livrables et les critères de maîtrise](experiments/rag.md).
-
-**Première démo disponible :** `python -m experiments.rag_demo` recherche des
-passages dans nos comptes rendus et affiche le prompt avec ses sources.
-Elle s’arrête avant l’appel au LLM ; la génération et l’évaluation restent à faire.
-
-Ce jalon couvre les bases du RAG dans le laboratoire LLM ; les recherches
-itératives pilotées par un agent et la mémoire persistante seront approfondies
-dans la voie « Agents et outils ».
-
-### Jalon 5 — Faire un mini-préentraînement propre
+### Jalon 4 — Faire un mini-préentraînement propre
 
 - corpus préparé ;
 - splits train/dev/holdout ;
 - suivi de la loss, perplexité, temps et coût.
 
-### Jalon 6 — Étudier le scaling
+### Jalon 5 — Étudier le scaling
 
 - faire varier taille du modèle, quantité de données et compute ;
 - comparer les courbes obtenues.
 
-### Jalon 7 — Pratiquer l’adaptation
+### Jalon 6 — Pratiquer l’adaptation
 
 - continued pretraining ;
 - SFT ;
 - éventuellement une méthode simple de post-training.
 
-### Jalon 8 — Faire des ablations
+### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;
 - mesurer leur effet ;

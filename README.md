@@ -104,8 +104,10 @@ La [première comparaison](experiments/data_scaling.md) porte sur **25 M contre
 25 M est extrait du corpus de référence avec des quotas identiques par domaine ;
 le warmup et le cosinus suivent la durée propre à chaque budget. Voir l’[audit
 du sous-ensemble](results/pretraining-25m-data.md).
-Le [run 25 M est lancé](results/data-scaling-25m-50m.md) le 24 septembre 2026 ;
-la comparaison finale est en attente de ses résultats.
+La [comparaison est terminée](results/data-scaling-25m-50m.md) : perplexité dev
+complète **294,09 à 25 M** contre **184,21 à 50 M** (−37,36 %), pour 26,48 contre
+57,60 minutes de boucle d’entraînement. Les générations restent répétitives ;
+l’effet de la taille du modèle reste à étudier.
 
 ### Jalon 6 — Pratiquer l’adaptation
 

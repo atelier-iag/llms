@@ -5,6 +5,9 @@ en doublant le budget de données et le calcul associé ? Le run
 [50 M terminé](../results/pretraining-50m.md) sert de référence. Un nouveau run
 25 M repart de poids aléatoires avec la même seed et le même modèle.
 Voir l’[état de la comparaison](../results/data-scaling-25m-50m.md).
+**Terminé le 24 septembre 2026** : perplexité dev complète 294,09 à 25 M contre
+184,21 à 50 M (−37,36 %), générations encore répétitives. Les courbes et coûts
+mesurés sont dans le rapport.
 
 ## Données imbriquées et dev fixe
 
@@ -69,7 +72,9 @@ Comparer les métriques finales sur le dev complet, les courbes dev en fonction
 des tokens traités, la durée, le débit et le pic mémoire. Garder les trois mêmes
 prompts, le décodage greedy et la limite de 64 nouveaux tokens pour examiner les
 générations. Vérifier le checkpoint rechargé et les hashes des données.
-Le run 25 M devrait prendre environ **30 à 35 minutes**, à confirmer par mesure.
+L’estimation avant lancement était de **30 à 35 minutes** pour le run 25 M.
+Mesuré : 26,48 minutes de boucle, 28,88 au chronomètre interne du runner et
+31,74 entre les horodatages du lanceur. Voir le rapport pour leur distinction.
 
 Cette première comparaison utilise une seule seed et deux budgets. Elle mesure
 le résultat de deux budgets d’entraînement à forme de calendrier comparable,

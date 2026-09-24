@@ -63,12 +63,14 @@ budget de tokens, sa perplexité est de **199,41**, contre **199,10** avec RoPE 
 une qualité très proche sur cette seed. Voir la [comparaison complète](results/gqa-baseline.md)
 et le [code et le protocole GQA](experiments/gqa.md).
 
-**La mixed precision BF16 est intégrée**, avec poids et optimiseur FP32, calculs
+**La mixed precision BF16 est intégrée et mesurée**, avec poids et optimiseur FP32, calculs
 matriciels éligibles en BF16 et évaluation FP32. La configuration conserve le
 modèle GQA et son budget de tokens. Voir le [fonctionnement et le protocole](experiments/mixed_precision.md).
 Le [premier benchmark court](results/mixed-precision-benchmark.md) mesure un débit
 médian supérieur de 10,64 % et un pic alloué inférieur de 6,14 % sur le GPU local.
-La qualité après entraînement complet reste à comparer.
+L’[entraînement complet](results/bf16-baseline.md) atteint une perplexité de
+**198,77**, contre **199,41** pour GQA FP32, en 39,60 minutes au total.
+La qualité reste proche sur cette seed et les générations restent répétitives.
 
 ### Jalon 4 — Faire un mini-préentraînement propre
 

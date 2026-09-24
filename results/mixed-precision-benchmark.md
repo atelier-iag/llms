@@ -4,7 +4,7 @@ Mesure du **24 septembre 2026**, terminée sur la RTX 4060 Laptop GPU avec
 PyTorch 2.10.0+cu128. Sur ce benchmark court, BF16 augmente le débit médian de
 **10,64 %** et réduit le pic alloué maximal par PyTorch de **6,14 %**.
 Ce résultat concerne le coût de quelques pas ; la comparaison de qualité après
-un entraînement complet reste à réaliser.
+un entraînement complet est présentée dans le [rapport BF16](bf16-baseline.md).
 
 [Mesures intégrales](mixed-precision-benchmark.json),
 [script](../experiments/mixed_precision_benchmark.py),

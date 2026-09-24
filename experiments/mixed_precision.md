@@ -70,12 +70,15 @@ passe de 8 070 à 8 929 cibles/s (+10,64 %), et le pic alloué maximal baisse de
 
 ## Comparaison sur le corpus complet
 
-**Lancée le 24 septembre 2026**, après les 119 tests et le benchmark court.
+**Terminée le 24 septembre 2026**, après les 119 tests et le benchmark court.
 Run local : `runs/simple-baseline-6aay3x5v/`. Le journal, les métadonnées et la
 copie des sources sont dans `runs/bf16-launch-zqr283f8/` ; le code d’entraînement
 est le commit `b0c883c8ed5cb9798b26cbe001b0c1509b0b3ebd`.
-Cette note atteste le lancement ; l’événement `complete` et le fichier final
-`metrics.json` sont nécessaires avant de conclure sur la qualité après entraînement.
+L’événement `complete` et le fichier final `metrics.json` confirment les 9 279
+mises à jour. La perplexité de validation complète atteint **198,768992**, contre
+**199,410936** en FP32 (−0,32 % sur cette seed). Le checkpoint se recharge avec
+un écart maximal de logits nul ; les générations restent répétitives.
+Voir les [résultats complets et leurs limites](../results/bf16-baseline.md).
 
 ```sh
 python -m reimplementation.train_baseline --device cuda --config experiments/bf16_config.json

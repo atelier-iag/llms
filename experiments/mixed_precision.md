@@ -70,6 +70,13 @@ passe de 8 070 à 8 929 cibles/s (+10,64 %), et le pic alloué maximal baisse de
 
 ## Comparaison sur le corpus complet
 
+**Lancée le 24 septembre 2026**, après les 119 tests et le benchmark court.
+Run local : `runs/simple-baseline-6aay3x5v/`. Le journal, les métadonnées et la
+copie des sources sont dans `runs/bf16-launch-zqr283f8/` ; le code d’entraînement
+est le commit `b0c883c8ed5cb9798b26cbe001b0c1509b0b3ebd`.
+Cette note atteste le lancement ; l’événement `complete` et le fichier final
+`metrics.json` sont nécessaires avant de conclure sur la qualité après entraînement.
+
 ```sh
 python -m reimplementation.train_baseline --device cuda --config experiments/bf16_config.json
 ```

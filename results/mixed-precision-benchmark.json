@@ -1,0 +1,275 @@
+{
+  "experiment": "short-fp32-bf16-comparison",
+  "config": {
+    "name": "simple-384-rope-gqa2",
+    "seed": 0,
+    "model": {
+      "vocab_size": 100278,
+      "d_model": 384,
+      "num_heads": 8,
+      "hidden_size": 1536,
+      "num_layers": 8,
+      "rope_theta": 10000.0,
+      "num_kv_heads": 2
+    },
+    "sequence_length": 256,
+    "batch_size": 8,
+    "epochs": 1,
+    "optimizer": {
+      "lr": 0.0003,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "weight_decay": 0.1
+    },
+    "warmup_updates": 100,
+    "min_lr_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "evaluation_windows": 128,
+    "evaluate_every": 1000,
+    "log_every": 100,
+    "prompts": [
+      "The purpose of science is",
+      "The history of the world",
+      "To write a Python function,"
+    ],
+    "max_new_tokens": 64
+  },
+  "torch_version": "2.10.0+cu128",
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "matmul_precision": "highest",
+  "data_sha256": {
+    "train": "3ea9c5caa9f700921ecc6e40776e38682856e2f67e61714ea05ca825584f9cb3",
+    "val": "8ca35012e0cc3683da6e9fe08a34f74bd8e0bd5e1aa55cd07c5a933705a2afd0"
+  },
+  "source_sha256": {
+    "reimplementation/attention.py": "f5fe9c96817290d05b25b184e9085058a32d9e01904c9fe445c426ab6c58855d",
+    "reimplementation/normalization.py": "ed0b043cf3cad4959c8b7e4f15e7668ffe6520a4d82715b2cf65a5cca86ad125",
+    "reimplementation/model.py": "1fb75d568b1ab1c32ece7da78caa22202893bf6b3115baf66912af0011ddbdb7",
+    "reimplementation/checkpoint.py": "51efa23258659af455d8f1ac04c7b49921cc237034777c0649ec0b8c6477fa35",
+    "reimplementation/train.py": "d1644602ef1e90d8a1c5ff26f31029b11026de9cd80b4d93950dd7a4d224428c",
+    "reimplementation/block.py": "da7dd0d2dfd18dab74672146976f0936359571a0a2591df6dd94cf1ac48734e5",
+    "reimplementation/embeddings.py": "f289ef28a5f4ab4a7137e568474eae43c26375ecddd635c1b22c5178891175e9",
+    "reimplementation/generate.py": "8cd305080ca3ca4a5837240cdc730c79d0b5903e21b2629d4ff759548bd3f350",
+    "reimplementation/train_corpus.py": "d40cacf12a93daf0828c8a4525a59757e1433cd4f050ee44e954664cf87cb421",
+    "reimplementation/decoder.py": "7265db76acd7bc59638c45664773aa638c9346bb6fd54e44ee50f1991d643910",
+    "reimplementation/data.py": "156c9f0119af34a75eafb60be079c4ce365b77fafdd265c0f04ffa946292f1e2",
+    "reimplementation/train_baseline.py": "3e1b10da15d79e4c7ff4465e3765e8e500a65239ce95b55b95423a74d58a6187",
+    "reimplementation/tokenizer.py": "42ddbe9496112d0f3fd14d23757fd100df94711ca29e0b6525f806588c8bc82a",
+    "reimplementation/feed_forward.py": "b1de5fc6222e243b81b300ef7633b193d160d2a32ecdb8e552657cb0f0697c37",
+    "reimplementation/precision.py": "d1882015768cfdcabd88ef5921390c1c667d5c7c3a8dd08456dc599703550b79",
+    "reimplementation/gqa.py": "80743347ab0954fff0bfc1c6da58fdab4bae52767f86cf3ecfbd39d7b2acfff7",
+    "reimplementation/lm_head.py": "f77202d9a02e2c1d8cb595af0cc64c3a04585325da50941901257148551b025b",
+    "reimplementation/rope.py": "bee33c84e39b7bb07061df7f895e91b8f397d5dfd7ac70be90cdfa900dd7f50d",
+    "reimplementation/loss.py": "c82fce22c2041683040611d2219111bedf2130f5dacd4e3997721aa8fc0b21ea",
+    "experiments/mixed_precision_benchmark.py": "2ba4d7ed0c3e729b506c322e4dbc0b67c24d5b10a15f40add9c918b91a91f222",
+    "evaluation/language_model.py": "711e7860d315a4b1a899eaa283115971791d0062770d203edfc50982e549e006"
+  },
+  "validation_targets": 1024,
+  "trials": [
+    {
+      "precision": "fp32",
+      "initial_state_sha256": "63c77459c83f1c5ca62fd392e343281eef934ddf40ffdb0fb53219fec8b93cf1",
+      "parameter_count": 94124928,
+      "parameter_dtype": "torch.float32",
+      "warmup_updates": 3,
+      "measured_updates": 20,
+      "measured_target_tokens": 40960,
+      "seconds": 4.931927359999918,
+      "target_tokens_per_second": 8305.069602647327,
+      "peak_cuda_allocated_bytes": 5219819520,
+      "losses_before_updates": [
+        11.60696792602539,
+        11.690839767456055,
+        11.684152603149414,
+        11.68510627746582,
+        11.576265335083008,
+        11.621199607849121,
+        11.640331268310547,
+        11.608213424682617,
+        11.365596771240234,
+        11.510578155517578,
+        11.52413558959961,
+        11.413408279418945,
+        11.194748878479004,
+        11.465760231018066,
+        11.441619873046875,
+        11.012031555175781,
+        11.154472351074219,
+        10.809321403503418,
+        11.111364364624023,
+        10.919119834899902,
+        11.087060928344727,
+        10.859344482421875,
+        10.776470184326172
+      ],
+      "finite_weights_and_gradients": true,
+      "initial_validation_fp32": {
+        "loss": 11.703399658203125,
+        "perplexity": 120982.31516102976,
+        "scored_tokens": 1024
+      },
+      "final_validation_fp32": {
+        "loss": 10.988698959350586,
+        "perplexity": 59201.31061243397,
+        "scored_tokens": 1024
+      }
+    },
+    {
+      "precision": "bf16",
+      "initial_state_sha256": "63c77459c83f1c5ca62fd392e343281eef934ddf40ffdb0fb53219fec8b93cf1",
+      "parameter_count": 94124928,
+      "parameter_dtype": "torch.float32",
+      "warmup_updates": 3,
+      "measured_updates": 20,
+      "measured_target_tokens": 40960,
+      "seconds": 4.624757091999982,
+      "target_tokens_per_second": 8856.681374866934,
+      "peak_cuda_allocated_bytes": 4899520512,
+      "losses_before_updates": [
+        11.606492042541504,
+        11.690727233886719,
+        11.683937072753906,
+        11.685534477233887,
+        11.576359748840332,
+        11.6207275390625,
+        11.640470504760742,
+        11.609071731567383,
+        11.365127563476562,
+        11.510825157165527,
+        11.523767471313477,
+        11.413078308105469,
+        11.19435977935791,
+        11.465330123901367,
+        11.441743850708008,
+        11.011764526367188,
+        11.154529571533203,
+        10.80905818939209,
+        11.11069393157959,
+        10.918938636779785,
+        11.086956024169922,
+        10.859797477722168,
+        10.776147842407227
+      ],
+      "finite_weights_and_gradients": true,
+      "initial_validation_fp32": {
+        "loss": 11.703399658203125,
+        "perplexity": 120982.31516102976,
+        "scored_tokens": 1024
+      },
+      "final_validation_fp32": {
+        "loss": 10.988533020019531,
+        "perplexity": 59191.48760158785,
+        "scored_tokens": 1024
+      }
+    },
+    {
+      "precision": "bf16",
+      "initial_state_sha256": "63c77459c83f1c5ca62fd392e343281eef934ddf40ffdb0fb53219fec8b93cf1",
+      "parameter_count": 94124928,
+      "parameter_dtype": "torch.float32",
+      "warmup_updates": 3,
+      "measured_updates": 20,
+      "measured_target_tokens": 40960,
+      "seconds": 4.550269700000172,
+      "target_tokens_per_second": 9001.664231023153,
+      "peak_cuda_allocated_bytes": 4899520512,
+      "losses_before_updates": [
+        11.606492042541504,
+        11.690727233886719,
+        11.683937072753906,
+        11.685534477233887,
+        11.576359748840332,
+        11.6207275390625,
+        11.640470504760742,
+        11.609071731567383,
+        11.365127563476562,
+        11.510825157165527,
+        11.523767471313477,
+        11.413078308105469,
+        11.19435977935791,
+        11.465330123901367,
+        11.441743850708008,
+        11.011764526367188,
+        11.154529571533203,
+        10.80905818939209,
+        11.11069393157959,
+        10.918938636779785,
+        11.086956024169922,
+        10.859797477722168,
+        10.776147842407227
+      ],
+      "finite_weights_and_gradients": true,
+      "initial_validation_fp32": {
+        "loss": 11.703399658203125,
+        "perplexity": 120982.31516102976,
+        "scored_tokens": 1024
+      },
+      "final_validation_fp32": {
+        "loss": 10.988533020019531,
+        "perplexity": 59191.48760158785,
+        "scored_tokens": 1024
+      }
+    },
+    {
+      "precision": "fp32",
+      "initial_state_sha256": "63c77459c83f1c5ca62fd392e343281eef934ddf40ffdb0fb53219fec8b93cf1",
+      "parameter_count": 94124928,
+      "parameter_dtype": "torch.float32",
+      "warmup_updates": 3,
+      "measured_updates": 20,
+      "measured_target_tokens": 40960,
+      "seconds": 5.227508443000261,
+      "target_tokens_per_second": 7835.47275850817,
+      "peak_cuda_allocated_bytes": 5220002816,
+      "losses_before_updates": [
+        11.60696792602539,
+        11.690839767456055,
+        11.684152603149414,
+        11.68510627746582,
+        11.576265335083008,
+        11.621199607849121,
+        11.640331268310547,
+        11.608213424682617,
+        11.365596771240234,
+        11.510578155517578,
+        11.52413558959961,
+        11.413408279418945,
+        11.194748878479004,
+        11.465760231018066,
+        11.441619873046875,
+        11.012031555175781,
+        11.154472351074219,
+        10.809321403503418,
+        11.111364364624023,
+        10.919119834899902,
+        11.087060928344727,
+        10.859344482421875,
+        10.776470184326172
+      ],
+      "finite_weights_and_gradients": true,
+      "initial_validation_fp32": {
+        "loss": 11.703399658203125,
+        "perplexity": 120982.31516102976,
+        "scored_tokens": 1024
+      },
+      "final_validation_fp32": {
+        "loss": 10.988698959350586,
+        "perplexity": 59201.31061243397,
+        "scored_tokens": 1024
+      }
+    }
+  ],
+  "summary": {
+    "fp32": {
+      "median_target_tokens_per_second": 8070.271180577749,
+      "max_peak_cuda_allocated_bytes": 5220002816
+    },
+    "bf16": {
+      "median_target_tokens_per_second": 8929.172802945042,
+      "max_peak_cuda_allocated_bytes": 4899520512
+    }
+  },
+  "scope": "Short training throughput/stability check, not a full-corpus quality comparison. Timed steps include CPU-to-GPU transfer; CPU batches are prepared beforehand. Initialization, warmup and FP32 validation are outside the timer."
+}

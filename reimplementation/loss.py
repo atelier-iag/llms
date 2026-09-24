@@ -21,6 +21,10 @@ def cross_entropy_loss(logits: torch.Tensor, targets: torch.Tensor) -> torch.Ten
     """
     if logits.ndim != 3 or logits.shape[:2] != targets.shape or targets.numel() == 0:
         raise ValueError("expected nonempty logits [batch, positions, vocab] and aligned targets")
+    # Keep log probabilities and the final reduction in FP32 under BF16 autocast.
+    # Leave FP32 and FP64 callers unchanged.
+    if logits.dtype in (torch.float16, torch.bfloat16):
+        logits = logits.float()
     log_probabilities = F.log_softmax(logits, dim=-1)
     correct_log_probabilities = log_probabilities.gather(
         dim=-1, index=targets.unsqueeze(-1)

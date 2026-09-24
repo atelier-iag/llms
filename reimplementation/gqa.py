@@ -55,6 +55,8 @@ class GroupedQueryCausalAttention(nn.Module):
             k = keys[group_id]
             v = values[group_id]
             scores = (q @ k.transpose(-2, -1)) / self.head_dim**0.5
+            if scores.dtype in (torch.float16, torch.bfloat16):
+                scores = scores.float()
             weights = torch.softmax(scores.masked_fill(~allowed, float("-inf")), dim=-1)
             head_outputs.append(weights @ v)
             head_weights.append(weights)

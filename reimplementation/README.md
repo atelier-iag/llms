@@ -237,6 +237,10 @@ run reaches full-validation perplexity **199.103**, versus **225.756** without
 RoPE, with repetition still present; see the [comparison](../results/rope-baseline.md).
 GQA is available via `num_kv_heads=2`, keeping eight independent queries and two
 K/V groups per block; see the [implementation and comparison recipe](../experiments/gqa.md).
-Omitting that option preserves MHA and old checkpoints. Q/K normalization and
-mixed precision remain later work. The components depend on PyTorch; some
+Omitting that option preserves MHA and old checkpoints. Optional training precision
+`bf16` now enables autocast while retaining FP32 weights, optimizer state and evaluation.
+See the [mixed precision protocol](../experiments/mixed_precision.md) and
+[BF16 configuration](../experiments/bf16_config.json). The default remains FP32;
+recovery checkpoints preserve and validate the training precision.
+Q/K normalization remains later work. The components depend on PyTorch; some
 tests also compare with the existing OLMo-core baseline.

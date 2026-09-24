@@ -15,6 +15,7 @@ from reimplementation.checkpoint import load_checkpoint, save_checkpoint
 from reimplementation.data import open_splits
 from reimplementation.generate import generate
 from reimplementation.model import CausalLanguageModel
+from reimplementation.precision import validate_precision
 from reimplementation.tokenizer import DOLMA_TOKENIZER, load_tokenizer
 from reimplementation.train import train_step
 from reimplementation.train_corpus import file_sha256
@@ -63,6 +64,8 @@ def recovery_history(checkpoint: dict, path: Path) -> dict:
 
 def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         resume: Path | None = None) -> Path:
+    precision = config.get("precision", "fp32")
+    validate_precision(precision, device)
     torch.set_num_threads(1)
     torch.manual_seed(config["seed"])
     tokenizer = load_tokenizer(DOLMA_TOKENIZER)
@@ -205,7 +208,8 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
                                config["warmup_updates"], config["min_lr_ratio"])
             for group in optimizer.param_groups:
                 group["lr"] = lr
-            loss = train_step(model, optimizer, tokens.to(device), max_grad_norm=config["max_grad_norm"])
+            loss = train_step(model, optimizer, tokens.to(device),
+                              max_grad_norm=config["max_grad_norm"], precision=precision)
             count = tokens.shape[0] * (tokens.shape[1] - 1)
             seen += count
             window_tokens += count
@@ -273,6 +277,7 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         "transformer_parameters": sum(p.numel() for p in model.decoder.parameters()),
         "device": device, "hardware": torch.cuda.get_device_name() if device == "cuda" else "cpu",
         "torch_version": str(torch.__version__), "numpy_version": np.__version__, "dtype": "float32",
+        "training_precision": precision, "evaluation_precision": "fp32",
         "matmul_precision": torch.get_float32_matmul_precision(), "tokenizer": DOLMA_TOKENIZER,
         "data": {name: {"path": str(split.path), "tokens": len(split.tokens), "sha256": hashes[name],
                         "evaluation_offsets": offsets[name].tolist()} for name, split in splits.items()},

@@ -11,20 +11,23 @@ from torch import nn
 
 from reimplementation.loss import cross_entropy_loss, make_next_token_batch
 from reimplementation.model import CausalLanguageModel
+from reimplementation.precision import training_autocast
 
 
 def train_step(
     model: nn.Module, optimizer: torch.optim.Optimizer, tokens: torch.Tensor,
-    *, max_grad_norm: float | None = None,
+    *, max_grad_norm: float | None = None, precision: str = "fp32",
 ) -> float:
     """Apply one weight update and return the loss measured before that update."""
     model.train()
     inputs, targets = make_next_token_batch(tokens)
     optimizer.zero_grad(set_to_none=True)
-    logits = model(inputs)
-    loss = cross_entropy_loss(logits, targets)
+    with training_autocast(tokens.device, precision):
+        logits = model(inputs)
+        loss = cross_entropy_loss(logits, targets)
     if not torch.isfinite(loss):
         raise FloatingPointError("Training loss is not finite")
+    # BF16 uses FP32 parameter gradients; backward/AdamW run outside autocast.
     loss.backward()
     if max_grad_norm is not None:
         nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm, error_if_nonfinite=True)

@@ -67,8 +67,9 @@ def test_optional_gradient_clipping_bounds_sgd_update():
 
 @pytest.mark.parametrize("rope_theta", [None, 10000.0])
 @pytest.mark.parametrize("num_kv_heads", [None, 1])
+@pytest.mark.parametrize("precision", ["fp32", "bf16"])
 def test_full_baseline_run_records_coverage_curve_and_reload(
-    tmp_path, monkeypatch, rope_theta, num_kv_heads,
+    tmp_path, monkeypatch, rope_theta, num_kv_heads, precision,
 ):
     class TestTokenizer:
         def get_vocab_size(self):
@@ -98,6 +99,8 @@ def test_full_baseline_run_records_coverage_curve_and_reload(
         config["model"]["rope_theta"] = rope_theta
     if num_kv_heads is not None:
         config["model"]["num_kv_heads"] = num_kv_heads
+    if precision != "fp32":
+        config["precision"] = precision
     monkeypatch.setattr(train_baseline, "load_tokenizer", lambda _: TestTokenizer())
     run_dir = train_baseline.run(config, tmp_path, device="cpu", output_root=tmp_path / "runs")
     metrics = json.loads((run_dir / "metrics.json").read_text())
@@ -110,6 +113,8 @@ def test_full_baseline_run_records_coverage_curve_and_reload(
     assert sum(record["window_target_tokens"] for record in metrics["training_history"]) == 79
     assert metrics["checkpoint_reload_max_logit_error"] == 0
     assert metrics["data_unchanged"]
+    assert metrics["training_precision"] == precision
+    assert metrics["evaluation_precision"] == "fp32"
     model, metadata = load_checkpoint(Path(metrics["checkpoint"]))
     assert metadata["step"] == 14
     assert metadata["model_config"] == config["model"]
@@ -171,7 +176,10 @@ def assert_nested_equal(actual, expected):
 
 
 @pytest.mark.parametrize("checkpoint_step,legacy", [(5, False), (15, False), (15, True), (28, False)])
-def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_case, checkpoint_step, legacy):
+@pytest.mark.parametrize("precision", ["fp32", "bf16"])
+def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_case, checkpoint_step, legacy, precision):
+    if precision != "fp32":
+        resume_case["precision"] = precision
     batches = []
     stop_after = None
 
@@ -238,13 +246,16 @@ def test_resume_matches_uninterrupted_training(tmp_path, monkeypatch, resume_cas
     assert "initial" not in events
 
 
-@pytest.mark.parametrize("mismatch", ["config", "data", "count", "inference"])
+@pytest.mark.parametrize("mismatch", ["config", "precision", "data", "count", "inference"])
 def test_resume_rejects_incompatible_checkpoint_before_creating_run(tmp_path, resume_case, mismatch):
     source_dir = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "original")
     source = source_dir / "recovery.pt"
     state = torch.load(source, weights_only=True)
     if mismatch == "config":
         resume_case["seed"] += 1
+        message = "configuration/tokenizer"
+    elif mismatch == "precision":
+        resume_case["precision"] = "bf16"
         message = "configuration/tokenizer"
     elif mismatch == "data":
         data_path = tmp_path / "train.npy"

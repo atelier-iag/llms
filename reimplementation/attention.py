@@ -34,6 +34,8 @@ class CausalAttentionHead(nn.Module):
         allowed = torch.ones(length, length, dtype=torch.bool, device=x.device).tril()
         scores = scores.masked_fill(~allowed, float("-inf"))
 
+        if scores.dtype in (torch.float16, torch.bfloat16):
+            scores = scores.float()
         weights = torch.softmax(scores, dim=-1)
         output = weights @ v
         return output, weights

@@ -320,3 +320,98 @@ def test_versioned_corpus_training_and_resume_keep_manifest_identity(tmp_path, r
     with pytest.raises(ValueError, match="corpus token budget"):
         train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "bad")
     assert not (tmp_path / "bad").exists()
+
+
+def test_continued_pretraining_loads_weights_resets_optimizer_and_resumes_exactly(
+    tmp_path, monkeypatch, resume_case,
+):
+    from evaluation.language_model import evaluate
+    from reimplementation.train_corpus import file_sha256
+
+    parent = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "parent")
+    source = parent / "recovery.pt"  # Even if supplied, the old optimizer must be ignored.
+    source_hash = file_sha256(source)
+    pretrained, _ = load_checkpoint(parent / "model.pt")
+    expected_initial = evaluate(pretrained, TokenFile(tmp_path / "val.npy", 3, 6).epoch_batches(2))
+    general_dir = tmp_path / "general"
+    general_dir.mkdir()
+    np.zeros(44, dtype=np.uint32).tofile(general_dir / "val.npy")
+    expected_general = evaluate(pretrained, TokenFile(general_dir / "val.npy", 3, 6).epoch_batches(2))
+    # Zero occurs only in the general dev, which must never enter a gradient update.
+    np.tile(np.array([1, 2, 3, 4], dtype=np.uint32), 20).tofile(tmp_path / "train.npy")
+    resume_case["initialization"] = {"require_checkpoint": True}
+    resume_case["general_evaluation"] = {"validation_tokens": 44}
+    resume_case["optimizer"]["lr"] = 0.003
+    calls = []
+    stop_after = None
+
+    def checked_step(model, optimizer, tokens, **kwargs):
+        if stop_after is not None and len(calls) == stop_after:
+            raise KeyboardInterrupt
+        if not calls:
+            assert not optimizer.state
+            assert_nested_equal(model.state_dict(), pretrained.state_dict())
+            assert optimizer.param_groups[0]["lr"] == 0.0015
+        assert (tokens != 0).all()
+        calls.append(tokens.clone())
+        return train_step(model, optimizer, tokens, **kwargs)
+
+    monkeypatch.setattr(train_baseline, "train_step", checked_step)
+    kwargs = dict(device="cpu", general_data_dir=general_dir)
+    full = train_baseline.run(resume_case, tmp_path, output_root=tmp_path / "full",
+                              init_from=source, **kwargs)
+    reference = json.loads((full / "metrics.json").read_text())
+    assert reference["initial_full_validation"] == expected_initial
+    assert reference["initial_general_validation"] == expected_general
+    assert reference["final_general_validation"]["scored_tokens"] == 43
+    assert reference["initialization"]["sha256"] == source_hash
+    assert reference["initialization"]["source_step"] == 28
+    assert reference["training_target_tokens"] == 158
+    assert reference["updates"] == 28
+    assert len(reference["initial_generations"]) == 1
+    calls.clear()
+    stop_after = 7
+    with pytest.raises(KeyboardInterrupt):
+        train_baseline.run(resume_case, tmp_path, output_root=tmp_path / "interrupted",
+                           init_from=source, **kwargs)
+    interrupted = next((tmp_path / "interrupted").iterdir()) / "recovery.pt"
+    monkeypatch.setattr(train_baseline, "train_step", train_step)
+    resumed = train_baseline.run(resume_case, tmp_path, output_root=tmp_path / "resumed",
+                                 resume=interrupted, **kwargs)
+    resumed_metrics = json.loads((resumed / "metrics.json").read_text())
+    for key in ("initialization", "initial_full_validation", "final_full_validation",
+                "initial_general_validation", "final_general_validation", "initial_generations",
+                "generations", "evaluation_history"):
+        assert resumed_metrics[key] == reference[key]
+    for key in ("model_state", "optimizer_state", "torch_rng_state"):
+        assert_nested_equal(torch.load(resumed / "recovery.pt", weights_only=True)[key],
+                            torch.load(full / "recovery.pt", weights_only=True)[key])
+    assert file_sha256(source) == source_hash
+    # No general train or holdout files were provided; only general dev is scored.
+    np.ones(44, dtype=np.uint32).tofile(general_dir / "val.npy")
+    with pytest.raises(ValueError, match="data hashes"):
+        train_baseline.run(resume_case, tmp_path, output_root=tmp_path / "bad-general",
+                           resume=interrupted, **kwargs)
+    assert not (tmp_path / "bad-general").exists()
+
+
+@pytest.mark.parametrize("mismatch", ["model_config", "context_length", "tokenizer", "both", "missing"])
+def test_continued_pretraining_rejects_incompatible_initialization(tmp_path, resume_case, mismatch):
+    parent = train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "parent")
+    source = parent / "model.pt"
+    state = torch.load(source, weights_only=True)
+    kwargs = {"init_from": source}
+    if mismatch == "both":
+        kwargs["resume"] = parent / "recovery.pt"
+        message = "mutually exclusive"
+    elif mismatch == "missing":
+        resume_case["initialization"] = {"require_checkpoint": True}
+        kwargs = {}
+        message = "requires --init-from"
+    else:
+        state[mismatch] = None
+        torch.save(state, source)
+        message = "architecture/context/tokenizer"
+    with pytest.raises(ValueError, match=message):
+        train_baseline.run(resume_case, tmp_path, device="cpu", output_root=tmp_path / "bad", **kwargs)
+    assert not (tmp_path / "bad").exists()

@@ -123,6 +123,12 @@ mémoire allouée en moins** ; les générations restent répétitives.
 - SFT ;
 - éventuellement une méthode simple de post-training.
 
+Le [premier protocole d’adaptation](experiments/continued_pretraining_python.md)
+reprend le modèle **94 M préentraîné sur 50 M de tokens**, puis ajoute **5 M de
+tokens Python**, avec optimiseur neuf et taux d’apprentissage réduit. Un dev
+Python séparé mesure l’adaptation ; le même dev général qu’auparavant mesure
+l’éventuelle dégradation hors domaine. Les deux holdouts restent réservés.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

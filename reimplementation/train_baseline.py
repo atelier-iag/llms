@@ -13,7 +13,7 @@ import torch
 from evaluation.language_model import evaluate
 from reimplementation.checkpoint import load_checkpoint, save_checkpoint
 from reimplementation.corpus_manifest import validate_manifest
-from reimplementation.data import open_splits
+from reimplementation.data import TokenFile, open_splits
 from reimplementation.generate import generate
 from reimplementation.model import CausalLanguageModel
 from reimplementation.precision import validate_precision
@@ -64,7 +64,14 @@ def recovery_history(checkpoint: dict, path: Path) -> dict:
 
 
 def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
-        resume: Path | None = None) -> Path:
+        resume: Path | None = None, init_from: Path | None = None,
+        general_data_dir: Path | None = None) -> Path:
+    if resume is not None and init_from is not None:
+        raise ValueError("--resume and --init-from are mutually exclusive")
+    if config.get("initialization", {}).get("require_checkpoint") and resume is None and init_from is None:
+        raise ValueError("this experiment requires --init-from or --resume")
+    if config.get("general_evaluation") and general_data_dir is None:
+        raise ValueError("this experiment requires --general-data-dir")
     precision = config.get("precision", "fp32")
     validate_precision(precision, device)
     torch.set_num_threads(1)
@@ -95,10 +102,34 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
     if not 0 <= config["min_lr_ratio"] <= 1 or config["max_grad_norm"] <= 0:
         raise ValueError("invalid learning-rate floor or gradient clipping limit")
     splits = {"train": train, "validation": val}
+    general_manifest = None
+    if general_data_dir is not None:
+        general_config = config.get("general_evaluation", {})
+        general_manifest = validate_manifest(
+            general_data_dir, tokenizer=DOLMA_TOKENIZER, vocab_size=config["model"]["vocab_size"],
+            required=general_config.get("require_manifest", False),
+        )
+        general = TokenFile(Path(general_data_dir) / "val.npy", config["sequence_length"],
+                            config["model"]["vocab_size"])
+        if (general_config.get("validation_tokens") is not None
+                and len(general.tokens) != general_config["validation_tokens"]):
+            raise ValueError("unexpected general validation corpus token budget")
+        splits["general_validation"] = general
     offsets = {name: split.evaluation_starts(config["evaluation_windows"])
                for name, split in splits.items()}
     hashes = {name: file_sha256(split.path) for name, split in splits.items()}
     recovery = restored_history = None
+    initial_state = initialization = None
+    if init_from is not None:
+        init_from = Path(init_from).resolve()
+        initial_state = torch.load(init_from, map_location="cpu", weights_only=True, mmap=True)
+        if (initial_state.get("format_version") != 1 or initial_state.get("model_config") != config["model"]
+                or initial_state.get("context_length") != config["sequence_length"]
+                or initial_state.get("tokenizer") != DOLMA_TOKENIZER):
+            raise ValueError("initialization architecture/context/tokenizer differs from the checkpoint")
+        initialization = {"checkpoint": str(init_from), "sha256": file_sha256(init_from),
+                          "source_step": initial_state["step"], "optimizer": "fresh AdamW",
+                          "schedule": "new phase starting at update 1"}
     resume_step = resume_seen = 0
     if resume is not None:
         resume = Path(resume).resolve()
@@ -114,6 +145,11 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         manifest_hash = corpus_manifest["sha256"] if corpus_manifest else None
         if recovery.get("corpus_manifest_sha256") != manifest_hash:
             raise ValueError("resume corpus manifest differs from the checkpoint")
+        if recovery.get("general_manifest_sha256") != (general_manifest["sha256"] if general_manifest else None):
+            raise ValueError("resume general corpus manifest differs from the checkpoint")
+        initialization = recovery.get("initialization")
+        if config.get("initialization", {}).get("require_checkpoint") and initialization is None:
+            raise ValueError("recovery checkpoint lacks initialization provenance")
         resume_step, resume_seen = recovery["step"], recovery["training_target_tokens"]
         if not isinstance(resume_step, int) or not 0 < resume_step <= total_steps:
             raise ValueError("invalid recovery update count")
@@ -133,6 +169,9 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
     run_dir = Path(tempfile.mkdtemp(prefix="simple-baseline-", dir=output_root))
     (run_dir / "config.json").write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
     model = CausalLanguageModel(**config["model"]).to(device)
+    if initial_state is not None:
+        model.load_state_dict(initial_state["model_state"], strict=True)
+        del initial_state
     optimizer = torch.optim.AdamW(model.parameters(), **config["optimizer"])
     if recovery is not None:
         model.load_state_dict(recovery.pop("model_state"), strict=True)
@@ -162,6 +201,16 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
             stream.write(json.dumps(record, allow_nan=False) + "\n")
         print(json.dumps(record, allow_nan=False), flush=True)
 
+    def generate_prompts():
+        generations = []
+        for text, ids in zip(config["prompts"], prompts):
+            output = generate(model, torch.tensor([ids]), max_new_tokens=config["max_new_tokens"],
+                              context_length=config["sequence_length"],
+                              eos_token_id=tokenizer.token_to_id("<|endoftext|>"))
+            generations.append({"prompt": text, "token_ids": output[0].tolist(),
+                                "text": tokenizer.decode(output[0].tolist(), skip_special_tokens=True)})
+        return generations
+
     def save_recovery(step, seen):
         # A rolling checkpoint in this new run directory avoids losing a long run.
         # Keep optimizer and RNG states as well as the inference model metadata.
@@ -172,10 +221,14 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
             "optimizer_state": optimizer.state_dict(), "config": config,
             "data_sha256": hashes, "training_target_tokens": seen,
             "corpus_manifest_sha256": corpus_manifest["sha256"] if corpus_manifest else None,
+            "general_manifest_sha256": general_manifest["sha256"] if general_manifest else None,
+            "initialization": initialization,
             "torch_rng_state": torch.get_rng_state(),
             "cuda_rng_states": torch.cuda.get_rng_state_all() if device == "cuda" else [],
             "run_state": {
                 "initial_full_validation": initial_full_validation,
+                "initial_general_validation": initial_general_validation,
+                "initial_generations": initial_generations,
                 "evaluation_history": evaluations, "training_history": history,
                 "window_nll": window_nll, "window_tokens": window_tokens,
             },
@@ -194,11 +247,19 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         initial_samples = measure_samples()
         event({"event": "validation_full_start"})
         initial_full_validation = evaluate(model, val.epoch_batches(batch_size))
-        event({"event": "initial", "samples": initial_samples, "full_validation": initial_full_validation})
+        initial_general_validation = (evaluate(model, general.epoch_batches(batch_size))
+                                      if general_data_dir is not None else None)
+        initial_generations = generate_prompts() if initialization is not None else []
+        event({"event": "initial", "samples": initial_samples, "full_validation": initial_full_validation,
+               "general_validation": initial_general_validation})
         evaluations = [{"step": 0, "target_tokens": 0, **initial_samples}]
         history = []
     else:
         initial_full_validation = restored_history["initial_full_validation"]
+        initial_general_validation = restored_history.get("initial_general_validation")
+        initial_generations = restored_history.get("initial_generations", [])
+        if general_data_dir is not None and initial_general_validation is None:
+            raise ValueError("recovery history lacks initial general validation")
         evaluations = restored_history["evaluation_history"]
         history = restored_history["training_history"]
         window_nll = restored_history["window_nll"]
@@ -255,6 +316,8 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
     peak_bytes = torch.cuda.max_memory_allocated() if device == "cuda" else None
     event({"event": "validation_full_end"})
     final_full_validation = evaluate(model, val.epoch_batches(batch_size))
+    final_general_validation = (evaluate(model, general.epoch_batches(batch_size))
+                                if general_data_dir is not None else None)
     checkpoint = run_dir / "model.pt"
     save_checkpoint(checkpoint, model, config["model"], step=step,
                     context_length=config["sequence_length"], tokenizer=DOLMA_TOKENIZER)
@@ -268,17 +331,15 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         actual_logits = model(probe).cpu()
     reload_error = (actual_logits - expected_logits).abs().max().item()
     torch.testing.assert_close(actual_logits, expected_logits, rtol=0, atol=0)
-    generations = []
-    for text, ids in zip(config["prompts"], prompts):
-        output = generate(model, torch.tensor([ids]), max_new_tokens=config["max_new_tokens"],
-                          context_length=config["sequence_length"],
-                          eos_token_id=tokenizer.token_to_id("<|endoftext|>"))
-        generations.append({"prompt": text, "token_ids": output[0].tolist(),
-                            "text": tokenizer.decode(output[0].tolist(), skip_special_tokens=True)})
+    generations = generate_prompts()
     if hashes != {name: file_sha256(split.path) for name, split in splits.items()}:
         raise RuntimeError("source data changed during training")
     if corpus_manifest and file_sha256(Path(corpus_manifest["path"])) != corpus_manifest["sha256"]:
         raise RuntimeError("corpus manifest changed during training")
+    if general_manifest and file_sha256(Path(general_manifest["path"])) != general_manifest["sha256"]:
+        raise RuntimeError("general corpus manifest changed during training")
+    if init_from is not None and file_sha256(init_from) != initialization["sha256"]:
+        raise RuntimeError("initial checkpoint changed during training")
     session = {
         "start_step": resume_step, "updates": step - resume_step,
         "training_target_tokens": seen - resume_seen,
@@ -299,6 +360,7 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
                         "evaluation_offsets": offsets[name].tolist()} for name, split in splits.items()},
         "data_unchanged": True, "updates": step, "training_target_tokens": seen,
         "corpus_manifest": corpus_manifest,
+        "general_corpus_manifest": general_manifest, "initialization": initialization,
         # Legacy recovery files do not contain complete timing/memory measurements.
         # Never present a resumed session's cost as the cost of the whole run.
         **{key: session[key] if resume is None else None for key in (
@@ -308,8 +370,10 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
         "evaluation_history": evaluations,
         "training_history": history, "initial_full_validation": initial_full_validation,
         "final_full_validation": final_full_validation,
+        "initial_general_validation": initial_general_validation,
+        "final_general_validation": final_general_validation,
         "checkpoint": str(checkpoint), "checkpoint_reload_max_logit_error": reload_error,
-        "generation_method": "greedy", "generations": generations,
+        "generation_method": "greedy", "initial_generations": initial_generations, "generations": generations,
     }
     (run_dir / "metrics.json").write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     event({"event": "complete", "metrics": str(run_dir / "metrics.json"),
@@ -320,7 +384,10 @@ def run(config: dict, data_dir: Path, *, device: str, output_root: Path,
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path)
-    parser.add_argument("--resume", type=Path, help="recovery.pt to continue in a new run directory")
+    checkpoint_args = parser.add_mutually_exclusive_group()
+    checkpoint_args.add_argument("--resume", type=Path, help="recovery.pt to continue in a new run directory")
+    checkpoint_args.add_argument("--init-from", type=Path, help="initialize weights; start a fresh optimizer and schedule")
+    parser.add_argument("--general-data-dir", type=Path, help="evaluate this corpus's val.npy; never train on it")
     parser.add_argument("--data-dir", type=Path, default=ROOT / "baseline/olmo3/mini/data")
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
     args = parser.parse_args()
@@ -334,7 +401,8 @@ def main():
         del recovery
     else:
         config = json.loads(Path(__file__).with_name("baseline_config.json").read_text(encoding="utf-8"))
-    run(config, args.data_dir, device=args.device, output_root=ROOT / "runs", resume=args.resume)
+    run(config, args.data_dir, device=args.device, output_root=ROOT / "runs", resume=args.resume,
+        init_from=args.init_from, general_data_dir=args.general_data_dir)
 
 
 if __name__ == "__main__":

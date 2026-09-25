@@ -29,7 +29,9 @@ sauvegardes et générations selon le chronomètre interne.
 
 L’estimation retenue est donc **45 à 55 minutes au total**. Il s’agit d’une
 extrapolation de courts essais, sensible à la charge et à la température du
-portable ; le prochain run mesurera le coût soutenu réel.
+portable. Le [run complet est désormais mesuré](model-scaling-59m-94m.md) :
+19 394 cibles/s soutenues, 42,97 minutes de boucle et 49,82 minutes entre les
+horodatages du lanceur.
 
 Artefacts locaux : `runs/model-size-benchmark-5wjjgkw0/`, contenant
 `metrics.json` et le script autonome `benchmark.py`. Le JSON publié est une

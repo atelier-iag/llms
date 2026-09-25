@@ -4,7 +4,10 @@ Question : à budget de données fixé, quel compromis qualité/temps/mémoire o
 une réduction de largeur du modèle ? Le run
 [94 M sur 50 M de tokens](../results/pretraining-50m.md) est déjà terminé ; un seul
 nouveau modèle, de 59 M de paramètres, est entraîné depuis zéro.
-Le [run 59 M est lancé le 25 septembre 2026](../results/model-scaling-59m-94m.md).
+La [comparaison est terminée le 25 septembre 2026](../results/model-scaling-59m-94m.md) :
+perplexité dev complète **211,08 pour 59 M** contre **184,21 pour 94 M** ;
+le modèle réduit économise **25,40 % de temps de boucle** et **13,56 % de mémoire
+allouée**, avec des générations encore répétitives.
 
 ## Configuration
 
@@ -64,7 +67,9 @@ courbes d’évaluation, le débit, la durée et la mémoire. Les trois prompts,
 décodage greedy et la limite de 64 nouveaux tokens restent identiques.
 Le [benchmark court](../results/model-size-benchmark.md) mesure environ
 19 327 cibles/s pour 59 M contre 15 918 pour 94 M. L’estimation avant lancement
-est de **45 à 55 minutes**, évaluations et sauvegardes comprises.
+était de **45 à 55 minutes**, évaluations et sauvegardes comprises. Le run a
+pris **49,82 minutes entre les horodatages du lanceur** ; les durées internes
+et les courbes sont détaillées dans le rapport.
 
 La quantité de données et le nombre de mises à jour sont fixés ; le calcul et
 la durée varient avec la largeur. Il ne s’agit pas d’une comparaison à compute

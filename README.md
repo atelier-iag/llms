@@ -112,8 +112,10 @@ L’[étude de la taille](experiments/model_scaling.md) compare maintenant **59 
 contre 94 M de paramètres**, à budget fixé de **50 M de tokens**, sur exactement
 les mêmes fichiers et fenêtres d’évaluation. Seules la largeur du modèle et
 celle de son MLP changent.
-Le [run 59 M est lancé](results/model-scaling-59m-94m.md) le 25 septembre 2026 ;
-ses résultats finaux sont en attente.
+La [comparaison est terminée](results/model-scaling-59m-94m.md) le 25 septembre
+2026 : perplexité dev complète **211,08 pour 59 M** contre **184,21 pour 94 M**.
+Le modèle 59 M utilise **25,40 % de temps de boucle en moins** et **13,56 % de
+mémoire allouée en moins** ; les générations restent répétitives.
 
 ### Jalon 6 — Pratiquer l’adaptation
 

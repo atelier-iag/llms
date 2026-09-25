@@ -4,6 +4,8 @@ Next mechanism: [GQA implementation, teaching example and comparison protocol](g
 Then: [BF16 mixed precision](mixed_precision.md), [optimized SDPA attention](sdpa.md),
 and [50M-token pretraining with train/dev/holdout splits](pretraining_50m.md).
 Milestone 5 begins with a [25M versus 50M data-budget comparison](data_scaling.md).
+It continues with a [59M versus 94M parameter-count comparison](model_scaling.md)
+at a fixed 50M-token budget.
 
 Implementation: [rope.py](../reimplementation/rope.py), called from
 [attention.py](../reimplementation/attention.py) after the Q/K projections and

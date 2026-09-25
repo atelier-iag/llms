@@ -106,8 +106,12 @@ le warmup et le cosinus suivent la durée propre à chaque budget. Voir l’[aud
 du sous-ensemble](results/pretraining-25m-data.md).
 La [comparaison est terminée](results/data-scaling-25m-50m.md) : perplexité dev
 complète **294,09 à 25 M** contre **184,21 à 50 M** (−37,36 %), pour 26,48 contre
-57,60 minutes de boucle d’entraînement. Les générations restent répétitives ;
-l’effet de la taille du modèle reste à étudier.
+57,60 minutes de boucle d’entraînement. Les générations restent répétitives.
+
+L’[étude de la taille](experiments/model_scaling.md) compare maintenant **59 M
+contre 94 M de paramètres**, à budget fixé de **50 M de tokens**, sur exactement
+les mêmes fichiers et fenêtres d’évaluation. Seules la largeur du modèle et
+celle de son MLP changent.
 
 ### Jalon 6 — Pratiquer l’adaptation
 

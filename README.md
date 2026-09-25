@@ -129,6 +129,11 @@ tokens Python**, avec optimiseur neuf et taux d’apprentissage réduit. Un dev
 Python séparé mesure l’adaptation ; le même dev général qu’auparavant mesure
 l’éventuelle dégradation hors domaine. Les deux holdouts restent réservés.
 
+L’[adaptation est terminée](results/continued-python-5m.md) le 25 septembre 2026 :
+perplexité dev Python **860,80 → 75,77**, mais perplexité dev générale
+**184,21 → 268,54**. Les générations restent répétitives : la spécialisation
+statistique ne suffit pas à produire du code fonctionnel. Le SFT reste à pratiquer.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

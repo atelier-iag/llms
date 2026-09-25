@@ -1,0 +1,38 @@
+{
+  "training_git_commit": "d945dbc5c1f742c43dc75ee349a47645e5e7ee74",
+  "command": [
+    "/home/random/atelier-iag/llms/.venv/bin/python",
+    "-u",
+    "-m",
+    "reimplementation.train_baseline",
+    "--device",
+    "cuda",
+    "--config",
+    "experiments/continued_pretraining_python_config.json",
+    "--init-from",
+    "/home/random/atelier-iag/llms/runs/simple-baseline-2fsdgx0q/model.pt",
+    "--data-dir",
+    "data/continued-python-5m-v1",
+    "--general-data-dir",
+    "data/pretraining-50m-v1"
+  ],
+  "launch_directory": "runs/continued-python-5m-launch-su7jtw_3",
+  "run_directory": "runs/simple-baseline-mxq_ot5k",
+  "started_at": "2026-09-25T13:46:02.046568+00:00",
+  "finished_at": "2026-09-25T13:54:42.346029+00:00",
+  "returncode": 0,
+  "elapsed_between_utc_timestamps_seconds": 520.299461,
+  "subprocess_monotonic_seconds": 476.00002660300015,
+  "initial_checkpoint_sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa",
+  "final_checkpoint_sha256": "751141c836aea9ff5f48af4727540ce448aefd7b07e4eadf243d1bef3ba5e35f",
+  "python_manifest_sha256": "1b25b6e25b165154f188f659d8692e495cebd7219ffbcd431212ef289f0ed7f3",
+  "general_manifest_sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+  "validation": {
+    "tests_command": "python -m pytest tests -q",
+    "tests_passed": 176,
+    "base_general_score_reproduced_exactly": true,
+    "base_three_generations_reproduced_exactly": true,
+    "code_and_data_identities_verified": true,
+    "holdouts_scored": false
+  }
+}

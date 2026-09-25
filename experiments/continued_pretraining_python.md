@@ -12,6 +12,12 @@ Le principe de poursuite du préentraînement sur un domaine est étudié dans
 Notre essai vérifie ce mécanisme à petite échelle ; il ne reproduit pas leurs
 résultats et ne garantit pas du code correct ou la disparition des répétitions.
 
+Le [corpus préparé et son audit](../results/continued-python-5m-data.md) sont
+disponibles : 2 390 fichiers train, 122 dev et 113 holdout.
+L’[essai est terminé](../results/continued-python-5m.md) : perplexité Python
+**860,80 → 75,77**, perplexité générale **184,21 → 268,54**. Les générations
+restent répétitives et les deux fonctions sondées ne sont pas réalisées.
+
 ## Corpus et séparation
 
 Source : [CodeParrot clean](https://huggingface.co/datasets/codeparrot/codeparrot-clean),

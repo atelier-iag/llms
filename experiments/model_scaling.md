@@ -4,6 +4,7 @@ Question : à budget de données fixé, quel compromis qualité/temps/mémoire o
 une réduction de largeur du modèle ? Le run
 [94 M sur 50 M de tokens](../results/pretraining-50m.md) est déjà terminé ; un seul
 nouveau modèle, de 59 M de paramètres, est entraîné depuis zéro.
+Le [run 59 M est lancé le 25 septembre 2026](../results/model-scaling-59m-94m.md).
 
 ## Configuration
 

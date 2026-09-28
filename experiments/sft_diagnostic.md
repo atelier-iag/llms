@@ -6,6 +6,9 @@ préentraînement, des données, des réglages ou de l’implémentation. Ce pet
 essai contrôle d’abord la capacité à **mémoriser des réponses connues**, puis
 mesure la généralisation à de nouvelles combinaisons.
 
+**Essai terminé** : [32/32 exemples appris et 46/64 combinaisons nouvelles](../results/sft-diagnostic-32-64.md),
+avec erreurs d’association sur les prénoms et forte dégradation générale.
+
 L’[entraînement sur un minuscule sous-ensemble](https://cs231n.github.io/neural-networks-3/)
 est un contrôle classique du pipeline. Une réussite ne certifie pas à elle
 seule toute l’implémentation, ni une capacité générale à suivre des consignes.

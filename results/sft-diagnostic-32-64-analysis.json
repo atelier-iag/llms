@@ -1,0 +1,95 @@
+{
+  "by_task": {
+    "initial": {
+      "train": {
+        "copy": {
+          "examples": 8,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 12,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 12,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "val": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      }
+    },
+    "final": {
+      "train": {
+        "copy": {
+          "examples": 8,
+          "exact_matches": 8,
+          "stopped_at_eos": 8
+        },
+        "color": {
+          "examples": 12,
+          "exact_matches": 12,
+          "stopped_at_eos": 12
+        },
+        "name": {
+          "examples": 12,
+          "exact_matches": 12,
+          "stopped_at_eos": 12
+        }
+      },
+      "val": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 10,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 12,
+          "stopped_at_eos": 24
+        }
+      }
+    }
+  },
+  "paired_contexts_final_dev": {
+    "color": {
+      "contexts": 12,
+      "both_questions_correct": 12
+    },
+    "name": {
+      "contexts": 12,
+      "both_questions_correct": 0
+    }
+  },
+  "name_map_queries": {
+    "examples": 12,
+    "correct": 0,
+    "outputs_equal_training_partner_of_current_key_holder": 12
+  },
+  "general_perplexity_ratio": 5.412464218350676,
+  "general_perplexity_change_percent": 441.2464218350676,
+  "training_peak_GiB": 2.9503283500671387,
+  "final_evaluation_peak_GiB": 1.8977899551391602
+}

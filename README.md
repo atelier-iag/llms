@@ -147,6 +147,16 @@ perplexité des réponses dev **378,56 → 144,94**, mais perplexité générale
 entraînement supplémentaire. Le mécanisme SFT est pratiqué et mesuré ;
 ce modèle ne suit pas encore correctement les consignes.
 
+Un [diagnostic sur des consignes simples](results/sft-diagnostic-32-64.md)
+vérifie ensuite la mémorisation et la généralisation : **32/32 exemples
+appris réussis**, puis **46/64 combinaisons nouvelles**, avec les mêmes
+gabarits et mots possibles. Le détail est contrasté : 24/24 couleurs,
+10/16 copies de mots et 12/24 prénoms. Les erreurs de prénom reproduisent
+des associations apprises malgré un contexte différent. Ce test montre
+que le pipeline apprend, avec une généralisation partielle ; il dégrade
+fortement le dev général (**184,21 → 997,01**). Le modèle initial reste
+la référence et les holdouts restent réservés.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

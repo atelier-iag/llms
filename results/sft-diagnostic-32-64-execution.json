@@ -1,0 +1,49 @@
+{
+  "training_git_commit": "ee3d5c72a3b3be6e67ae58e191cd52e1791d5c31",
+  "command": [
+    "/home/random/atelier-iag/llms/.venv/bin/python",
+    "-u",
+    "-m",
+    "reimplementation.train_sft",
+    "--device",
+    "cuda",
+    "--config",
+    "experiments/sft_diagnostic_config.json",
+    "--init-from",
+    "/home/random/atelier-iag/llms/runs/simple-baseline-2fsdgx0q/model.pt",
+    "--data-dir",
+    "data/sft-diagnostic-32-64-v1",
+    "--probes",
+    "data/sft-diagnostic-32-64-v1/train-probes.json",
+    "--general-data-dir",
+    "data/pretraining-50m-v1"
+  ],
+  "launch_directory": "runs/sft-diagnostic-launch-nar1z4e0",
+  "run_directory": "runs/sft-gi30rb8x",
+  "started_at": "2026-09-28T18:48:16.645748+00:00",
+  "finished_at": "2026-09-28T18:51:36.421171+00:00",
+  "returncode": 0,
+  "elapsed_between_utc_timestamps_seconds": 199.775423,
+  "subprocess_monotonic_seconds": 181.6247792920003,
+  "initial_checkpoint_sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa",
+  "final_checkpoint_sha256": "9b4ec27c2afe1eb140315a8a02eeaf824d1912df67c5943b271b296287106ba6",
+  "recovery_checkpoint_sha256": "64e0c7d40bc5a7280e885a73c2634b821f2a9d53caa601b91d48880e2cc97a81",
+  "sft_manifest_sha256": "0c2e283b52cdace98a04ff3ae7018bfb52ecde0e16f730a32b5fc684621ae136",
+  "general_manifest_sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+  "metric_roles": {
+    "probes": "TRAIN memorization, 32 examples",
+    "dev_generation": "64 novel combinations, same rules and vocabulary"
+  },
+  "validation": {
+    "tests_command": "python -m pytest tests -q",
+    "tests_passed": 197,
+    "base_general_score_reproduced_exactly": true,
+    "final_weights_identical_to_recovery": true,
+    "identical_generation_prompts_references_and_budgets": true,
+    "code_and_data_identities_verified": true,
+    "source_checkpoint_unchanged": true,
+    "train_probe_ids_match_training_ids_exactly": true,
+    "dev_probe_ids_match_validation_ids_exactly": true,
+    "holdouts_scored": false
+  }
+}

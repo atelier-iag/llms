@@ -132,12 +132,20 @@ l’éventuelle dégradation hors domaine. Les deux holdouts restent réservés.
 L’[adaptation est terminée](results/continued-python-5m.md) le 25 septembre 2026 :
 perplexité dev Python **860,80 → 75,77**, mais perplexité dev générale
 **184,21 → 268,54**. Les générations restent répétitives : la spécialisation
-statistique ne suffit pas à produire du code fonctionnel. Le SFT reste à pratiquer.
+statistique ne suffit pas à produire du code fonctionnel.
 
 Le [premier essai SFT](experiments/sft_dolly.md) repart du checkpoint généraliste
 94 M avec **3 000 exemples courts**, trois passes et une loss limitée aux
 réponses. Le protocole compare les réponses générées avant/après, le dev SFT
 et le même dev général ; les holdouts restent réservés.
+
+L’[essai SFT est terminé](results/sft-dolly-3k.md) le 28 septembre 2026 :
+perplexité des réponses dev **378,56 → 144,94**, mais perplexité générale
+**184,21 → 303,85**. Les réponses s’arrêtent plus souvent à EOS, mais les
+**12 consignes simples du diagnostic restent toutes ratées**. L’évaluation a
+été reprise après un crash, depuis les poids finaux sauvegardés, sans aucun
+entraînement supplémentaire. Le mécanisme SFT est pratiqué et mesuré ;
+ce modèle ne suit pas encore correctement les consignes.
 
 ### Jalon 7 — Faire des ablations
 

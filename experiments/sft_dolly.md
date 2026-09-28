@@ -6,6 +6,10 @@ de mesurer si le modèle suit mieux des consignes, tout en surveillant le dev
 général. La perte de généralité observée dans le
 [continued pretraining Python](../results/continued-python-5m.md) motive ce choix.
 
+Les [résultats du premier essai](../results/sft-dolly-3k.md) sont disponibles :
+adaptation statistique aux réponses, dégradation générale et échec des
+12 consignes diagnostiques, après reprise de l’évaluation interrompue.
+
 ## Une consigne, un contexte éventuel, une réponse
 
 Chaque exemple est présenté avec les séparateurs textuels suivants, sans

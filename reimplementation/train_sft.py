@@ -28,6 +28,11 @@ from reimplementation.train_baseline import learning_rate
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def select_evaluation_examples(rows, count, seed):
+    # A complete diagnostic split needs no category-dependent subsampling.
+    return list(rows) if count == len(rows) else balanced_select(rows, count, seed)
+
+
 def run(config, data_dir, *, general_data_dir, probes_path, device, output_root,
         init_from=None, resume=None):
     if (init_from is None) == (resume is None):
@@ -62,8 +67,8 @@ def run(config, data_dir, *, general_data_dir, probes_path, device, output_root,
         probes.append({**row, "source_id": probe["id"], "category": probe["category"]})
     if not probes:
         raise ValueError("diagnostic probes must be nonempty")
-    dev_generation = balanced_select(val, config["generation_examples"], config["seed"])
-    train_sample = balanced_select(train, config["train_evaluation_examples"], config["seed"])
+    dev_generation = select_evaluation_examples(val, config["generation_examples"], config["seed"])
+    train_sample = select_evaluation_examples(train, config["train_evaluation_examples"], config["seed"])
     identity = {"sft_manifest_sha256": manifest["sha256"],
                 "general_manifest_sha256": general_manifest["sha256"] if general_manifest else None,
                 "general_validation_sha256": file_hash(general.path), "probes_sha256": file_hash(probes_path)}

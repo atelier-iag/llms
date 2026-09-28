@@ -1,0 +1,55 @@
+{
+  "format_version": 1,
+  "kind": "sft",
+  "status": "complete",
+  "prompt_format": "instruction-context-response-v1",
+  "max_tokens": 256,
+  "vocab_size": 100278,
+  "eos_token_id": 100257,
+  "provenance": {
+    "tokenizer": {
+      "repo_id": "allenai/dolma2-tokenizer",
+      "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+    },
+    "source_sha256": "249c1f17ae3a3d6ea7aa0c7d4402292c9a144fac186afa3be3395b4b2b72e113",
+    "source": "Self-authored deterministic copy/color/name combinations; no external dataset"
+  },
+  "grouping": "Exact full prompts are disjoint; templates and answer vocabulary deliberately shared",
+  "split_policy": "Pair offset 1 for train, offsets 2 and 3 for val; no random split",
+  "purpose": "Memorization and generalization to novel combinations of known values; not an AGI benchmark or reserved holdout",
+  "files": {
+    "train": {
+      "path": "train.jsonl",
+      "sha256": "f3c123881cebb8da7840f16b99ebfd00a22303e6665cf255a67b69b9b7fe0d46",
+      "examples": 32,
+      "categories": {
+        "copy": 8,
+        "color": 12,
+        "name": 12
+      },
+      "groups": 32,
+      "sequence_tokens": 1016,
+      "response_tokens": 70,
+      "max_sequence_tokens": 33
+    },
+    "val": {
+      "path": "val.jsonl",
+      "sha256": "90ac4f3cc81b922e568f1c33f35025ff765864f6a8f99661dfde9e402f0f80fc",
+      "examples": 64,
+      "categories": {
+        "copy": 16,
+        "color": 24,
+        "name": 24
+      },
+      "groups": 64,
+      "sequence_tokens": 2032,
+      "response_tokens": 140,
+      "max_sequence_tokens": 33
+    }
+  },
+  "train_probes": {
+    "path": "train-probes.json",
+    "sha256": "5c477ee0c4d1fb757b53171622df2f697ce0ee881eee3d81989f74c33f1e8879",
+    "role": "training-set memorization"
+  }
+}

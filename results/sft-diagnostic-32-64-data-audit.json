@@ -1,0 +1,16 @@
+{
+  "source_sha256": "249c1f17ae3a3d6ea7aa0c7d4402292c9a144fac186afa3be3395b4b2b72e113",
+  "manifest_sha256": "0c2e283b52cdace98a04ff3ae7018bfb52ecde0e16f730a32b5fc684621ae136",
+  "examples_checked_against_text_oracle": 96,
+  "examples_reencoded_exactly": 96,
+  "decoded_responses_match_source": true,
+  "train_and_val_prompts_disjoint": true,
+  "train_and_val_contexts_disjoint": true,
+  "templates_and_answer_vocabulary_shared_intentionally": true,
+  "identical_per_task_answer_distributions": true,
+  "train_probe_ids_match_training_ids_exactly": true,
+  "max_sequence_tokens": 33,
+  "max_response_tokens_including_eos": 3,
+  "old_sft_probes_used_for_training": false,
+  "holdouts_scored": false
+}

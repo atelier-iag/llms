@@ -125,6 +125,9 @@ Le runner refuse de remplacer un run existant. Il vérifie les métadonnées du
 checkpoint, le manifeste SFT, ses fichiers train/dev et le dev général. Les
 sauvegardes de reprise après chaque époque gardent les poids, AdamW, RNG,
 compteurs de réponses et exemples, identités des données et historiques.
+Le modèle d’inférence est écrit avant l’évaluation finale. AdamW et les
+gradients sont libérés avant cette phase ; une reprise au dernier pas ne
+recrée pas l’optimiseur et n’effectue aucune mise à jour supplémentaire.
 
 ```sh
 python -m reimplementation.train_sft --device cuda \

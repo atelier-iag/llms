@@ -112,9 +112,14 @@ def run(config, data_dir, *, general_data_dir, probes_path, device, output_root,
             raise ValueError("SFT initialization architecture/context/tokenizer differs")
         initialization = {"checkpoint": str(Path(init_from).resolve()), "sha256": file_hash(init_from),
                           "source_step": metadata["step"], "optimizer": "fresh AdamW"}
-    optimizer = torch.optim.AdamW(model.parameters(), **config["optimizer"])
+    # A completed recovery needs evaluation only, so keep Adam's state off the GPU.
+    optimizer = (torch.optim.AdamW(model.parameters(), **config["optimizer"])
+                 if start_step < total_steps else None)
     if recovery is not None:
-        optimizer.load_state_dict(recovery.pop("optimizer_state"))
+        saved_optimizer = recovery.pop("optimizer_state")
+        if optimizer is not None:
+            optimizer.load_state_dict(saved_optimizer)
+        del saved_optimizer
         torch.set_rng_state(recovery["torch_rng_state"])
         if device == "cuda":
             torch.cuda.set_rng_state_all(recovery["cuda_rng_states"])
@@ -225,22 +230,29 @@ def run(config, data_dir, *, general_data_dir, probes_path, device, output_root,
     if seen != expected or seen_examples != config["epochs"] * len(train):
         raise RuntimeError("SFT did not cover the planned examples and response targets")
     peak = torch.cuda.max_memory_allocated() if device == "cuda" else None
-    event({"event": "final_evaluation_start"})
-    final = {"dev_response": evaluate_sft(model, batches(val, batch_size, eos)),
-             "general_validation_full": evaluate(model, general.epoch_batches(batch_size))}
+    # Save the inference weights before the long evaluation and release training memory.
     checkpoint = run_dir / "model.pt"
     save_checkpoint(checkpoint, model, config["model"], step=total_steps,
                     context_length=config["sequence_length"], tokenizer=DOLMA_TOKENIZER)
+    del optimizer
+    model.zero_grad(set_to_none=True)
+    if device == "cuda":
+        torch.cuda.empty_cache()
+        torch.cuda.reset_peak_memory_stats()
+    event({"event": "final_evaluation_start", "checkpoint": str(checkpoint)})
+    final = {"dev_response": evaluate_sft(model, batches(val, batch_size, eos)),
+             "general_validation_full": evaluate(model, general.epoch_batches(batch_size))}
     probe_inputs = collate(val[:1], eos)[0].to(device)
     model.eval()
     with torch.no_grad():
         expected_logits = model(probe_inputs).cpu()
-    del optimizer, model
+    del model
     model, _ = load_checkpoint(checkpoint, device=device)
     with torch.no_grad():
         actual_logits = model(probe_inputs).cpu()
     torch.testing.assert_close(actual_logits, expected_logits, rtol=0, atol=0)
     final.update(generations())
+    evaluation_peak = torch.cuda.max_memory_allocated() if device == "cuda" else None
     write_json("final-generations.json", {"dev": final["dev_generation_details"], "probes": final["probe_outputs"]})
     _, checked = load_sft(data_dir, tokenizer=DOLMA_TOKENIZER, vocab_size=config["model"]["vocab_size"], max_tokens=config["sequence_length"])
     if (checked["sha256"] != manifest["sha256"] or file_hash(general.path) != identity["general_validation_sha256"]
@@ -251,7 +263,8 @@ def run(config, data_dir, *, general_data_dir, probes_path, device, output_root,
         raise RuntimeError("SFT initial checkpoint changed during training")
     session = {"start_step": start_step, "updates": total_steps - start_step,
                "training_seconds": train_seconds, "wall_seconds": time.perf_counter() - start,
-               "peak_cuda_allocated_bytes": peak}
+               "peak_cuda_allocated_bytes": peak,
+               "final_evaluation_peak_cuda_allocated_bytes": evaluation_peak}
     # Source prompts/reference answers from Dolly stay in the local generation files.
     # Aggregate scores and self-authored diagnostic probes are safe to publish together.
     result = {"experiment": "supervised-fine-tuning", "config": config, "initialization": initialization,

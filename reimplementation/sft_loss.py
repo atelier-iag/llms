@@ -53,6 +53,7 @@ def evaluate_sft(model, batches):
             total_nll += loss * count
             tokens += count
             correct += int((logits[mask].argmax(dim=-1) == labels[mask]).sum())
+            del logits  # Do not keep a full vocabulary tensor during the next forward.
     finally:
         model.train(was_training)
     if not tokens:

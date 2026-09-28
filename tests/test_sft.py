@@ -1,4 +1,5 @@
 import json
+import weakref
 from types import SimpleNamespace
 
 import numpy as np
@@ -257,6 +258,52 @@ def test_sft_full_run_and_interrupted_resume_are_identical(tmp_path, monkeypatch
         assert resumed_metrics[key] == metrics[key]
     assert resumed_metrics["training_seconds"] is None
     assert file_hash(checkpoint) == before and file_hash(source) == original_hash
+
+
+def test_final_evaluation_crash_preserves_weights_and_resumes_without_optimizer(tmp_path, monkeypatch, training_case):
+    config, kwargs, source = training_case
+    original_step = train_sft.sft_step
+    original_evaluate = train_sft.evaluate
+    optimizer_refs = []
+    updates = 0
+
+    def track_step(model, optimizer, batch, **settings):
+        nonlocal updates
+        updates += 1
+        optimizer_refs.append(weakref.ref(optimizer))
+        return original_step(model, optimizer, batch, **settings)
+
+    def interrupt_final(model, batch_iterator):
+        if updates == 6 and next((tmp_path / "crashed").glob("*/model.pt"), None):
+            assert all(ref() is None for ref in optimizer_refs)
+            assert all(parameter.grad is None for parameter in model.parameters())
+            raise KeyboardInterrupt
+        return original_evaluate(model, batch_iterator)
+
+    monkeypatch.setattr(train_sft, "sft_step", track_step)
+    monkeypatch.setattr(train_sft, "evaluate", interrupt_final)
+    with pytest.raises(KeyboardInterrupt):
+        train_sft.run(config, output_root=tmp_path / "crashed", init_from=source, **kwargs)
+    crashed = next((tmp_path / "crashed").iterdir())
+    recovery = crashed / "recovery.pt"
+    before = file_hash(recovery)
+    expected_model, _ = load_checkpoint(crashed / "model.pt")
+    monkeypatch.setattr(train_sft, "evaluate", original_evaluate)
+
+    def no_more_training(*args, **kwargs):
+        pytest.fail("a completed recovery must not construct an optimizer or train again")
+
+    monkeypatch.setattr(torch.optim, "AdamW", no_more_training)
+    monkeypatch.setattr(train_sft, "sft_step", no_more_training)
+    resumed = train_sft.run(config, output_root=tmp_path / "resumed", resume=recovery, **kwargs)
+    actual_model, _ = load_checkpoint(resumed / "model.pt")
+    assert_state_equal(actual_model.state_dict(), expected_model.state_dict())
+    metrics = json.loads((resumed / "metrics.json").read_text())
+    assert metrics["session"]["start_step"] == 6 and metrics["session"]["updates"] == 0
+    assert metrics["session"]["training_seconds"] == 0
+    assert metrics["training_seconds"] is None and metrics["wall_seconds"] is None
+    assert metrics["updates"] == 6 and metrics["response_tokens"] == 42
+    assert file_hash(recovery) == before
 
 
 @pytest.mark.parametrize("changed", ["general", "manifest", "probes", "config", "count"])

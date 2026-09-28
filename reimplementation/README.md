@@ -258,3 +258,18 @@ extracts a smaller balanced training set from a prepared corpus and copies dev
 and holdout byte-for-byte. See the [25M/50M protocol](../experiments/data_scaling.md).
 Q/K normalization remains later work. The components depend on PyTorch; some
 tests also compare with the existing OLMo-core baseline.
+
+## Instruction fine-tuning
+
+[prepare_sft.py](prepare_sft.py) builds a pinned, grouped Dolly corpus of short
+instruction/context/response examples. [sft_data.py](sft_data.py) formats prompts,
+right-pads separate sequences and shifts labels so the last prompt position
+predicts the first response token. Prompt and padding labels are ignored;
+the real response EOS remains supervised. [sft_loss.py](sft_loss.py) implements
+the masked objective and token-weighted evaluation.
+
+[train_sft.py](train_sft.py) initializes from an existing inference checkpoint,
+starts a fresh optimizer, supports exact interrupted-run recovery and measures
+general-domain retention. See the [SFT protocol and commands](../experiments/sft_dolly.md).
+Detailed source dev generations remain local; the published metrics distinguish
+teacher-forced response loss from free-generation diagnostic scores.

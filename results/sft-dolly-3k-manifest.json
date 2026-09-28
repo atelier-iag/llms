@@ -1,0 +1,121 @@
+{
+  "format_version": 1,
+  "kind": "sft",
+  "status": "complete",
+  "seed": 0,
+  "prompt_format": "instruction-context-response-v1",
+  "max_tokens": 256,
+  "max_answer_tokens": 80,
+  "vocab_size": 100278,
+  "eos_token_id": 100257,
+  "provenance": {
+    "tokenizer": {
+      "repo_id": "allenai/dolma2-tokenizer",
+      "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+    },
+    "dataset": {
+      "repo_id": "databricks/databricks-dolly-15k",
+      "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "file": "databricks-dolly-15k.jsonl",
+      "sha256": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec"
+    },
+    "quality_review_sha256": "481e4a3ad155a5ae412fe763adfe9ee34634f1093e91b938c86ffa6ff12ca6c0"
+  },
+  "license": "CC-BY-SA-3.0; attribution: Databricks and contributing Wikipedia authors",
+  "grouping": "same normalized instruction/context or prompt word-trigram Jaccard >= 0.8; transitive components",
+  "split_policy": "group hash salted by seed; 80/10/10 buckets; category-balanced deterministic selection",
+  "excluded_source_ids": [
+    1184,
+    1521,
+    3030,
+    4417,
+    6420,
+    6677,
+    6901,
+    10035,
+    10589,
+    11811,
+    13518
+  ],
+  "files": {
+    "train": {
+      "path": "train.jsonl",
+      "examples": 3000,
+      "sha256": "6b13e46b292547c81ea06dd5aa36ed6b3d49e6b916f473a853defed4cf00bf25",
+      "groups": 2876,
+      "categories": {
+        "classification": 1399,
+        "closed_qa": 770,
+        "information_extraction": 541,
+        "summarization": 290
+      },
+      "sequence_tokens": 361590,
+      "response_tokens": 82266,
+      "max_sequence_tokens": 256
+    },
+    "val": {
+      "path": "val.jsonl",
+      "examples": 300,
+      "sha256": "f11e76fb4095bd3be611225cb3cf9c20b41ec1d857944c49b6313891775fe343",
+      "groups": 287,
+      "categories": {
+        "classification": 100,
+        "closed_qa": 100,
+        "information_extraction": 70,
+        "summarization": 30
+      },
+      "sequence_tokens": 39740,
+      "response_tokens": 7518,
+      "max_sequence_tokens": 256
+    },
+    "holdout": {
+      "path": "holdout.jsonl",
+      "examples": 300,
+      "sha256": "eec3dede52998234842c7f9861c3ab8c2f29ad18f912f0505adc5405ad3fdd54",
+      "groups": 277,
+      "categories": {
+        "classification": 98,
+        "closed_qa": 98,
+        "information_extraction": 72,
+        "summarization": 32
+      },
+      "sequence_tokens": 41278,
+      "response_tokens": 7699,
+      "max_sequence_tokens": 256
+    }
+  },
+  "statistics": {
+    "visited": 15011,
+    "category_or_empty_filtered": 8400,
+    "length_filtered": 2574,
+    "quality_excluded": 11,
+    "duplicates": 4,
+    "eligible": 4022,
+    "groups": 3856
+  },
+  "available_examples": {
+    "train": 3213,
+    "val": 399,
+    "holdout": 410
+  },
+  "available_categories": {
+    "train": {
+      "closed_qa": 770,
+      "summarization": 290,
+      "classification": 1612,
+      "information_extraction": 541
+    },
+    "val": {
+      "information_extraction": 70,
+      "classification": 188,
+      "closed_qa": 111,
+      "summarization": 30
+    },
+    "holdout": {
+      "classification": 183,
+      "information_extraction": 72,
+      "closed_qa": 123,
+      "summarization": 32
+    }
+  }
+}

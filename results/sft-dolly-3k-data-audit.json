@@ -1,0 +1,12 @@
+{
+  "examples": 3600,
+  "manifest_sha256": "debd63f6c7e6ff2bee82307d0659cbdee62673397b5e16b74c5f1bd5ef8435e1",
+  "source_verified": true,
+  "all_sequences_reencoded_identically": true,
+  "cross_split_group_overlap": 0,
+  "cross_split_fingerprint_overlap": 0,
+  "diagnostic_exact_prompt_overlap": 0,
+  "holdout_scored": false,
+  "response_targets_three_epochs": 246798,
+  "nonpadding_sequence_tokens_three_epochs": 1084770
+}

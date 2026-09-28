@@ -1,0 +1,14 @@
+[
+  {"id": "extract-color", "category": "extraction", "instruction": "What color is the box? Answer with one word.", "context": "The box is blue. The bag is red.", "response": "blue"},
+  {"id": "extract-day", "category": "extraction", "instruction": "On which day does the parcel arrive? Answer with one word.", "context": "The parcel leaves on Monday and arrives on Thursday.", "response": "Thursday"},
+  {"id": "extract-name", "category": "extraction", "instruction": "Who has the key? Answer with the person's name only.", "context": "Maya has the map. Leo has the key.", "response": "Leo"},
+  {"id": "extract-number", "category": "extraction", "instruction": "How many chairs are there? Answer with a digit only.", "context": "The room contains 3 tables and 7 chairs.", "response": "7"},
+  {"id": "classify-large", "category": "classification", "instruction": "Use the label large for numbers greater than 10 and small otherwise. Classify 12. Return only the label.", "context": "", "response": "large"},
+  {"id": "classify-small", "category": "classification", "instruction": "Use the label large for numbers greater than 10 and small otherwise. Classify 4. Return only the label.", "context": "", "response": "small"},
+  {"id": "classify-yes", "category": "classification", "instruction": "Does the text contain the word apple? Answer yes or no only.", "context": "There is an apple on the table.", "response": "yes"},
+  {"id": "classify-no", "category": "classification", "instruction": "Does the text contain the word apple? Answer yes or no only.", "context": "There is a pear on the table.", "response": "no"},
+  {"id": "format-copy", "category": "format", "instruction": "Reply with exactly the word hello.", "context": "", "response": "hello"},
+  {"id": "format-comma", "category": "format", "instruction": "Write these words separated by commas, in the same order: red blue green. Output only the list.", "context": "", "response": "red, blue, green"},
+  {"id": "format-first", "category": "format", "instruction": "Return only the first word of this text.", "context": "River birds sing softly.", "response": "River"},
+  {"id": "format-last", "category": "format", "instruction": "Return only the last word of this text.", "context": "The yellow door is open", "response": "open"}
+]

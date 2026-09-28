@@ -134,6 +134,11 @@ perplexité dev Python **860,80 → 75,77**, mais perplexité dev générale
 **184,21 → 268,54**. Les générations restent répétitives : la spécialisation
 statistique ne suffit pas à produire du code fonctionnel. Le SFT reste à pratiquer.
 
+Le [premier essai SFT](experiments/sft_dolly.md) repart du checkpoint généraliste
+94 M avec **3 000 exemples courts**, trois passes et une loss limitée aux
+réponses. Le protocole compare les réponses générées avant/après, le dev SFT
+et le même dev général ; les holdouts restent réservés.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

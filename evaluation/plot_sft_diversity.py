@@ -1,4 +1,4 @@
-"""Compare association diversity with matched updates and identical dev examples."""
+"""Compare SFT diversity or learning rate with matched budgets and dev examples."""
 
 import argparse
 import json
@@ -16,17 +16,25 @@ def main():
     parser.add_argument("baseline", type=Path)
     parser.add_argument("variant", type=Path)
     parser.add_argument("--output-prefix", type=Path, required=True)
+    parser.add_argument("--comparison", choices=("diversity", "learning-rate"), default="diversity")
     args = parser.parse_args()
     runs = [json.loads(path.read_text(encoding="utf-8")) for path in (args.baseline, args.variant)]
     if runs[0]["sft_manifest"]["contents"]["files"]["val"] != runs[1]["sft_manifest"]["contents"]["files"]["val"]:
         parser.error("the two runs must use identical diagnostic dev files")
     if any(run["updates"] != 400 or run["response_tokens"] != 7000 for run in runs):
         parser.error("expected matching 400-update and 7000-response-target budgets")
+    labels = ("32 exemples × 100 passes", "64 exemples × 50 passes")
+    title = "Diversité des associations SFT · mêmes poids initiaux et mêmes réglages"
+    if args.comparison == "learning-rate":
+        if runs[0]["data_identity"] != runs[1]["data_identity"]:
+            parser.error("learning-rate comparison requires identical data identities")
+        labels = tuple(f"Taux maximal : {run['config']['optimizer']['lr']:.0e}" for run in runs)
+        title = "Taux d’apprentissage SFT · mêmes 64 exemples train et mêmes poids initiaux"
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), layout="constrained")
     categories = ("copy", "color", "name", None)
     x = np.arange(len(categories))
-    for index, (run, label, color) in enumerate(zip(runs, ("32 exemples × 100 passes", "64 exemples × 50 passes"),
+    for index, (run, label, color) in enumerate(zip(runs, labels,
                                                    ("#2166ac", "#1b9e77"))):
         counts = []
         for category in categories:
@@ -48,8 +56,7 @@ def main():
                 ylabel="Loss sur les mêmes 32 768 cibles (nats)")
     axes[1].grid(alpha=0.2)
     axes[1].legend(loc="lower right")
-    fig.suptitle("Diversité des associations SFT · mêmes poids initiaux et mêmes réglages\n"
-                 "400 mises à jour · 3 200 présentations · 7 000 cibles réponse/EOS · seed 0", fontsize=12)
+    fig.suptitle(title + "\n400 mises à jour · 3 200 présentations · 7 000 cibles réponse/EOS · seed 0", fontsize=12)
     args.output_prefix.parent.mkdir(parents=True, exist_ok=True)
     for extension in ("png", "svg"):
         path = args.output_prefix.with_suffix(f".{extension}")

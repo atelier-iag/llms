@@ -165,6 +165,15 @@ sur les couleurs. Les erreurs d’association persistent et la perplexité
 générale atteint **1 476,86**. Cette variante ne fournit pas de gain global
 sur cet essai ; le résultat négatif est documenté.
 
+L’[ablation du taux d’apprentissage](results/sft-learning-rate-1e-4.md)
+conserve ensuite ces mêmes 64 exemples et les 400 mises à jour, en divisant
+seulement le taux par trois (`3e-4 → 1e-4`). Le score dev atteint **61/64**
+au lieu de 44/64 : 16/16 copies, 24/24 couleurs et 21/24 prénoms, avec
+64/64 sur le train. La perplexité générale baisse à **272,98**, mais reste
+supérieure aux **184,21** du modèle initial. C’est un meilleur compromis
+sur ce diagnostic structuré, à confirmer sur des consignes plus variées ;
+les holdouts restent réservés.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

@@ -1,0 +1,5762 @@
+{
+  "experiment": "supervised-fine-tuning",
+  "config": {
+    "seed": 0,
+    "model": {
+      "vocab_size": 100278,
+      "d_model": 384,
+      "num_heads": 8,
+      "hidden_size": 1536,
+      "num_layers": 8,
+      "rope_theta": 10000.0,
+      "num_kv_heads": 2,
+      "attention_backend": "sdpa"
+    },
+    "sequence_length": 256,
+    "batch_size": 8,
+    "min_lr_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "evaluation_windows": 128,
+    "precision": "bf16",
+    "name": "sft-learning-rate-1e-4-v1",
+    "epochs": 50,
+    "optimizer": {
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "weight_decay": 0.0
+    },
+    "warmup_updates": 20,
+    "evaluate_every": 100,
+    "log_every": 25,
+    "max_new_tokens": 8,
+    "probe_max_new_tokens": 8,
+    "generation_examples": 64,
+    "train_evaluation_examples": 64,
+    "corpus": {
+      "train_examples": 64,
+      "val_examples": 64
+    },
+    "general_evaluation": {
+      "require_manifest": true,
+      "validation_tokens": 1000000
+    },
+    "diagnostic": {
+      "purpose": "Learning-rate ablation: peak 1e-4 versus 3e-4, identical 64/64 data and 400 updates",
+      "probes_role": "generation on all 64 TRAIN examples; not an independent validation score",
+      "memorization_success_exact_matches": 64,
+      "checkpoint_selection": "fixed 400 updates; no early stopping or dev-based selection",
+      "majority_answer_per_task_accuracy": 0.15625
+    }
+  },
+  "initialization": {
+    "checkpoint": "/home/random/atelier-iag/llms/runs/simple-baseline-2fsdgx0q/model.pt",
+    "sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa",
+    "source_step": 24415,
+    "optimizer": "fresh AdamW"
+  },
+  "data_identity": {
+    "sft_manifest_sha256": "7d486166f561441ca8ac61e12c70e57d8226d792b93d743bc16aa073bb2e74b0",
+    "general_manifest_sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+    "general_validation_sha256": "20f301c8571cae55a8ba03fa6806d58bfee7d9a6f06c6cd6c02bee757b714def",
+    "probes_sha256": "db20919c98ce38afab4faedf917173fe16201bbfb44cba456712d2035041d3cc"
+  },
+  "sft_manifest": {
+    "path": "/home/random/atelier-iag/llms/data/sft-diversity-64-64-v1/manifest.json",
+    "sha256": "7d486166f561441ca8ac61e12c70e57d8226d792b93d743bc16aa073bb2e74b0",
+    "contents": {
+      "format_version": 1,
+      "kind": "sft",
+      "status": "complete",
+      "prompt_format": "instruction-context-response-v1",
+      "max_tokens": 256,
+      "vocab_size": 100278,
+      "eos_token_id": 100257,
+      "provenance": {
+        "tokenizer": {
+          "repo_id": "allenai/dolma2-tokenizer",
+          "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+        },
+        "source_sha256": "5ae19f69369bffe0f24c42398f3c975a36ef0a68a12e9d459df56ed98e4a96ea",
+        "source": "Self-authored deterministic copy/color/name combinations; no external dataset"
+      },
+      "grouping": "Exact full prompts are disjoint; templates and answer vocabulary deliberately shared",
+      "split_policy": "Pair offsets 1 and 4 for train, offsets 2 and 3 for val; no random split",
+      "purpose": "Memorization and generalization to novel combinations of known values; not an AGI benchmark or reserved holdout",
+      "files": {
+        "train": {
+          "path": "train.jsonl",
+          "sha256": "20d6daf775c45e13e7d8ab1ba4b6a2a14345b96b6dfeee7e596bd35aab3b140d",
+          "examples": 64,
+          "categories": {
+            "copy": 16,
+            "color": 24,
+            "name": 24
+          },
+          "groups": 64,
+          "sequence_tokens": 2032,
+          "response_tokens": 140,
+          "max_sequence_tokens": 33
+        },
+        "val": {
+          "path": "val.jsonl",
+          "sha256": "90ac4f3cc81b922e568f1c33f35025ff765864f6a8f99661dfde9e402f0f80fc",
+          "examples": 64,
+          "categories": {
+            "copy": 16,
+            "color": 24,
+            "name": 24
+          },
+          "groups": 64,
+          "sequence_tokens": 2032,
+          "response_tokens": 140,
+          "max_sequence_tokens": 33
+        }
+      },
+      "train_probes": {
+        "path": "train-probes.json",
+        "sha256": "db20919c98ce38afab4faedf917173fe16201bbfb44cba456712d2035041d3cc",
+        "role": "training-set memorization"
+      }
+    }
+  },
+  "general_manifest": {
+    "path": "/home/random/atelier-iag/llms/data/pretraining-50m-v1/manifest.json",
+    "sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+    "provenance": {
+      "dataset": {
+        "repo_id": "allenai/dolma3_pool",
+        "revision": "6462556697df1a8f5c953727e9c686629ad98b68"
+      },
+      "tokenizer": {
+        "repo_id": "allenai/dolma2-tokenizer",
+        "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+      }
+    }
+  },
+  "parameter_count": 94124928,
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch_version": "2.10.0+cu128",
+  "training_precision": "bf16",
+  "evaluation_precision": "fp32",
+  "updates": 400,
+  "response_tokens": 7000,
+  "seen_examples": 3200,
+  "training_history": [
+    {
+      "step": 25,
+      "response_tokens": 436,
+      "seen_examples": 200,
+      "mean_training_loss": 6.106905561521513,
+      "window_response_tokens": 436,
+      "lr": 9.996155912742855e-05,
+      "elapsed_seconds": 60.26048241300009
+    },
+    {
+      "step": 50,
+      "response_tokens": 873,
+      "seen_examples": 400,
+      "mean_training_loss": 3.10933842729922,
+      "window_response_tokens": 437,
+      "lr": 9.862301196726987e-05,
+      "elapsed_seconds": 62.393980974000215
+    },
+    {
+      "step": 75,
+      "response_tokens": 1312,
+      "seen_examples": 600,
+      "mean_training_loss": 2.20448064613994,
+      "window_response_tokens": 439,
+      "lr": 9.542759418513906e-05,
+      "elapsed_seconds": 64.53942092600005
+    },
+    {
+      "step": 100,
+      "response_tokens": 1750,
+      "seen_examples": 800,
+      "mean_training_loss": 1.5285559805560873,
+      "window_response_tokens": 438,
+      "lr": 9.051132292283771e-05,
+      "elapsed_seconds": 66.73811924900019
+    },
+    {
+      "step": 125,
+      "response_tokens": 2186,
+      "seen_examples": 1000,
+      "mean_training_loss": 1.1106903301466495,
+      "window_response_tokens": 436,
+      "lr": 8.408346570374233e-05,
+      "elapsed_seconds": 75.87780156200006
+    },
+    {
+      "step": 150,
+      "response_tokens": 2628,
+      "seen_examples": 1200,
+      "mean_training_loss": 0.6971149038000883,
+      "window_response_tokens": 442,
+      "lr": 7.641763268666831e-05,
+      "elapsed_seconds": 78.04031113000019
+    },
+    {
+      "step": 175,
+      "response_tokens": 3061,
+      "seen_examples": 1400,
+      "mean_training_loss": 0.5088616716944317,
+      "window_response_tokens": 433,
+      "lr": 6.784013009120974e-05,
+      "elapsed_seconds": 80.08449774400015
+    },
+    {
+      "step": 200,
+      "response_tokens": 3500,
+      "seen_examples": 1600,
+      "mean_training_loss": 0.33187178664910766,
+      "window_response_tokens": 439,
+      "lr": 5.8716070546254966e-05,
+      "elapsed_seconds": 82.29135270000006
+    },
+    {
+      "step": 225,
+      "response_tokens": 3938,
+      "seen_examples": 1800,
+      "mean_training_loss": 0.14793662341592245,
+      "window_response_tokens": 438,
+      "lr": 4.9433831592879355e-05,
+      "elapsed_seconds": 92.83284818800007
+    },
+    {
+      "step": 250,
+      "response_tokens": 4375,
+      "seen_examples": 2000,
+      "mean_training_loss": 0.05263126980368415,
+      "window_response_tokens": 437,
+      "lr": 4.0388523885789256e-05,
+      "elapsed_seconds": 95.28423755200015
+    },
+    {
+      "step": 275,
+      "response_tokens": 4811,
+      "seen_examples": 2200,
+      "mean_training_loss": 0.023965009821390888,
+      "window_response_tokens": 436,
+      "lr": 3.1965172790967965e-05,
+      "elapsed_seconds": 97.55689321900013
+    },
+    {
+      "step": 300,
+      "response_tokens": 5250,
+      "seen_examples": 2400,
+      "mean_training_loss": 0.014664774292821153,
+      "window_response_tokens": 439,
+      "lr": 2.4522329276841663e-05,
+      "elapsed_seconds": 99.87910746500006
+    },
+    {
+      "step": 325,
+      "response_tokens": 5688,
+      "seen_examples": 2600,
+      "mean_training_loss": 0.010905645227433952,
+      "window_response_tokens": 438,
+      "lr": 1.837680772284123e-05,
+      "elapsed_seconds": 106.51505611000016
+    },
+    {
+      "step": 350,
+      "response_tokens": 6127,
+      "seen_examples": 2800,
+      "mean_training_loss": 0.008763133165275928,
+      "window_response_tokens": 439,
+      "lr": 1.3790200300522413e-05,
+      "elapsed_seconds": 109.10129096800006
+    },
+    {
+      "step": 375,
+      "response_tokens": 6562,
+      "seen_examples": 3000,
+      "mean_training_loss": 0.007650622236274782,
+      "window_response_tokens": 435,
+      "lr": 1.0957741960269049e-05,
+      "elapsed_seconds": 111.516749677
+    },
+    {
+      "step": 400,
+      "response_tokens": 7000,
+      "seen_examples": 3200,
+      "mean_training_loss": 0.00662038154734222,
+      "window_response_tokens": 438,
+      "lr": 1e-05,
+      "elapsed_seconds": 113.77551491000008
+    }
+  ],
+  "evaluation_history": [
+    {
+      "step": 0,
+      "response_tokens": 0,
+      "train_response": {
+        "loss": 10.507013062068394,
+        "perplexity": 36571.0806932937,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.014285714285714285
+      },
+      "dev_response": {
+        "loss": 10.508716358457292,
+        "perplexity": 36633.42516345924,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.014285714285714285
+      },
+      "general_validation_sample": {
+        "loss": 5.252075612545013,
+        "perplexity": 190.96222097595276,
+        "scored_tokens": 32768
+      }
+    },
+    {
+      "step": 100,
+      "response_tokens": 1750,
+      "train_response": {
+        "loss": 1.1884740957192013,
+        "perplexity": 3.2820692609451796,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.6714285714285714
+      },
+      "dev_response": {
+        "loss": 1.3065346641199929,
+        "perplexity": 3.6933528026766926,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.6428571428571429
+      },
+      "general_validation_sample": {
+        "loss": 5.726387143135071,
+        "perplexity": 306.8586269942146,
+        "scored_tokens": 32768
+      }
+    },
+    {
+      "step": 200,
+      "response_tokens": 3500,
+      "train_response": {
+        "loss": 0.2181381945897426,
+        "perplexity": 1.243758936499082,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.95
+      },
+      "dev_response": {
+        "loss": 0.468085601074355,
+        "perplexity": 1.5969340961107183,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.8642857142857143
+      },
+      "general_validation_sample": {
+        "loss": 5.615981712937355,
+        "perplexity": 274.7830048570596,
+        "scored_tokens": 32768
+      }
+    },
+    {
+      "step": 300,
+      "response_tokens": 5250,
+      "train_response": {
+        "loss": 0.01234760464036039,
+        "perplexity": 1.0124241510409873,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 1.0
+      },
+      "dev_response": {
+        "loss": 0.09784896155553205,
+        "perplexity": 1.1027962079052365,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.9642857142857143
+      },
+      "general_validation_sample": {
+        "loss": 5.662009179592133,
+        "perplexity": 287.72615571814066,
+        "scored_tokens": 32768
+      }
+    },
+    {
+      "step": 400,
+      "response_tokens": 7000,
+      "train_response": {
+        "loss": 0.006216698141569005,
+        "perplexity": 1.0062360619149089,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 1.0
+      },
+      "dev_response": {
+        "loss": 0.05977501060281481,
+        "perplexity": 1.0615976714540323,
+        "scored_tokens": 140,
+        "teacher_forced_token_accuracy": 0.9785714285714285
+      },
+      "general_validation_sample": {
+        "loss": 5.674996197223663,
+        "perplexity": 291.48723008247134,
+        "scored_tokens": 32768
+      }
+    }
+  ],
+  "general_evaluation_offsets": [
+    0,
+    7871,
+    15743,
+    23615,
+    31487,
+    39359,
+    47231,
+    55103,
+    62975,
+    70847,
+    78719,
+    86591,
+    94463,
+    102335,
+    110207,
+    118079,
+    125951,
+    133823,
+    141695,
+    149567,
+    157439,
+    165311,
+    173183,
+    181055,
+    188927,
+    196799,
+    204671,
+    212543,
+    220415,
+    228287,
+    236159,
+    244031,
+    251903,
+    259775,
+    267647,
+    275519,
+    283391,
+    291263,
+    299135,
+    307007,
+    314879,
+    322751,
+    330623,
+    338495,
+    346367,
+    354239,
+    362111,
+    369983,
+    377855,
+    385727,
+    393599,
+    401471,
+    409343,
+    417215,
+    425087,
+    432959,
+    440831,
+    448703,
+    456575,
+    464447,
+    472319,
+    480191,
+    488063,
+    495935,
+    503807,
+    511679,
+    519551,
+    527423,
+    535295,
+    543167,
+    551039,
+    558911,
+    566783,
+    574655,
+    582527,
+    590399,
+    598271,
+    606143,
+    614015,
+    621887,
+    629759,
+    637631,
+    645503,
+    653375,
+    661247,
+    669119,
+    676991,
+    684863,
+    692735,
+    700607,
+    708479,
+    716351,
+    724223,
+    732095,
+    739967,
+    747839,
+    755711,
+    763583,
+    771455,
+    779327,
+    787199,
+    795071,
+    802943,
+    810815,
+    818687,
+    826559,
+    834431,
+    842303,
+    850175,
+    858047,
+    865919,
+    873791,
+    881663,
+    889535,
+    897407,
+    905279,
+    913151,
+    921023,
+    928895,
+    936767,
+    944639,
+    952511,
+    960383,
+    968255,
+    976127,
+    983999,
+    991871,
+    999743
+  ],
+  "initial": {
+    "train_response": {
+      "loss": 10.507013062068394,
+      "perplexity": 36571.0806932937,
+      "scored_tokens": 140,
+      "teacher_forced_token_accuracy": 0.014285714285714285
+    },
+    "dev_response": {
+      "loss": 10.508716358457292,
+      "perplexity": 36633.42516345924,
+      "scored_tokens": 140,
+      "teacher_forced_token_accuracy": 0.014285714285714285
+    },
+    "general_validation_sample": {
+      "loss": 5.252075612545013,
+      "perplexity": 190.96222097595276,
+      "scored_tokens": 32768
+    },
+    "general_validation_full": {
+      "loss": 5.216052759574641,
+      "perplexity": 184.2056431922239,
+      "scored_tokens": 999999
+    },
+    "dev_generation": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "probes": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "train-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "train-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "probe_outputs": [
+      {
+        "source_id": "train-copy-01",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: river\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-02",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-03",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: cloud\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-04",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-05",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: chair\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-06",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-07",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: paper\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-08",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a list of text",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1160,
+          315,
+          1495
+        ]
+      },
+      {
+        "source_id": "train-color-09",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-10",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-11",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-12",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-13",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-14",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-15",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-16",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-17",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-18",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-19",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-20",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-name-21",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-22",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-23",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-24",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-25",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-26",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-27",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-28",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-29",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-30",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-31",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-32",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-copy-33",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: bread\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-34",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-35",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: music\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-36",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The text: text, text,",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          25,
+          1495,
+          11,
+          1495,
+          11
+        ]
+      },
+      {
+        "source_id": "train-copy-37",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: apple\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-38",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-39",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: stone\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-40",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a list of text",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1160,
+          315,
+          1495
+        ]
+      },
+      {
+        "source_id": "train-color-41",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-42",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-43",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-44",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-45",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-46",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-47",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-48",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-49",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-50",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-51",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-52",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-name-53",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-54",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-55",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-56",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-57",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-58",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-59",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-name-60",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-61",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-62",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-63",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-64",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      }
+    ]
+  },
+  "final": {
+    "dev_response": {
+      "loss": 0.05977501060281481,
+      "perplexity": 1.0615976714540323,
+      "scored_tokens": 140,
+      "teacher_forced_token_accuracy": 0.9785714285714285
+    },
+    "general_validation_full": {
+      "loss": 5.609395337682081,
+      "perplexity": 272.9791278996385,
+      "scored_tokens": 999999
+    },
+    "dev_generation": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "val-copy-01",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-02",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-03",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-04",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-05",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-06",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-07",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-08",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-09",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-10",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-11",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-12",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-13",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-14",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-15",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-16",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-17",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-18",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-19",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-20",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-21",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-22",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-23",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-25",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-26",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-27",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-28",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-29",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-30",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-31",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-33",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-34",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-35",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-36",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-37",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-38",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-39",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-copy-40",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-41",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-42",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-43",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-44",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-45",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-46",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-47",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-48",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-49",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-50",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-51",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-color-52",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-53",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-54",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-55",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-56",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-57",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-59",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-60",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-61",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-62",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-63",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "val-name-64",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 61,
+      "exact_match_rate": 0.953125,
+      "mean_token_f1": 0.953125,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "probes": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "train-copy-01",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-02",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-03",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-04",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-05",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-06",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-07",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-08",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-09",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-10",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-11",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-12",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-13",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-14",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-15",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-16",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-17",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-18",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-19",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-20",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-21",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-22",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-23",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-24",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-25",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-26",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-27",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-28",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-29",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-30",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-31",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-32",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-33",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-34",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-35",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-36",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-37",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-38",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-39",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-copy-40",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-41",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-42",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-43",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-44",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-45",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-46",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-47",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-48",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-49",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-50",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-51",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-color-52",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-53",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-54",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-55",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-56",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-57",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-58",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-59",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-60",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-61",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-62",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-63",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "train-name-64",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 64,
+      "exact_match_rate": 1.0,
+      "mean_token_f1": 1.0,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "probe_outputs": [
+      {
+        "source_id": "train-copy-01",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: river\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-02",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-03",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: cloud\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "stone",
+        "generated_ids": [
+          11046,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-04",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-05",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: chair\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-06",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-07",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: paper\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "music",
+        "generated_ids": [
+          32261,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-08",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-09",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-10",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-11",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-12",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-13",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-14",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-15",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-16",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-17",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-18",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-19",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-20",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-21",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-22",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-23",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-24",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-25",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-26",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-27",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-28",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-29",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-30",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-31",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-32",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-33",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: bread\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-34",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-35",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: music\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "stone",
+        "generated_ids": [
+          11046,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-36",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-37",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: apple\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-38",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-39",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: stone\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "music",
+        "generated_ids": [
+          32261,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-40",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-41",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-42",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-43",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-44",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-45",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-46",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-47",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-48",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-49",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-50",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-51",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-52",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-53",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-54",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-55",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-56",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-57",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-58",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-59",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-60",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-61",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-62",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-63",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-64",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      }
+    ]
+  },
+  "checkpoint": "/home/random/atelier-iag/llms/runs/sft-duplqurm/model.pt",
+  "checkpoint_reload_max_logit_error": 0.0,
+  "data_unchanged": true,
+  "resume_from": null,
+  "session": {
+    "start_step": 0,
+    "updates": 400,
+    "training_seconds": 37.788679797999976,
+    "wall_seconds": 157.2943939260001,
+    "peak_cuda_allocated_bytes": 3167890944,
+    "final_evaluation_peak_cuda_allocated_bytes": 2037736448
+  },
+  "training_seconds": 37.788679797999976,
+  "wall_seconds": 157.2943939260001,
+  "peak_cuda_allocated_bytes": 3167890944
+}

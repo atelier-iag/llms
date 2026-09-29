@@ -1,0 +1,170 @@
+{
+  "comparison_scores": {
+    "copy": {
+      "examples": 16,
+      "high_lr_correct": 12,
+      "low_lr_correct": 16,
+      "newly_correct": [
+        "val-copy-03",
+        "val-copy-07",
+        "val-copy-35",
+        "val-copy-39"
+      ],
+      "regressions": []
+    },
+    "color": {
+      "examples": 24,
+      "high_lr_correct": 18,
+      "low_lr_correct": 24,
+      "newly_correct": [
+        "val-color-13",
+        "val-color-17",
+        "val-color-19",
+        "val-color-45",
+        "val-color-49",
+        "val-color-51"
+      ],
+      "regressions": []
+    },
+    "name": {
+      "examples": 24,
+      "high_lr_correct": 14,
+      "low_lr_correct": 21,
+      "newly_correct": [
+        "val-name-22",
+        "val-name-26",
+        "val-name-28",
+        "val-name-54",
+        "val-name-56",
+        "val-name-60",
+        "val-name-62",
+        "val-name-64"
+      ],
+      "regressions": [
+        "val-name-24"
+      ]
+    },
+    "total": {
+      "examples": 64,
+      "high_lr_correct": 44,
+      "low_lr_correct": 61,
+      "newly_correct": [
+        "val-copy-03",
+        "val-copy-07",
+        "val-color-13",
+        "val-color-17",
+        "val-color-19",
+        "val-name-22",
+        "val-name-26",
+        "val-name-28",
+        "val-copy-35",
+        "val-copy-39",
+        "val-color-45",
+        "val-color-49",
+        "val-color-51",
+        "val-name-54",
+        "val-name-56",
+        "val-name-60",
+        "val-name-62",
+        "val-name-64"
+      ],
+      "regressions": [
+        "val-name-24"
+      ]
+    }
+  },
+  "by_task": {
+    "initial": {
+      "train": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "val": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      }
+    },
+    "final": {
+      "train": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 16,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        }
+      },
+      "val": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 16,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 21,
+          "stopped_at_eos": 24
+        }
+      }
+    }
+  },
+  "paired_contexts_final_dev": {
+    "color": {
+      "contexts": 12,
+      "both_questions_correct": 12
+    },
+    "name": {
+      "contexts": 12,
+      "both_questions_correct": 9
+    }
+  },
+  "map_questions": {
+    "examples": 12,
+    "high_lr_correct": 2,
+    "low_lr_correct": 9
+  },
+  "general_perplexity": {
+    "initial": 184.2056431922239,
+    "high_lr_final": 1476.8567870301777,
+    "low_lr_final": 272.9791278996385
+  }
+}

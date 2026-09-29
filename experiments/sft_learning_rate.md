@@ -6,6 +6,11 @@ réponses dev exactes et une perplexité générale de 1 476,86, contre
 plus faible améliore le compromis entre apprentissage et conservation
 du comportement général.
 
+**Résultat du 29 septembre 2026 :** [61/64 sur dev et perplexité générale
+272,98](../results/sft-learning-rate-1e-4.md), contre 44/64 et 1 476,86.
+Le protocole ci-dessous a été fixé avant le run ; ce lien de bilan a été
+ajouté après l’audit final.
+
 ## Un seul paramètre d’entraînement modifié
 
 La [configuration](sft_learning_rate_config.json) reprend celle du test de

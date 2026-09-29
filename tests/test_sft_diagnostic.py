@@ -2,6 +2,7 @@ from collections import Counter
 import copy
 import json
 from pathlib import Path
+import re
 from types import SimpleNamespace
 
 import pytest
@@ -95,3 +96,55 @@ def test_preparation_rejects_length_overflow_before_creating_data(tmp_path):
     with pytest.raises(ValueError, match="budget"):
         prepare(ROOT / "experiments/sft_diagnostic_examples.json", tmp_path / "data", tokenizer=Tokenizer())
     assert not (tmp_path / "data").exists()
+
+
+def test_diversity_changes_partners_preserving_dev_and_answer_distributions():
+    original = build_examples()
+    diverse = build_examples((1, 4))
+    assert diverse == json.loads((ROOT / "experiments/sft_diversity_examples.json").read_text())
+    assert diverse["train"][:32] == original["train"]
+    assert diverse["val"] == original["val"]
+    assert len(diverse["train"]) == 64
+    for category in ("copy", "color", "name"):
+        train = [row for row in diverse["train"] if row["category"] == category]
+        val = [row for row in diverse["val"] if row["category"] == category]
+        assert Counter(row["response"] for row in train) == Counter(row["response"] for row in val)
+        assert not {row["context"] for row in train} & {row["context"] for row in val}
+        assert all(solve(row) == row["response"] for row in train + val)
+    partners = {}
+    for row in diverse["train"]:
+        if row["category"] == "name":
+            first, second = re.findall(r"(\w+) has the", row["context"])
+            partners.setdefault(first, set()).add(second)
+    assert len(partners) == 6 and all(len(values) == 2 for values in partners.values())
+    for bad in ((1, 2), (1, 3), (1, 1), (4,)):
+        with pytest.raises(ValueError, match="offsets"):
+            build_examples(bad)
+
+
+def test_diversity_preparation_keeps_dev_bytes_and_training_budget(tmp_path):
+    class Tokenizer:
+        def get_vocab_size(self):
+            return 8
+
+        def token_to_id(self, text):
+            return 0
+
+        def encode(self, text, add_special_tokens=False):
+            return SimpleNamespace(ids=[1, 2, 3] if text.startswith("### Instruction:") else [4])
+
+    original = prepare(ROOT / "experiments/sft_diagnostic_examples.json", tmp_path / "original", tokenizer=Tokenizer())
+    diverse = prepare(ROOT / "experiments/sft_diversity_examples.json", tmp_path / "diverse",
+                      tokenizer=Tokenizer(), train_offsets=(1, 4))
+    assert (tmp_path / "original/val.jsonl").read_bytes() == (tmp_path / "diverse/val.jsonl").read_bytes()
+    rows, _ = load_sft(tmp_path / "diverse", tokenizer=DOLMA_TOKENIZER, vocab_size=8, max_tokens=256)
+    assert len(rows["train"]) == len(rows["val"]) == 64
+    old_config = json.loads((ROOT / "experiments/sft_diagnostic_config.json").read_text())
+    new_config = json.loads((ROOT / "experiments/sft_diversity_config.json").read_text())
+    permitted = {"name", "epochs", "corpus", "train_evaluation_examples", "diagnostic"}
+    assert {k: v for k, v in old_config.items() if k not in permitted} == {k: v for k, v in new_config.items() if k not in permitted}
+    assert old_config["corpus"]["val_examples"] == new_config["corpus"]["val_examples"] == 64
+    assert old_config["epochs"] * 32 == new_config["epochs"] * 64 == 3200
+    assert old_config["batch_size"] == new_config["batch_size"] == 8
+    for key in ("response_tokens", "sequence_tokens"):
+        assert original["files"]["train"][key] * old_config["epochs"] == diverse["files"]["train"][key] * new_config["epochs"]

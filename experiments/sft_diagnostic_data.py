@@ -1,4 +1,4 @@
-"""Build 32 training and 64 novel combinations for a controlled SFT diagnostic."""
+"""Build 32 or 64 training combinations with the same 64-example diagnostic dev."""
 
 import argparse
 from collections import Counter
@@ -19,9 +19,15 @@ COUNTS = {"train": {"copy": 8, "color": 12, "name": 12},
           "val": {"copy": 16, "color": 24, "name": 24}}
 
 
-def build_examples():
+def validate_offsets(train_offsets):
+    if train_offsets not in ((1,), (1, 4)):
+        raise ValueError("supported training offsets are (1,) and (1, 4); dev uses (2, 3)")
+
+
+def build_examples(train_offsets=(1,)):
+    validate_offsets(train_offsets)
     splits = {}
-    for split, offsets in (("train", (1,)), ("val", (2, 3))):
+    for split, offsets in (("train", train_offsets), ("val", (2, 3))):
         rows = []
 
         def add(category, instruction, context, response):
@@ -45,7 +51,7 @@ def build_examples():
                 for obj, answer in (("key", name), ("map", other)):
                     add("name", f"Who has the {obj}? Reply with one name.", context, answer)
         splits[split] = rows
-    validate_examples(splits)
+    validate_examples(splits, train_offsets=train_offsets)
     return splits
 
 
@@ -72,11 +78,14 @@ def solve(row):
     return dict(pairs)[match[1]]
 
 
-def validate_examples(splits):
+def validate_examples(splits, *, train_offsets=(1,)):
+    validate_offsets(train_offsets)
     if set(splits) != set(COUNTS):
         raise ValueError("expected train and val only")
     prompts, ids = set(), set()
     for split, counts in COUNTS.items():
+        if split == "train":
+            counts = {category: n * len(train_offsets) for category, n in counts.items()}
         if Counter(row["category"] for row in splits[split]) != counts:
             raise ValueError("unexpected diagnostic task counts")
         for row in splits[split]:
@@ -90,14 +99,15 @@ def validate_examples(splits):
     for category in COUNTS["train"]:
         train = Counter(row["response"] for row in splits["train"] if row["category"] == category)
         val = Counter(row["response"] for row in splits["val"] if row["category"] == category)
-        if val != {answer: 2 * n for answer, n in train.items()}:
+        if (set(train) != set(val) or any(n * sum(val.values()) != val[answer] * sum(train.values())
+                                         for answer, n in train.items())):
             raise ValueError("answer distributions must match across splits")
 
 
-def prepare(source, output, *, tokenizer, max_tokens=256):
+def prepare(source, output, *, tokenizer, max_tokens=256, train_offsets=(1,)):
     source, output = Path(source), Path(output)
     splits = json.loads(source.read_text(encoding="utf-8"))
-    validate_examples(splits)
+    validate_examples(splits, train_offsets=train_offsets)
     eos = tokenizer.token_to_id("<|endoftext|>")
     encoded = {}
     for split, rows in splits.items():
@@ -115,7 +125,9 @@ def prepare(source, output, *, tokenizer, max_tokens=256):
                 "provenance": {"tokenizer": DOLMA_TOKENIZER, "source_sha256": file_hash(source),
                                "source": "Self-authored deterministic copy/color/name combinations; no external dataset"},
                 "grouping": "Exact full prompts are disjoint; templates and answer vocabulary deliberately shared",
-                "split_policy": "Pair offset 1 for train, offsets 2 and 3 for val; no random split",
+                "split_policy": ("Pair offset 1 for train, offsets 2 and 3 for val; no random split"
+                                 if train_offsets == (1,) else
+                                 "Pair offsets 1 and 4 for train, offsets 2 and 3 for val; no random split"),
                 "purpose": "Memorization and generalization to novel combinations of known values; not an AGI benchmark or reserved holdout",
                 "files": {}}
     write_manifest(output, manifest)
@@ -139,10 +151,14 @@ def prepare(source, output, *, tokenizer, max_tokens=256):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", type=Path, default=Path(__file__).with_name("sft_diagnostic_examples.json"))
+    parser.add_argument("--source", type=Path)
+    parser.add_argument("--diverse", action="store_true", help="train on offsets 1 and 4, keeping dev unchanged")
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
-    manifest = prepare(args.source, args.output_dir, tokenizer=load_tokenizer(DOLMA_TOKENIZER))
+    source = args.source or Path(__file__).with_name(
+        "sft_diversity_examples.json" if args.diverse else "sft_diagnostic_examples.json")
+    manifest = prepare(source, args.output_dir, tokenizer=load_tokenizer(DOLMA_TOKENIZER),
+                       train_offsets=(1, 4) if args.diverse else (1,))
     print(json.dumps(manifest, indent=2))
 
 

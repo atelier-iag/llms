@@ -1,0 +1,20 @@
+{
+  "source_sha256": "5ae19f69369bffe0f24c42398f3c975a36ef0a68a12e9d459df56ed98e4a96ea",
+  "manifest_sha256": "7d486166f561441ca8ac61e12c70e57d8226d792b93d743bc16aa073bb2e74b0",
+  "baseline_manifest_sha256": "0c2e283b52cdace98a04ff3ae7018bfb52ecde0e16f730a32b5fc684621ae136",
+  "shared_dev_sha256": "90ac4f3cc81b922e568f1c33f35025ff765864f6a8f99661dfde9e402f0f80fc",
+  "oracle_checked_examples": 128,
+  "reencoded_examples": 128,
+  "dev_bytes_identical_to_baseline": true,
+  "original_32_train_examples_preserved": true,
+  "original_recipe_reproduced_byte_for_byte": true,
+  "train_and_dev_prompts_and_contexts_disjoint": true,
+  "answer_distributions_match": true,
+  "matched_budget": {
+    "updates": 400,
+    "presentations": 3200,
+    "response_tokens": 7000,
+    "nonpadding_sequence_tokens": 101600
+  },
+  "holdouts_scored": false
+}

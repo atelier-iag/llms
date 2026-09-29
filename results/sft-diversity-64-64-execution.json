@@ -1,0 +1,61 @@
+{
+  "training_git_commit": "624ab1c02c9bf734bfda03c968ad16504d4b66c8",
+  "command": [
+    "/home/random/atelier-iag/llms/.venv/bin/python",
+    "-u",
+    "-m",
+    "reimplementation.train_sft",
+    "--device",
+    "cuda",
+    "--config",
+    "experiments/sft_diversity_config.json",
+    "--init-from",
+    "/home/random/atelier-iag/llms/runs/simple-baseline-2fsdgx0q/model.pt",
+    "--data-dir",
+    "data/sft-diversity-64-64-v1",
+    "--probes",
+    "data/sft-diversity-64-64-v1/train-probes.json",
+    "--general-data-dir",
+    "data/pretraining-50m-v1"
+  ],
+  "launch_directory": "runs/sft-diversity-launch-u20lzybd",
+  "run_directory": "runs/sft-qrk4c22k",
+  "started_at": "2026-09-29T11:01:53.655311+00:00",
+  "finished_at": "2026-09-29T11:05:04.279062+00:00",
+  "returncode": 0,
+  "elapsed_between_utc_timestamps_seconds": 190.623751,
+  "subprocess_monotonic_seconds": 175.443075385,
+  "initial_checkpoint_sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa",
+  "final_checkpoint_sha256": "cc5d5f9060d3c207dcb1a66151242a21a397ce1d27d4d92a5298c1c45548d4e0",
+  "recovery_checkpoint_sha256": "761fbdb99796ed703a689873aef2069a4877229b4d9d4365e2586ab31dd41e16",
+  "sft_manifest_sha256": "7d486166f561441ca8ac61e12c70e57d8226d792b93d743bc16aa073bb2e74b0",
+  "general_manifest_sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+  "metric_roles": {
+    "probes": "TRAIN memorization, 64 examples",
+    "dev_generation": "64 novel combinations, same rules and vocabulary"
+  },
+  "validation": {
+    "tests_command": "python -m pytest tests -q",
+    "tests_passed": 199,
+    "base_general_score_reproduced_exactly": true,
+    "final_weights_identical_to_recovery": true,
+    "identical_generation_prompts_references_and_budgets": true,
+    "code_and_data_identities_verified": true,
+    "source_checkpoint_unchanged": true,
+    "train_probe_ids_match_training_ids_exactly": true,
+    "dev_probe_ids_match_validation_ids_exactly": true,
+    "holdouts_scored": false
+  },
+  "comparison": {
+    "reference_metrics": "results/sft-diagnostic-32-64.json",
+    "reference_metrics_sha256": "c1d9cb7827a36310cea66d8ac2c9fd804d48f8f7a1519390c353493aa7047d24",
+    "same_initial_weights": true,
+    "same_training_and_scoring_code": true,
+    "same_optimizer_schedule_and_precision": true,
+    "same_updates_presentations_and_response_targets": true,
+    "same_dev_bytes_prompts_references_and_generation_budgets": true,
+    "initial_dev_scores_and_generations_identical": true,
+    "same_nonpadding_sequence_token_budget": true,
+    "reference_not_retrained": true
+  }
+}

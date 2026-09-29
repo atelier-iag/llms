@@ -157,6 +157,14 @@ que le pipeline apprend, avec une généralisation partielle ; il dégrade
 fortement le dev général (**184,21 → 997,01**). Le modèle initial reste
 la référence et les holdouts restent réservés.
 
+La [comparaison de diversité à budget égal](results/sft-diversity-64-64.md)
+est terminée le 29 septembre 2026 : 64 exemples distincts parcourus 50 fois,
+contre 32 parcourus 100 fois, avec les mêmes 400 mises à jour et le même dev.
+Le score passe de **46/64 à 44/64** : gains en copie et en prénoms, pertes
+sur les couleurs. Les erreurs d’association persistent et la perplexité
+générale atteint **1 476,86**. Cette variante ne fournit pas de gain global
+sur cet essai ; le résultat négatif est documenté.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

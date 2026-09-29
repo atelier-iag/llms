@@ -1,0 +1,5156 @@
+{
+  "source": "Self-authored diagnostic examples; train means memorization, dev means novel combinations",
+  "initial": {
+    "dev": [
+      {
+        "source_id": "val-copy-01",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: stone\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-02",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-03",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: bread\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-04",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-05",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: music\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "val-copy-06",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The text: 1\n-",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          25,
+          220,
+          16,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-07",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: apple\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The class is a class\n-",
+        "generated_ids": [
+          12,
+          578,
+          538,
+          374,
+          264,
+          538,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-08",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "val-color-09",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is green.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-10",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-11",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is yellow.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-12",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-13",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is black.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-14",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-15",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is white.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-16",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-17",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is red.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-18",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-19",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is blue.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-20",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-name-21",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-22",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-23",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. David has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-24",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-25",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "val-name-26",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-27",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-28",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-29",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-30",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-31",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "val-name-32",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The following example shows the following example",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3187,
+          5039,
+          279,
+          2768,
+          3187
+        ]
+      },
+      {
+        "source_id": "val-copy-33",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: cloud\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-34",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-35",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: chair\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-36",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "val-copy-37",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: paper\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The text is a list of text",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1160,
+          315,
+          1495
+        ]
+      },
+      {
+        "source_id": "val-copy-38",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-copy-39",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: river\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "val-copy-40",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "val-color-41",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is yellow.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-42",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-43",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is black.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-44",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-45",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is white.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-46",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-47",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is red.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-48",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-49",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is blue.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-50",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-51",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is green.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-color-52",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "val-name-53",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. David has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-54",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-55",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-56",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-57",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "val-name-58",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-59",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "val-name-60",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-61",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-62",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "val-name-63",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "val-name-64",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      }
+    ],
+    "probes": [
+      {
+        "source_id": "train-copy-01",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: river\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-02",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-03",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: cloud\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-04",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-05",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: chair\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-06",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-07",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: paper\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-08",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a list of text",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1160,
+          315,
+          1495
+        ]
+      },
+      {
+        "source_id": "train-color-09",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-10",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-11",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-12",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-13",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-14",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-15",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-16",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-17",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-18",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-19",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-20",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-name-21",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-22",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-23",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-24",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-25",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-26",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-27",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-28",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-29",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-30",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-31",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-32",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-copy-33",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: bread\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-34",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-35",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: music\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-36",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "- The text: text, text,",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          25,
+          1495,
+          11,
+          1495,
+          11
+        ]
+      },
+      {
+        "source_id": "train-copy-37",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: apple\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "- The name of the text.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-38",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "- The name of the text\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1495,
+          198,
+          12
+        ]
+      },
+      {
+        "source_id": "train-copy-39",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: stone\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "- The text is a text that is",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1495,
+          430,
+          374
+        ]
+      },
+      {
+        "source_id": "train-copy-40",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "- The text is a list of text",
+        "generated_ids": [
+          12,
+          578,
+          1495,
+          374,
+          264,
+          1160,
+          315,
+          1495
+        ]
+      },
+      {
+        "source_id": "train-color-41",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-42",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-43",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-44",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-45",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-46",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-47",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-48",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-49",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-50",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-51",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-color-52",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "The following is a list of the following",
+        "generated_ids": [
+          791,
+          2768,
+          374,
+          264,
+          1160,
+          315,
+          279,
+          2768
+        ]
+      },
+      {
+        "source_id": "train-name-53",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-54",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-55",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-56",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-57",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-58",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-59",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file.\n-",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          627,
+          12
+        ]
+      },
+      {
+        "source_id": "train-name-60",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-61",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-62",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      },
+      {
+        "source_id": "train-name-63",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "- The following command is the name of",
+        "generated_ids": [
+          12,
+          578,
+          2768,
+          3290,
+          374,
+          279,
+          836,
+          315
+        ]
+      },
+      {
+        "source_id": "train-name-64",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": false,
+        "generated_tokens": 8,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0.0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "- The name of the file is the",
+        "generated_ids": [
+          12,
+          578,
+          836,
+          315,
+          279,
+          1052,
+          374,
+          279
+        ]
+      }
+    ]
+  },
+  "final": {
+    "dev": [
+      {
+        "source_id": "val-copy-01",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: stone\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-02",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-03",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: bread\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-04",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-05",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: music\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-06",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-07",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: apple\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-08",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-09",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is green.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-10",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-11",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is yellow.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-12",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-13",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is black.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-14",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-15",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is white.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-16",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-17",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is red.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-18",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-19",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is blue.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-20",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-21",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-22",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-23",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. David has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-24",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-25",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-26",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-27",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-28",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-29",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-30",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-31",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-32",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-33",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: cloud\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-34",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-35",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: chair\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "music",
+        "generated_ids": [
+          32261,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-36",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-37",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: paper\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-38",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-39",
+        "category": "copy",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: river\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-copy-40",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-41",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is yellow.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-42",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-43",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is black.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-44",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-45",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is white.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-46",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-47",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is red.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-48",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-49",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is blue.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-50",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-51",
+        "category": "color",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is green.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-color-52",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-53",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. David has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-54",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-55",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-56",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-57",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-58",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-59",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-60",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-61",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-62",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-63",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "val-name-64",
+        "category": "name",
+        "exact_match": false,
+        "token_f1": 0.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      }
+    ],
+    "probes": [
+      {
+        "source_id": "train-copy-01",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: river\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-02",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: stone\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-03",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: cloud\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "stone",
+        "generated_ids": [
+          11046,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-04",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: bread\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-05",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: chair\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-06",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: music\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-07",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: paper\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "music",
+        "generated_ids": [
+          32261,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-08",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: apple\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-09",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-10",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-11",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-12",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-13",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-14",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-15",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-16",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-17",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-18",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-19",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-20",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-21",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-22",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-23",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-24",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-25",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-26",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-27",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-28",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-29",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-30",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-31",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-32",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-33",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: apple\nOther word: bread\n\n### Response:\n",
+        "reference": "apple",
+        "prediction": "apple",
+        "generated_ids": [
+          23182,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-34",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: chair\nTarget word: river\n\n### Response:\n",
+        "reference": "river",
+        "prediction": "river",
+        "generated_ids": [
+          5586,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-35",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: stone\nOther word: music\n\n### Response:\n",
+        "reference": "stone",
+        "prediction": "stone",
+        "generated_ids": [
+          11046,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-36",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: paper\nTarget word: cloud\n\n### Response:\n",
+        "reference": "cloud",
+        "prediction": "cloud",
+        "generated_ids": [
+          12641,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-37",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: bread\nOther word: apple\n\n### Response:\n",
+        "reference": "bread",
+        "prediction": "bread",
+        "generated_ids": [
+          48616,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-38",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: river\nTarget word: chair\n\n### Response:\n",
+        "reference": "chair",
+        "prediction": "chair",
+        "generated_ids": [
+          35296,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-39",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nTarget word: music\nOther word: stone\n\n### Response:\n",
+        "reference": "music",
+        "prediction": "music",
+        "generated_ids": [
+          32261,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-copy-40",
+        "category": "copy",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nCopy the target word. Answer with one word.\n\n### Context:\nOther word: cloud\nTarget word: paper\n\n### Response:\n",
+        "reference": "paper",
+        "prediction": "paper",
+        "generated_ids": [
+          19716,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-41",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-42",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is red. The basket is black.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-43",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-44",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is blue. The basket is white.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-45",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-46",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is green. The basket is red.\n\n### Response:\n",
+        "reference": "red",
+        "prediction": "red",
+        "generated_ids": [
+          1171,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-47",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-48",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is yellow. The basket is blue.\n\n### Response:\n",
+        "reference": "blue",
+        "prediction": "blue",
+        "generated_ids": [
+          12481,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-49",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "black",
+        "prediction": "black",
+        "generated_ids": [
+          11708,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-50",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is black. The basket is green.\n\n### Response:\n",
+        "reference": "green",
+        "prediction": "green",
+        "generated_ids": [
+          13553,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-51",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the lantern? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "white",
+        "prediction": "white",
+        "generated_ids": [
+          5902,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-color-52",
+        "category": "color",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWhich color is the basket? Reply with one color.\n\n### Context:\nThe lantern is white. The basket is yellow.\n\n### Response:\n",
+        "reference": "yellow",
+        "prediction": "yellow",
+        "generated_ids": [
+          28969,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-53",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-54",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nAlice has the key. Emma has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-55",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-56",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nBruno has the key. Felix has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-57",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-58",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nClara has the key. Alice has the map.\n\n### Response:\n",
+        "reference": "Alice",
+        "prediction": "Alice",
+        "generated_ids": [
+          62786,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-59",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-60",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nDavid has the key. Bruno has the map.\n\n### Response:\n",
+        "reference": "Bruno",
+        "prediction": "Bruno",
+        "generated_ids": [
+          95330,
+          78,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-61",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Emma",
+        "prediction": "Emma",
+        "generated_ids": [
+          90174,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-62",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nEmma has the key. Clara has the map.\n\n### Response:\n",
+        "reference": "Clara",
+        "prediction": "Clara",
+        "generated_ids": [
+          5176,
+          5169,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-63",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 3,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the key? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "Felix",
+        "prediction": "Felix",
+        "generated_ids": [
+          37,
+          68818,
+          100257
+        ]
+      },
+      {
+        "source_id": "train-name-64",
+        "category": "name",
+        "exact_match": true,
+        "token_f1": 1.0,
+        "stopped_at_eos": true,
+        "generated_tokens": 2,
+        "generation_budget": 8,
+        "repeated_4gram_fraction": 0,
+        "prompt": "### Instruction:\nWho has the map? Reply with one name.\n\n### Context:\nFelix has the key. David has the map.\n\n### Response:\n",
+        "reference": "David",
+        "prediction": "David",
+        "generated_ids": [
+          23083,
+          100257
+        ]
+      }
+    ]
+  }
+}

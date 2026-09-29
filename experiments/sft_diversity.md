@@ -6,6 +6,10 @@ la carte, le modèle réutilise un partenaire vu dans le train malgré un
 contexte nouveau. L’hypothèse testée est qu’une **deuxième association par
 valeur dans le train** réduit ce raccourci.
 
+**Essai terminé le 29 septembre 2026** : [44/64 réponses dev correctes,
+contre 46/64 pour la référence](../results/sft-diversity-64-64.md), avec
+persistance des erreurs d’association et dégradation générale accrue.
+
 Ce protocole est fixé avant l’exécution de la variante. Le dev est déjà
 connu et a servi à formuler l’hypothèse ; ce n’est pas un test aveugle ni un
 holdout. Aucun holdout réservé du laboratoire n’est évalué.

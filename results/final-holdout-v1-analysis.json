@@ -1,0 +1,149 @@
+{
+  "general_dev_vs_holdout": {
+    "general_94m_50m": {
+      "dev": {
+        "loss": 5.216052759574641,
+        "perplexity": 184.2056431922239,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 4.949208676516473,
+        "perplexity": 141.06329304695967,
+        "scored_tokens": 999999
+      }
+    },
+    "general_94m_25m": {
+      "dev": {
+        "loss": 5.683896289936291,
+        "perplexity": 294.0930723726746,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 5.4215465655194395,
+        "perplexity": 226.2287296399442,
+        "scored_tokens": 999999
+      }
+    },
+    "general_59m_50m": {
+      "dev": {
+        "loss": 5.352226365990271,
+        "perplexity": 211.07771136754516,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 5.076433630157442,
+        "perplexity": 160.20169741180646,
+        "scored_tokens": 999999
+      }
+    },
+    "python_94m": {
+      "dev": {
+        "loss": 5.592983972520124,
+        "perplexity": 268.5357286033142,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 5.715436687676182,
+        "perplexity": 303.51671638344834,
+        "scored_tokens": 999999
+      }
+    },
+    "dolly_94m": {
+      "dev": {
+        "loss": 5.716540929684278,
+        "perplexity": 303.85205740658586,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 5.4225923467347075,
+        "perplexity": 226.46543914736046,
+        "scored_tokens": 999999
+      }
+    },
+    "toy_sft_3e4": {
+      "dev": {
+        "loss": 7.2976713157653785,
+        "perplexity": 1476.8567870301777,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 6.928322465010793,
+        "perplexity": 1020.7801481036455,
+        "scored_tokens": 999999
+      }
+    },
+    "toy_sft_1e4": {
+      "dev": {
+        "loss": 5.609395337682081,
+        "perplexity": 272.9791278996385,
+        "scored_tokens": 999999
+      },
+      "holdout": {
+        "loss": 5.3064125693925535,
+        "perplexity": 201.62561151890262,
+        "scored_tokens": 999999
+      }
+    }
+  },
+  "data_scaling_25m_to_50m": {
+    "before": 226.2287296399442,
+    "after": 141.06329304695967,
+    "ratio": 0.6235427890678159,
+    "percent_change": -37.64572109321841
+  },
+  "model_scaling_59m_to_94m": {
+    "before": 160.20169741180646,
+    "after": 141.06329304695967,
+    "ratio": 0.8805355706334961,
+    "percent_change": -11.946442936650392
+  },
+  "python_adaptation": {
+    "python": {
+      "before": 950.8884905176491,
+      "after": 64.79862679881441,
+      "ratio": 0.06814534768797026,
+      "percent_change": -93.18546523120297
+    },
+    "general": {
+      "before": 141.06329304695967,
+      "after": 303.51671638344834,
+      "ratio": 2.151634984746941,
+      "percent_change": 115.1634984746941
+    }
+  },
+  "dolly_adaptation": {
+    "response": {
+      "before": 431.1131646258579,
+      "after": 171.82795023475245,
+      "ratio": 0.39856808915560155,
+      "percent_change": -60.14319108443984
+    },
+    "general": {
+      "before": 141.06329304695967,
+      "after": 226.46543914736046,
+      "ratio": 1.6054172156038538,
+      "percent_change": 60.541721560385376
+    }
+  },
+  "sft_rate_3e4_to_1e4_general": {
+    "before": 1020.7801481036455,
+    "after": 201.62561151890262,
+    "ratio": 0.19752109393337305,
+    "percent_change": -80.2478906066627
+  },
+  "general_reference_frozen_before_holdout": "general_94m_50m",
+  "publication_audit": {
+    "all_7_dev_controls_reproduced_exactly": true,
+    "all_11_model_dataset_pairs_complete": true,
+    "all_target_counts_verified": true,
+    "all_48_private_generations_cross_checked": true,
+    "weights_code_data_unchanged": true,
+    "full_test_suite": {
+      "command": "python -m pytest tests -q",
+      "passed": 225,
+      "warnings": 20,
+      "seconds": 34.61
+    },
+    "external_text_and_private_generations_published": false
+  }
+}

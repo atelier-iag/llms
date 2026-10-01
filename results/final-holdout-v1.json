@@ -1,0 +1,670 @@
+{
+  "dev_controls": {
+    "general_94m_50m": {
+      "loss": 5.252075612545013,
+      "perplexity": 190.96222097595276,
+      "scored_tokens": 32768
+    },
+    "general_94m_25m": {
+      "loss": 5.7170751094818115,
+      "perplexity": 304.0144123966086,
+      "scored_tokens": 32768
+    },
+    "general_59m_50m": {
+      "loss": 5.389564618468285,
+      "perplexity": 219.1079692209567,
+      "scored_tokens": 32768
+    },
+    "python_94m": {
+      "loss": 5.706454962491989,
+      "perplexity": 300.80281863443025,
+      "scored_tokens": 32768
+    },
+    "dolly_94m": {
+      "loss": 5.76897856593132,
+      "perplexity": 320.21049164294,
+      "scored_tokens": 32768
+    },
+    "toy_sft_3e4": {
+      "loss": 7.4303726851940155,
+      "perplexity": 1686.4359659782533,
+      "scored_tokens": 32768
+    },
+    "toy_sft_1e4": {
+      "loss": 5.674996197223663,
+      "perplexity": 291.48723008247134,
+      "scored_tokens": 32768
+    }
+  },
+  "models": {
+    "general_94m_50m": {
+      "general": {
+        "loss": 4.949208676516473,
+        "perplexity": 141.06329304695967,
+        "scored_tokens": 999999
+      },
+      "python": {
+        "loss": 6.857396800694304,
+        "perplexity": 950.8884905176491,
+        "scored_tokens": 249999
+      },
+      "dolly": {
+        "response": {
+          "loss": 6.0663706185771575,
+          "perplexity": 431.1131646258579,
+          "scored_tokens": 7699,
+          "teacher_forced_token_accuracy": 0.24042083387452917
+        },
+        "generation": {
+          "examples": 24,
+          "records": [
+            {
+              "source_id": 5763,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.1,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.47435897435897434
+            },
+            {
+              "source_id": 472,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.06153846153846154,
+              "stopped_at_eos": false,
+              "generated_tokens": 55,
+              "generation_budget": 55,
+              "repeated_4gram_fraction": 0.5
+            },
+            {
+              "source_id": 3505,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.07547169811320754,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.8205128205128205
+            },
+            {
+              "source_id": 11309,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.18518518518518517,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5641025641025641
+            },
+            {
+              "source_id": 1670,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.9358974358974359
+            },
+            {
+              "source_id": 4200,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.03571428571428571,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.42307692307692313
+            },
+            {
+              "source_id": 5205,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.04878048780487805,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7948717948717949
+            },
+            {
+              "source_id": 2774,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.06382978723404255,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.782051282051282
+            },
+            {
+              "source_id": 7991,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7564102564102564
+            },
+            {
+              "source_id": 7888,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 41,
+              "generation_budget": 41,
+              "repeated_4gram_fraction": 0.21052631578947367
+            },
+            {
+              "source_id": 13051,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.10256410256410256,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.6794871794871795
+            },
+            {
+              "source_id": 11014,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.19230769230769232,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.6025641025641026
+            },
+            {
+              "source_id": 12688,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.9230769230769231
+            },
+            {
+              "source_id": 12508,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.09302325581395349,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.641025641025641
+            },
+            {
+              "source_id": 7106,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.07476635514018691,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5897435897435898
+            },
+            {
+              "source_id": 11838,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5256410256410257
+            },
+            {
+              "source_id": 9806,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7692307692307692
+            },
+            {
+              "source_id": 9720,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.1643835616438356,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7948717948717949
+            },
+            {
+              "source_id": 3076,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7307692307692308
+            },
+            {
+              "source_id": 9524,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.15555555555555556,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5897435897435898
+            },
+            {
+              "source_id": 7857,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.03305785123966942,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5769230769230769
+            },
+            {
+              "source_id": 11616,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.06741573033707865,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.782051282051282
+            },
+            {
+              "source_id": 4025,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 34,
+              "generation_budget": 34,
+              "repeated_4gram_fraction": 0.4838709677419355
+            },
+            {
+              "source_id": 4404,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.15625,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.7051282051282051
+            }
+          ],
+          "method": "greedy",
+          "exact_matches": 0,
+          "exact_match_rate": 0.0,
+          "mean_token_f1": 0.06707683375800562,
+          "eos_rate": 0.0,
+          "mean_repeated_4gram_fraction": 0.6523306560445779
+        },
+        "generation_by_category": {
+          "classification": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.022176308539944904,
+            "eos_rate": 0.0
+          },
+          "closed_qa": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.07034588250793583,
+            "eos_rate": 0.0
+          },
+          "information_extraction": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.050263773937062516,
+            "eos_rate": 0.0
+          },
+          "summarization": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.12552137004707928,
+            "eos_rate": 0.0
+          }
+        }
+      }
+    },
+    "general_94m_25m": {
+      "general": {
+        "loss": 5.4215465655194395,
+        "perplexity": 226.2287296399442,
+        "scored_tokens": 999999
+      }
+    },
+    "general_59m_50m": {
+      "general": {
+        "loss": 5.076433630157442,
+        "perplexity": 160.20169741180646,
+        "scored_tokens": 999999
+      }
+    },
+    "python_94m": {
+      "general": {
+        "loss": 5.715436687676182,
+        "perplexity": 303.51671638344834,
+        "scored_tokens": 999999
+      },
+      "python": {
+        "loss": 4.171284411757368,
+        "perplexity": 64.79862679881441,
+        "scored_tokens": 249999
+      }
+    },
+    "dolly_94m": {
+      "general": {
+        "loss": 5.4225923467347075,
+        "perplexity": 226.46543914736046,
+        "scored_tokens": 999999
+      },
+      "dolly": {
+        "response": {
+          "loss": 5.1464936868573705,
+          "perplexity": 171.82795023475245,
+          "scored_tokens": 7699,
+          "teacher_forced_token_accuracy": 0.3422522405507209
+        },
+        "generation": {
+          "examples": 24,
+          "records": [
+            {
+              "source_id": 5763,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.07142857142857142,
+              "stopped_at_eos": true,
+              "generated_tokens": 16,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 472,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.13953488372093023,
+              "stopped_at_eos": true,
+              "generated_tokens": 25,
+              "generation_budget": 55,
+              "repeated_4gram_fraction": 0.19047619047619047
+            },
+            {
+              "source_id": 3505,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.21052631578947367,
+              "stopped_at_eos": true,
+              "generated_tokens": 10,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 11309,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.17142857142857143,
+              "stopped_at_eos": true,
+              "generated_tokens": 12,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 1670,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.12903225806451613,
+              "stopped_at_eos": true,
+              "generated_tokens": 7,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 4200,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.125,
+              "stopped_at_eos": true,
+              "generated_tokens": 14,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 5205,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.8333333333333334
+            },
+            {
+              "source_id": 2774,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.3076923076923077,
+              "stopped_at_eos": true,
+              "generated_tokens": 13,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 7991,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": true,
+              "generated_tokens": 8,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.5
+            },
+            {
+              "source_id": 7888,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": true,
+              "generated_tokens": 8,
+              "generation_budget": 41,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 13051,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.05128205128205128,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.8717948717948718
+            },
+            {
+              "source_id": 11014,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.14634146341463414,
+              "stopped_at_eos": true,
+              "generated_tokens": 8,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 12688,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.6666666666666666,
+              "stopped_at_eos": true,
+              "generated_tokens": 11,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 12508,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": true,
+              "generated_tokens": 3,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0
+            },
+            {
+              "source_id": 7106,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0975609756097561,
+              "stopped_at_eos": true,
+              "generated_tokens": 16,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 11838,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.8205128205128205
+            },
+            {
+              "source_id": 9806,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.46153846153846156,
+              "stopped_at_eos": true,
+              "generated_tokens": 13,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 9720,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.11764705882352941,
+              "stopped_at_eos": true,
+              "generated_tokens": 17,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 3076,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": true,
+              "generated_tokens": 10,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 9524,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.0425531914893617,
+              "stopped_at_eos": true,
+              "generated_tokens": 12,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 7857,
+              "category": "classification",
+              "exact_match": false,
+              "token_f1": 0.031746031746031744,
+              "stopped_at_eos": false,
+              "generated_tokens": 81,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.9358974358974359
+            },
+            {
+              "source_id": 11616,
+              "category": "closed_qa",
+              "exact_match": false,
+              "token_f1": 0.23529411764705882,
+              "stopped_at_eos": true,
+              "generated_tokens": 25,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            },
+            {
+              "source_id": 4025,
+              "category": "information_extraction",
+              "exact_match": false,
+              "token_f1": 0.0,
+              "stopped_at_eos": false,
+              "generated_tokens": 34,
+              "generation_budget": 34,
+              "repeated_4gram_fraction": 0.4838709677419355
+            },
+            {
+              "source_id": 4404,
+              "category": "summarization",
+              "exact_match": false,
+              "token_f1": 0.14634146341463414,
+              "stopped_at_eos": true,
+              "generated_tokens": 13,
+              "generation_budget": 81,
+              "repeated_4gram_fraction": 0.0
+            }
+          ],
+          "method": "greedy",
+          "exact_matches": 0,
+          "exact_match_rate": 0.0,
+          "mean_token_f1": 0.1313172662398565,
+          "eos_rate": 0.7916666666666666,
+          "mean_repeated_4gram_fraction": 0.19316190082319115
+        },
+        "generation_by_category": {
+          "classification": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.22673533157404124,
+            "eos_rate": 0.8333333333333334
+          },
+          "closed_qa": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.10291267669858643,
+            "eos_rate": 1.0
+          },
+          "information_extraction": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.05989489044688018,
+            "eos_rate": 0.5
+          },
+          "summarization": {
+            "examples": 6,
+            "exact_matches": 0,
+            "mean_token_f1": 0.13572616623991818,
+            "eos_rate": 0.8333333333333334
+          }
+        }
+      }
+    },
+    "toy_sft_3e4": {
+      "general": {
+        "loss": 6.928322465010793,
+        "perplexity": 1020.7801481036455,
+        "scored_tokens": 999999
+      }
+    },
+    "toy_sft_1e4": {
+      "general": {
+        "loss": 5.3064125693925535,
+        "perplexity": 201.62561151890262,
+        "scored_tokens": 999999
+      }
+    }
+  }
+}

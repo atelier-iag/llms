@@ -13,6 +13,23 @@ Le [contrat commun des laboratoires](https://github.com/atelier-iag/.github/blob
 
 S’approprier le fonctionnement pratique d’un petit modèle de fondation de type **OLMo-like**, de l’entraînement initial jusqu’au post-entraînement.
 
+## État du parcours — clôturé le 1er octobre 2026
+
+**Les sept jalons techniques et expérimentaux sont réalisés.** Le
+[bilan final](results/bilan-final.md) rassemble les acquis, preuves et limites.
+L’[évaluation finale](results/final-holdout-v1.md) couvre sept checkpoints
+figés sur les jeux réservés général, Python et Dolly, sans nouvel entraînement.
+Les **225 tests passent** ; les checkpoints et les données restent intacts.
+
+Le modèle généraliste 94 M / 50 M tokens reste la référence. Le laboratoire
+est terminé dans son périmètre pédagogique ; ses modèles restent limités
+en génération et en suivi de consignes. Les approfondissements SFT et les
+optimisations supplémentaires sont facultatifs et ne sont pas lancés.
+
+Les descriptions ci-dessous retracent les expériences : les holdouts étaient
+réservés pendant leur développement et ont été évalués lors de la clôture.
+Ils ne constituent plus des jeux inconnus pour une future optimisation.
+
 ## Jalons
 
 Les sept jalons (*milestones*) structurent le parcours « Modèles de fondation / scaling ».
@@ -22,6 +39,9 @@ Chaque jalon est un objectif important, atteint grâce aux réalisations ci-dess
 
 - entraîner un très petit modèle ;
 - comprendre le pipeline `données → tokens → batches → modèle → loss → optimisation`.
+
+**Réalisé :** [100 étapes d’entraînement OLMo sur GPU, validation et
+checkpoints](results/single-gpu-launch.md).
 
 ### Jalon 2 — Réimplémenter le cœur du modèle
 
@@ -179,8 +199,8 @@ Le [diagnostic de transfert](results/sft-transfer-v1.md), réalisé le
 **59/64** avec les questions reformulées, **6/64** après inversion des
 phrases, **0/64** avec de nouveaux mots, couleurs et prénoms. Dans ce
 dernier cas, les 64 sorties restent dans le vocabulaire des réponses
-apprises. La prochaine amélioration devra diversifier les valeurs et
-équilibrer leurs positions dans les contextes. Les deux checkpoints et
+apprises. Diversifier les valeurs et équilibrer leurs positions constituent
+des approfondissements possibles, hors du périmètre de clôture. Les deux checkpoints et
 leurs sorties de référence ont été vérifiés, avec 37 tests ciblés réussis.
 
 ### Jalon 7 — Faire des ablations
@@ -189,6 +209,15 @@ leurs sorties de référence ont été vérifiés, avec 37 tests ciblés réussi
 - mesurer leur effet ;
 - tester sur le holdout ;
 - documenter les échecs et différences observées.
+
+**Réalisé.** Les comparaisons contrôlées de mécanismes, de diversité et de
+taux SFT documentent leurs gains, compromis et échecs. Les
+[mesures finales sur holdout](results/final-holdout-v1.md) complètent le parcours :
+perplexité générale **141,06** pour la référence 94 M / 50 M tokens,
+contre **226,23** à 25 M tokens et **160,20** pour 59 M paramètres.
+L’adaptation Python et le SFT améliorent leur objectif spécialisé avec une
+dégradation générale ; Dolly reste à **0/24 réponses exactes** sur
+l’échantillon de génération holdout. Aucune optimisation n’a suivi ces scores.
 
 ## Critère de maîtrise
 

@@ -8,6 +8,11 @@ Les acquis et limites du SFT sont déjà documentés. La construction d’un
 autre jeu SFT et les optimisations supplémentaires sortent du périmètre
 de cette clôture.
 
+**Évaluation terminée le 1er octobre 2026 :** [résultats des holdouts](../results/final-holdout-v1.md)
+et [bilan final du laboratoire](../results/bilan-final.md). Ces liens ont été
+ajoutés après l’audit ; le protocole était figé au commit `09589cc` avant
+l’ouverture des jeux réservés.
+
 ## Modèles retenus avant d’ouvrir les holdouts
 
 La [configuration gelée](final_holdout_config.json) épingle les sept fichiers

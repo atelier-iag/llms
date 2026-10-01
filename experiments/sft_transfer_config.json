@@ -1,0 +1,27 @@
+{
+  "name": "sft-transfer-v1",
+  "source": "experiments/sft_diversity_examples.json",
+  "examples": "experiments/sft_transfer_examples.json",
+  "manifest": "experiments/sft_transfer_manifest.json",
+  "protocol": "experiments/sft_transfer.md",
+  "historical_generations": "results/sft-learning-rate-1e-4-generations.json",
+  "historical_execution": "results/sft-learning-rate-1e-4-execution.json",
+  "conditions": [
+    "control",
+    "rephrase",
+    "reorder",
+    "new_values"
+  ],
+  "context_length": 256,
+  "max_new_tokens": 8,
+  "models": {
+    "initial": {
+      "path": "runs/simple-baseline-2fsdgx0q/model.pt",
+      "sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa"
+    },
+    "sft": {
+      "path": "runs/sft-duplqurm/model.pt",
+      "sha256": "44cbf4dbd40c74bd6896036e01f8efa6eff30df2de53c22ffd82ba2845e4e33c"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "kind": "sft-transfer-diagnostic-v1",
+  "source": "Self-authored paired transformations of the existing dev; no external data",
+  "source_sha256": "5ae19f69369bffe0f24c42398f3c975a36ef0a68a12e9d459df56ed98e4a96ea",
+  "examples_sha256": "8dfbb111c046bc054d00e163454996f701b97d9aaa762e355370fb61993856d4",
+  "conditions": [
+    "control",
+    "rephrase",
+    "reorder",
+    "new_values"
+  ],
+  "examples_per_condition": 64,
+  "categories_per_condition": {
+    "copy": 16,
+    "color": 24,
+    "name": 24
+  },
+  "context_length": 256,
+  "max_new_tokens": 8,
+  "tokenizer": {
+    "repo_id": "allenai/dolma2-tokenizer",
+    "revision": "5292e5d6c0f40b67cc765fe41bec991cf4345b5c"
+  },
+  "value_maps": {
+    "copy": {
+      "apple": "table",
+      "river": "window",
+      "stone": "garden",
+      "cloud": "forest",
+      "bread": "water",
+      "chair": "train",
+      "music": "flower",
+      "paper": "planet"
+    },
+    "color": {
+      "red": "purple",
+      "blue": "orange",
+      "green": "pink",
+      "yellow": "brown",
+      "black": "gray",
+      "white": "cyan"
+    },
+    "name": {
+      "Alice": "Grace",
+      "Bruno": "Henry",
+      "Clara": "Irene",
+      "David": "Jack",
+      "Emma": "Karen",
+      "Felix": "Louis"
+    }
+  },
+  "tokenization": {
+    "control": {
+      "copy": {
+        "examples": 16,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 29,
+        "answer_tokens_without_eos": {
+          "1": 16
+        }
+      },
+      "color": {
+        "examples": 24,
+        "prompt_tokens_min": 30,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 24
+        }
+      },
+      "name": {
+        "examples": 24,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 12,
+          "2": 12
+        }
+      }
+    },
+    "rephrase": {
+      "copy": {
+        "examples": 16,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 29,
+        "answer_tokens_without_eos": {
+          "1": 16
+        }
+      },
+      "color": {
+        "examples": 24,
+        "prompt_tokens_min": 32,
+        "prompt_tokens_max": 32,
+        "answer_tokens_without_eos": {
+          "1": 24
+        }
+      },
+      "name": {
+        "examples": 24,
+        "prompt_tokens_min": 30,
+        "prompt_tokens_max": 31,
+        "answer_tokens_without_eos": {
+          "1": 12,
+          "2": 12
+        }
+      }
+    },
+    "reorder": {
+      "copy": {
+        "examples": 16,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 29,
+        "answer_tokens_without_eos": {
+          "1": 16
+        }
+      },
+      "color": {
+        "examples": 24,
+        "prompt_tokens_min": 30,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 24
+        }
+      },
+      "name": {
+        "examples": 24,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 12,
+          "2": 12
+        }
+      }
+    },
+    "new_values": {
+      "copy": {
+        "examples": 16,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 29,
+        "answer_tokens_without_eos": {
+          "1": 14,
+          "2": 2
+        }
+      },
+      "color": {
+        "examples": 24,
+        "prompt_tokens_min": 30,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 24
+        }
+      },
+      "name": {
+        "examples": 24,
+        "prompt_tokens_min": 29,
+        "prompt_tokens_max": 30,
+        "answer_tokens_without_eos": {
+          "1": 20,
+          "2": 4
+        }
+      }
+    }
+  },
+  "checks": {
+    "text_oracle_matches_all_labels": true,
+    "no_training_prompt_overlap": true,
+    "one_factor_changed_per_variant": true,
+    "new_values_absent_from_sft_answers": true,
+    "reserved_holdouts_read": false
+  }
+}

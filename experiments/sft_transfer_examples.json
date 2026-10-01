@@ -1,0 +1,2314 @@
+{
+  "control": [
+    {
+      "id": "control-val-copy-01",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: apple\nOther word: stone",
+      "response": "apple",
+      "base_id": "val-copy-01",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-02",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: cloud\nTarget word: river",
+      "response": "river",
+      "base_id": "val-copy-02",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-03",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: stone\nOther word: bread",
+      "response": "stone",
+      "base_id": "val-copy-03",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-04",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: chair\nTarget word: cloud",
+      "response": "cloud",
+      "base_id": "val-copy-04",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-05",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: bread\nOther word: music",
+      "response": "bread",
+      "base_id": "val-copy-05",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-06",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: paper\nTarget word: chair",
+      "response": "chair",
+      "base_id": "val-copy-06",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-07",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: music\nOther word: apple",
+      "response": "music",
+      "base_id": "val-copy-07",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-08",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: river\nTarget word: paper",
+      "response": "paper",
+      "base_id": "val-copy-08",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-09",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is red. The basket is green.",
+      "response": "red",
+      "base_id": "val-color-09",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-10",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is red. The basket is green.",
+      "response": "green",
+      "base_id": "val-color-10",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-11",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is blue. The basket is yellow.",
+      "response": "blue",
+      "base_id": "val-color-11",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-12",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is blue. The basket is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-12",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-13",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is green. The basket is black.",
+      "response": "green",
+      "base_id": "val-color-13",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-14",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is green. The basket is black.",
+      "response": "black",
+      "base_id": "val-color-14",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-15",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is yellow. The basket is white.",
+      "response": "yellow",
+      "base_id": "val-color-15",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-16",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is yellow. The basket is white.",
+      "response": "white",
+      "base_id": "val-color-16",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-17",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is black. The basket is red.",
+      "response": "black",
+      "base_id": "val-color-17",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-18",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is black. The basket is red.",
+      "response": "red",
+      "base_id": "val-color-18",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-19",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is white. The basket is blue.",
+      "response": "white",
+      "base_id": "val-color-19",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-20",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is white. The basket is blue.",
+      "response": "blue",
+      "base_id": "val-color-20",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-21",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Alice has the key. Clara has the map.",
+      "response": "Alice",
+      "base_id": "val-name-21",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-22",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Alice has the key. Clara has the map.",
+      "response": "Clara",
+      "base_id": "val-name-22",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-23",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Bruno has the key. David has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-23",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-24",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Bruno has the key. David has the map.",
+      "response": "David",
+      "base_id": "val-name-24",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-25",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Clara has the key. Emma has the map.",
+      "response": "Clara",
+      "base_id": "val-name-25",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-26",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Clara has the key. Emma has the map.",
+      "response": "Emma",
+      "base_id": "val-name-26",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-27",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "David has the key. Felix has the map.",
+      "response": "David",
+      "base_id": "val-name-27",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-28",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "David has the key. Felix has the map.",
+      "response": "Felix",
+      "base_id": "val-name-28",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-29",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Emma has the key. Alice has the map.",
+      "response": "Emma",
+      "base_id": "val-name-29",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-30",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Emma has the key. Alice has the map.",
+      "response": "Alice",
+      "base_id": "val-name-30",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-31",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Felix has the key. Bruno has the map.",
+      "response": "Felix",
+      "base_id": "val-name-31",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-32",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Felix has the key. Bruno has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-32",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-33",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: apple\nOther word: cloud",
+      "response": "apple",
+      "base_id": "val-copy-33",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-34",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: bread\nTarget word: river",
+      "response": "river",
+      "base_id": "val-copy-34",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-35",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: stone\nOther word: chair",
+      "response": "stone",
+      "base_id": "val-copy-35",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-36",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: music\nTarget word: cloud",
+      "response": "cloud",
+      "base_id": "val-copy-36",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-37",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: bread\nOther word: paper",
+      "response": "bread",
+      "base_id": "val-copy-37",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-38",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: apple\nTarget word: chair",
+      "response": "chair",
+      "base_id": "val-copy-38",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-39",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: music\nOther word: river",
+      "response": "music",
+      "base_id": "val-copy-39",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-copy-40",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: stone\nTarget word: paper",
+      "response": "paper",
+      "base_id": "val-copy-40",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-41",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is red. The basket is yellow.",
+      "response": "red",
+      "base_id": "val-color-41",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-42",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is red. The basket is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-42",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-43",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is blue. The basket is black.",
+      "response": "blue",
+      "base_id": "val-color-43",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-44",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is blue. The basket is black.",
+      "response": "black",
+      "base_id": "val-color-44",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-45",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is green. The basket is white.",
+      "response": "green",
+      "base_id": "val-color-45",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-46",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is green. The basket is white.",
+      "response": "white",
+      "base_id": "val-color-46",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-47",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is yellow. The basket is red.",
+      "response": "yellow",
+      "base_id": "val-color-47",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-48",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is yellow. The basket is red.",
+      "response": "red",
+      "base_id": "val-color-48",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-49",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is black. The basket is blue.",
+      "response": "black",
+      "base_id": "val-color-49",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-50",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is black. The basket is blue.",
+      "response": "blue",
+      "base_id": "val-color-50",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-51",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is white. The basket is green.",
+      "response": "white",
+      "base_id": "val-color-51",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-color-52",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is white. The basket is green.",
+      "response": "green",
+      "base_id": "val-color-52",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-53",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Alice has the key. David has the map.",
+      "response": "Alice",
+      "base_id": "val-name-53",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-54",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Alice has the key. David has the map.",
+      "response": "David",
+      "base_id": "val-name-54",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-55",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Bruno has the key. Emma has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-55",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-56",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Bruno has the key. Emma has the map.",
+      "response": "Emma",
+      "base_id": "val-name-56",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-57",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Clara has the key. Felix has the map.",
+      "response": "Clara",
+      "base_id": "val-name-57",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-58",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Clara has the key. Felix has the map.",
+      "response": "Felix",
+      "base_id": "val-name-58",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-59",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "David has the key. Alice has the map.",
+      "response": "David",
+      "base_id": "val-name-59",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-60",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "David has the key. Alice has the map.",
+      "response": "Alice",
+      "base_id": "val-name-60",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-61",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Emma has the key. Bruno has the map.",
+      "response": "Emma",
+      "base_id": "val-name-61",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-62",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Emma has the key. Bruno has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-62",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-63",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Felix has the key. Clara has the map.",
+      "response": "Felix",
+      "base_id": "val-name-63",
+      "condition": "control"
+    },
+    {
+      "id": "control-val-name-64",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Felix has the key. Clara has the map.",
+      "response": "Clara",
+      "base_id": "val-name-64",
+      "condition": "control"
+    }
+  ],
+  "rephrase": [
+    {
+      "id": "rephrase-val-copy-01",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: apple\nOther word: stone",
+      "response": "apple",
+      "base_id": "val-copy-01",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-02",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: cloud\nTarget word: river",
+      "response": "river",
+      "base_id": "val-copy-02",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-03",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: stone\nOther word: bread",
+      "response": "stone",
+      "base_id": "val-copy-03",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-04",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: chair\nTarget word: cloud",
+      "response": "cloud",
+      "base_id": "val-copy-04",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-05",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: bread\nOther word: music",
+      "response": "bread",
+      "base_id": "val-copy-05",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-06",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: paper\nTarget word: chair",
+      "response": "chair",
+      "base_id": "val-copy-06",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-07",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: music\nOther word: apple",
+      "response": "music",
+      "base_id": "val-copy-07",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-08",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: river\nTarget word: paper",
+      "response": "paper",
+      "base_id": "val-copy-08",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-09",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is red. The basket is green.",
+      "response": "red",
+      "base_id": "val-color-09",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-10",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is red. The basket is green.",
+      "response": "green",
+      "base_id": "val-color-10",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-11",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is blue. The basket is yellow.",
+      "response": "blue",
+      "base_id": "val-color-11",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-12",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is blue. The basket is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-12",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-13",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is green. The basket is black.",
+      "response": "green",
+      "base_id": "val-color-13",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-14",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is green. The basket is black.",
+      "response": "black",
+      "base_id": "val-color-14",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-15",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is yellow. The basket is white.",
+      "response": "yellow",
+      "base_id": "val-color-15",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-16",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is yellow. The basket is white.",
+      "response": "white",
+      "base_id": "val-color-16",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-17",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is black. The basket is red.",
+      "response": "black",
+      "base_id": "val-color-17",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-18",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is black. The basket is red.",
+      "response": "red",
+      "base_id": "val-color-18",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-19",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is white. The basket is blue.",
+      "response": "white",
+      "base_id": "val-color-19",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-20",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is white. The basket is blue.",
+      "response": "blue",
+      "base_id": "val-color-20",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-21",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Alice has the key. Clara has the map.",
+      "response": "Alice",
+      "base_id": "val-name-21",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-22",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Alice has the key. Clara has the map.",
+      "response": "Clara",
+      "base_id": "val-name-22",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-23",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Bruno has the key. David has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-23",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-24",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Bruno has the key. David has the map.",
+      "response": "David",
+      "base_id": "val-name-24",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-25",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Clara has the key. Emma has the map.",
+      "response": "Clara",
+      "base_id": "val-name-25",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-26",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Clara has the key. Emma has the map.",
+      "response": "Emma",
+      "base_id": "val-name-26",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-27",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "David has the key. Felix has the map.",
+      "response": "David",
+      "base_id": "val-name-27",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-28",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "David has the key. Felix has the map.",
+      "response": "Felix",
+      "base_id": "val-name-28",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-29",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Emma has the key. Alice has the map.",
+      "response": "Emma",
+      "base_id": "val-name-29",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-30",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Emma has the key. Alice has the map.",
+      "response": "Alice",
+      "base_id": "val-name-30",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-31",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Felix has the key. Bruno has the map.",
+      "response": "Felix",
+      "base_id": "val-name-31",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-32",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Felix has the key. Bruno has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-32",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-33",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: apple\nOther word: cloud",
+      "response": "apple",
+      "base_id": "val-copy-33",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-34",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: bread\nTarget word: river",
+      "response": "river",
+      "base_id": "val-copy-34",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-35",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: stone\nOther word: chair",
+      "response": "stone",
+      "base_id": "val-copy-35",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-36",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: music\nTarget word: cloud",
+      "response": "cloud",
+      "base_id": "val-copy-36",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-37",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: bread\nOther word: paper",
+      "response": "bread",
+      "base_id": "val-copy-37",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-38",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: apple\nTarget word: chair",
+      "response": "chair",
+      "base_id": "val-copy-38",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-39",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Target word: music\nOther word: river",
+      "response": "music",
+      "base_id": "val-copy-39",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-copy-40",
+      "category": "copy",
+      "instruction": "Return the target word. Answer with one word.",
+      "context": "Other word: stone\nTarget word: paper",
+      "response": "paper",
+      "base_id": "val-copy-40",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-41",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is red. The basket is yellow.",
+      "response": "red",
+      "base_id": "val-color-41",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-42",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is red. The basket is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-42",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-43",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is blue. The basket is black.",
+      "response": "blue",
+      "base_id": "val-color-43",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-44",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is blue. The basket is black.",
+      "response": "black",
+      "base_id": "val-color-44",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-45",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is green. The basket is white.",
+      "response": "green",
+      "base_id": "val-color-45",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-46",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is green. The basket is white.",
+      "response": "white",
+      "base_id": "val-color-46",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-47",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is yellow. The basket is red.",
+      "response": "yellow",
+      "base_id": "val-color-47",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-48",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is yellow. The basket is red.",
+      "response": "red",
+      "base_id": "val-color-48",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-49",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is black. The basket is blue.",
+      "response": "black",
+      "base_id": "val-color-49",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-50",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is black. The basket is blue.",
+      "response": "blue",
+      "base_id": "val-color-50",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-51",
+      "category": "color",
+      "instruction": "What is the color of the lantern? Reply with one color.",
+      "context": "The lantern is white. The basket is green.",
+      "response": "white",
+      "base_id": "val-color-51",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-color-52",
+      "category": "color",
+      "instruction": "What is the color of the basket? Reply with one color.",
+      "context": "The lantern is white. The basket is green.",
+      "response": "green",
+      "base_id": "val-color-52",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-53",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Alice has the key. David has the map.",
+      "response": "Alice",
+      "base_id": "val-name-53",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-54",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Alice has the key. David has the map.",
+      "response": "David",
+      "base_id": "val-name-54",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-55",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Bruno has the key. Emma has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-55",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-56",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Bruno has the key. Emma has the map.",
+      "response": "Emma",
+      "base_id": "val-name-56",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-57",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Clara has the key. Felix has the map.",
+      "response": "Clara",
+      "base_id": "val-name-57",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-58",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Clara has the key. Felix has the map.",
+      "response": "Felix",
+      "base_id": "val-name-58",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-59",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "David has the key. Alice has the map.",
+      "response": "David",
+      "base_id": "val-name-59",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-60",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "David has the key. Alice has the map.",
+      "response": "Alice",
+      "base_id": "val-name-60",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-61",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Emma has the key. Bruno has the map.",
+      "response": "Emma",
+      "base_id": "val-name-61",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-62",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Emma has the key. Bruno has the map.",
+      "response": "Bruno",
+      "base_id": "val-name-62",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-63",
+      "category": "name",
+      "instruction": "Which person has the key? Reply with one name.",
+      "context": "Felix has the key. Clara has the map.",
+      "response": "Felix",
+      "base_id": "val-name-63",
+      "condition": "rephrase"
+    },
+    {
+      "id": "rephrase-val-name-64",
+      "category": "name",
+      "instruction": "Which person has the map? Reply with one name.",
+      "context": "Felix has the key. Clara has the map.",
+      "response": "Clara",
+      "base_id": "val-name-64",
+      "condition": "rephrase"
+    }
+  ],
+  "reorder": [
+    {
+      "id": "reorder-val-copy-01",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: stone\nTarget word: apple",
+      "response": "apple",
+      "base_id": "val-copy-01",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-02",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: river\nOther word: cloud",
+      "response": "river",
+      "base_id": "val-copy-02",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-03",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: bread\nTarget word: stone",
+      "response": "stone",
+      "base_id": "val-copy-03",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-04",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: cloud\nOther word: chair",
+      "response": "cloud",
+      "base_id": "val-copy-04",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-05",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: music\nTarget word: bread",
+      "response": "bread",
+      "base_id": "val-copy-05",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-06",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: chair\nOther word: paper",
+      "response": "chair",
+      "base_id": "val-copy-06",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-07",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: apple\nTarget word: music",
+      "response": "music",
+      "base_id": "val-copy-07",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-08",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: paper\nOther word: river",
+      "response": "paper",
+      "base_id": "val-copy-08",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-09",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is green. The lantern is red.",
+      "response": "red",
+      "base_id": "val-color-09",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-10",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is green. The lantern is red.",
+      "response": "green",
+      "base_id": "val-color-10",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-11",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is yellow. The lantern is blue.",
+      "response": "blue",
+      "base_id": "val-color-11",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-12",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is yellow. The lantern is blue.",
+      "response": "yellow",
+      "base_id": "val-color-12",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-13",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is black. The lantern is green.",
+      "response": "green",
+      "base_id": "val-color-13",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-14",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is black. The lantern is green.",
+      "response": "black",
+      "base_id": "val-color-14",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-15",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is white. The lantern is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-15",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-16",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is white. The lantern is yellow.",
+      "response": "white",
+      "base_id": "val-color-16",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-17",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is red. The lantern is black.",
+      "response": "black",
+      "base_id": "val-color-17",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-18",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is red. The lantern is black.",
+      "response": "red",
+      "base_id": "val-color-18",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-19",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is blue. The lantern is white.",
+      "response": "white",
+      "base_id": "val-color-19",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-20",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is blue. The lantern is white.",
+      "response": "blue",
+      "base_id": "val-color-20",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-21",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Clara has the map. Alice has the key.",
+      "response": "Alice",
+      "base_id": "val-name-21",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-22",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Clara has the map. Alice has the key.",
+      "response": "Clara",
+      "base_id": "val-name-22",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-23",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "David has the map. Bruno has the key.",
+      "response": "Bruno",
+      "base_id": "val-name-23",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-24",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "David has the map. Bruno has the key.",
+      "response": "David",
+      "base_id": "val-name-24",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-25",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Emma has the map. Clara has the key.",
+      "response": "Clara",
+      "base_id": "val-name-25",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-26",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Emma has the map. Clara has the key.",
+      "response": "Emma",
+      "base_id": "val-name-26",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-27",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Felix has the map. David has the key.",
+      "response": "David",
+      "base_id": "val-name-27",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-28",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Felix has the map. David has the key.",
+      "response": "Felix",
+      "base_id": "val-name-28",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-29",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Alice has the map. Emma has the key.",
+      "response": "Emma",
+      "base_id": "val-name-29",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-30",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Alice has the map. Emma has the key.",
+      "response": "Alice",
+      "base_id": "val-name-30",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-31",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Bruno has the map. Felix has the key.",
+      "response": "Felix",
+      "base_id": "val-name-31",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-32",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Bruno has the map. Felix has the key.",
+      "response": "Bruno",
+      "base_id": "val-name-32",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-33",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: cloud\nTarget word: apple",
+      "response": "apple",
+      "base_id": "val-copy-33",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-34",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: river\nOther word: bread",
+      "response": "river",
+      "base_id": "val-copy-34",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-35",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: chair\nTarget word: stone",
+      "response": "stone",
+      "base_id": "val-copy-35",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-36",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: cloud\nOther word: music",
+      "response": "cloud",
+      "base_id": "val-copy-36",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-37",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: paper\nTarget word: bread",
+      "response": "bread",
+      "base_id": "val-copy-37",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-38",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: chair\nOther word: apple",
+      "response": "chair",
+      "base_id": "val-copy-38",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-39",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: river\nTarget word: music",
+      "response": "music",
+      "base_id": "val-copy-39",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-copy-40",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: paper\nOther word: stone",
+      "response": "paper",
+      "base_id": "val-copy-40",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-41",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is yellow. The lantern is red.",
+      "response": "red",
+      "base_id": "val-color-41",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-42",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is yellow. The lantern is red.",
+      "response": "yellow",
+      "base_id": "val-color-42",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-43",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is black. The lantern is blue.",
+      "response": "blue",
+      "base_id": "val-color-43",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-44",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is black. The lantern is blue.",
+      "response": "black",
+      "base_id": "val-color-44",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-45",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is white. The lantern is green.",
+      "response": "green",
+      "base_id": "val-color-45",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-46",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is white. The lantern is green.",
+      "response": "white",
+      "base_id": "val-color-46",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-47",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is red. The lantern is yellow.",
+      "response": "yellow",
+      "base_id": "val-color-47",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-48",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is red. The lantern is yellow.",
+      "response": "red",
+      "base_id": "val-color-48",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-49",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is blue. The lantern is black.",
+      "response": "black",
+      "base_id": "val-color-49",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-50",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is blue. The lantern is black.",
+      "response": "blue",
+      "base_id": "val-color-50",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-51",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The basket is green. The lantern is white.",
+      "response": "white",
+      "base_id": "val-color-51",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-color-52",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The basket is green. The lantern is white.",
+      "response": "green",
+      "base_id": "val-color-52",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-53",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "David has the map. Alice has the key.",
+      "response": "Alice",
+      "base_id": "val-name-53",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-54",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "David has the map. Alice has the key.",
+      "response": "David",
+      "base_id": "val-name-54",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-55",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Emma has the map. Bruno has the key.",
+      "response": "Bruno",
+      "base_id": "val-name-55",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-56",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Emma has the map. Bruno has the key.",
+      "response": "Emma",
+      "base_id": "val-name-56",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-57",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Felix has the map. Clara has the key.",
+      "response": "Clara",
+      "base_id": "val-name-57",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-58",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Felix has the map. Clara has the key.",
+      "response": "Felix",
+      "base_id": "val-name-58",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-59",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Alice has the map. David has the key.",
+      "response": "David",
+      "base_id": "val-name-59",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-60",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Alice has the map. David has the key.",
+      "response": "Alice",
+      "base_id": "val-name-60",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-61",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Bruno has the map. Emma has the key.",
+      "response": "Emma",
+      "base_id": "val-name-61",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-62",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Bruno has the map. Emma has the key.",
+      "response": "Bruno",
+      "base_id": "val-name-62",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-63",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Clara has the map. Felix has the key.",
+      "response": "Felix",
+      "base_id": "val-name-63",
+      "condition": "reorder"
+    },
+    {
+      "id": "reorder-val-name-64",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Clara has the map. Felix has the key.",
+      "response": "Clara",
+      "base_id": "val-name-64",
+      "condition": "reorder"
+    }
+  ],
+  "new_values": [
+    {
+      "id": "new_values-val-copy-01",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: table\nOther word: garden",
+      "response": "table",
+      "base_id": "val-copy-01",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-02",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: forest\nTarget word: window",
+      "response": "window",
+      "base_id": "val-copy-02",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-03",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: garden\nOther word: water",
+      "response": "garden",
+      "base_id": "val-copy-03",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-04",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: train\nTarget word: forest",
+      "response": "forest",
+      "base_id": "val-copy-04",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-05",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: water\nOther word: flower",
+      "response": "water",
+      "base_id": "val-copy-05",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-06",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: planet\nTarget word: train",
+      "response": "train",
+      "base_id": "val-copy-06",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-07",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: flower\nOther word: table",
+      "response": "flower",
+      "base_id": "val-copy-07",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-08",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: window\nTarget word: planet",
+      "response": "planet",
+      "base_id": "val-copy-08",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-09",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is purple. The basket is pink.",
+      "response": "purple",
+      "base_id": "val-color-09",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-10",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is purple. The basket is pink.",
+      "response": "pink",
+      "base_id": "val-color-10",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-11",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is orange. The basket is brown.",
+      "response": "orange",
+      "base_id": "val-color-11",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-12",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is orange. The basket is brown.",
+      "response": "brown",
+      "base_id": "val-color-12",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-13",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is pink. The basket is gray.",
+      "response": "pink",
+      "base_id": "val-color-13",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-14",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is pink. The basket is gray.",
+      "response": "gray",
+      "base_id": "val-color-14",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-15",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is brown. The basket is cyan.",
+      "response": "brown",
+      "base_id": "val-color-15",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-16",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is brown. The basket is cyan.",
+      "response": "cyan",
+      "base_id": "val-color-16",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-17",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is gray. The basket is purple.",
+      "response": "gray",
+      "base_id": "val-color-17",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-18",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is gray. The basket is purple.",
+      "response": "purple",
+      "base_id": "val-color-18",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-19",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is cyan. The basket is orange.",
+      "response": "cyan",
+      "base_id": "val-color-19",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-20",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is cyan. The basket is orange.",
+      "response": "orange",
+      "base_id": "val-color-20",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-21",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Grace has the key. Irene has the map.",
+      "response": "Grace",
+      "base_id": "val-name-21",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-22",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Grace has the key. Irene has the map.",
+      "response": "Irene",
+      "base_id": "val-name-22",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-23",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Henry has the key. Jack has the map.",
+      "response": "Henry",
+      "base_id": "val-name-23",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-24",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Henry has the key. Jack has the map.",
+      "response": "Jack",
+      "base_id": "val-name-24",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-25",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Irene has the key. Karen has the map.",
+      "response": "Irene",
+      "base_id": "val-name-25",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-26",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Irene has the key. Karen has the map.",
+      "response": "Karen",
+      "base_id": "val-name-26",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-27",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Jack has the key. Louis has the map.",
+      "response": "Jack",
+      "base_id": "val-name-27",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-28",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Jack has the key. Louis has the map.",
+      "response": "Louis",
+      "base_id": "val-name-28",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-29",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Karen has the key. Grace has the map.",
+      "response": "Karen",
+      "base_id": "val-name-29",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-30",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Karen has the key. Grace has the map.",
+      "response": "Grace",
+      "base_id": "val-name-30",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-31",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Louis has the key. Henry has the map.",
+      "response": "Louis",
+      "base_id": "val-name-31",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-32",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Louis has the key. Henry has the map.",
+      "response": "Henry",
+      "base_id": "val-name-32",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-33",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: table\nOther word: forest",
+      "response": "table",
+      "base_id": "val-copy-33",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-34",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: water\nTarget word: window",
+      "response": "window",
+      "base_id": "val-copy-34",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-35",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: garden\nOther word: train",
+      "response": "garden",
+      "base_id": "val-copy-35",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-36",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: flower\nTarget word: forest",
+      "response": "forest",
+      "base_id": "val-copy-36",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-37",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: water\nOther word: planet",
+      "response": "water",
+      "base_id": "val-copy-37",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-38",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: table\nTarget word: train",
+      "response": "train",
+      "base_id": "val-copy-38",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-39",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Target word: flower\nOther word: window",
+      "response": "flower",
+      "base_id": "val-copy-39",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-copy-40",
+      "category": "copy",
+      "instruction": "Copy the target word. Answer with one word.",
+      "context": "Other word: garden\nTarget word: planet",
+      "response": "planet",
+      "base_id": "val-copy-40",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-41",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is purple. The basket is brown.",
+      "response": "purple",
+      "base_id": "val-color-41",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-42",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is purple. The basket is brown.",
+      "response": "brown",
+      "base_id": "val-color-42",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-43",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is orange. The basket is gray.",
+      "response": "orange",
+      "base_id": "val-color-43",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-44",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is orange. The basket is gray.",
+      "response": "gray",
+      "base_id": "val-color-44",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-45",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is pink. The basket is cyan.",
+      "response": "pink",
+      "base_id": "val-color-45",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-46",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is pink. The basket is cyan.",
+      "response": "cyan",
+      "base_id": "val-color-46",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-47",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is brown. The basket is purple.",
+      "response": "brown",
+      "base_id": "val-color-47",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-48",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is brown. The basket is purple.",
+      "response": "purple",
+      "base_id": "val-color-48",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-49",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is gray. The basket is orange.",
+      "response": "gray",
+      "base_id": "val-color-49",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-50",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is gray. The basket is orange.",
+      "response": "orange",
+      "base_id": "val-color-50",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-51",
+      "category": "color",
+      "instruction": "Which color is the lantern? Reply with one color.",
+      "context": "The lantern is cyan. The basket is pink.",
+      "response": "cyan",
+      "base_id": "val-color-51",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-color-52",
+      "category": "color",
+      "instruction": "Which color is the basket? Reply with one color.",
+      "context": "The lantern is cyan. The basket is pink.",
+      "response": "pink",
+      "base_id": "val-color-52",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-53",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Grace has the key. Jack has the map.",
+      "response": "Grace",
+      "base_id": "val-name-53",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-54",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Grace has the key. Jack has the map.",
+      "response": "Jack",
+      "base_id": "val-name-54",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-55",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Henry has the key. Karen has the map.",
+      "response": "Henry",
+      "base_id": "val-name-55",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-56",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Henry has the key. Karen has the map.",
+      "response": "Karen",
+      "base_id": "val-name-56",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-57",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Irene has the key. Louis has the map.",
+      "response": "Irene",
+      "base_id": "val-name-57",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-58",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Irene has the key. Louis has the map.",
+      "response": "Louis",
+      "base_id": "val-name-58",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-59",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Jack has the key. Grace has the map.",
+      "response": "Jack",
+      "base_id": "val-name-59",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-60",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Jack has the key. Grace has the map.",
+      "response": "Grace",
+      "base_id": "val-name-60",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-61",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Karen has the key. Henry has the map.",
+      "response": "Karen",
+      "base_id": "val-name-61",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-62",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Karen has the key. Henry has the map.",
+      "response": "Henry",
+      "base_id": "val-name-62",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-63",
+      "category": "name",
+      "instruction": "Who has the key? Reply with one name.",
+      "context": "Louis has the key. Irene has the map.",
+      "response": "Louis",
+      "base_id": "val-name-63",
+      "condition": "new_values"
+    },
+    {
+      "id": "new_values-val-name-64",
+      "category": "name",
+      "instruction": "Who has the map? Reply with one name.",
+      "context": "Louis has the key. Irene has the map.",
+      "response": "Irene",
+      "base_id": "val-name-64",
+      "condition": "new_values"
+    }
+  ]
+}

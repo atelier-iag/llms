@@ -1,0 +1,253 @@
+{
+  "name": "final-holdout-v1",
+  "protocol": "experiments/final_holdout.md",
+  "context_length": 256,
+  "batch_size": 8,
+  "precision": "fp32",
+  "general_reference": "general_94m_50m",
+  "dolly_generation": {
+    "examples": 24,
+    "seed": 0,
+    "max_new_tokens": 81
+  },
+  "datasets": {
+    "general": {
+      "kind": "lm",
+      "directory": "data/pretraining-50m-v1",
+      "manifest_sha256": "74bd9a402fef117d425843859755da36db91a6b3445ded6c8aea4081e0d7d65f",
+      "holdout": {
+        "path": "holdout.npy",
+        "tokens": 1000000,
+        "documents": 112,
+        "sha256": "58f706f214d8f71963c9d566c20c5568a2f8531c9c5738969034f0a48a71ba73"
+      }
+    },
+    "python": {
+      "kind": "lm",
+      "directory": "data/continued-python-5m-v1",
+      "manifest_sha256": "1b25b6e25b165154f188f659d8692e495cebd7219ffbcd431212ef289f0ed7f3",
+      "holdout": {
+        "path": "holdout.npy",
+        "tokens": 250000,
+        "documents": 113,
+        "repositories": 99,
+        "sha256": "e6683e835b5f2cd87472215849276910f74ec94518ca5ddd831cf7cf248b008a"
+      }
+    },
+    "dolly": {
+      "kind": "sft",
+      "directory": "data/sft-dolly-3k-v1",
+      "manifest_sha256": "debd63f6c7e6ff2bee82307d0659cbdee62673397b5e16b74c5f1bd5ef8435e1",
+      "holdout": {
+        "path": "holdout.jsonl",
+        "examples": 300,
+        "sha256": "eec3dede52998234842c7f9861c3ab8c2f29ad18f912f0505adc5405ad3fdd54",
+        "groups": 277,
+        "categories": {
+          "classification": 98,
+          "closed_qa": 98,
+          "information_extraction": 72,
+          "summarization": 32
+        },
+        "sequence_tokens": 41278,
+        "response_tokens": 7699,
+        "max_sequence_tokens": 256
+      }
+    }
+  },
+  "models": {
+    "general_94m_50m": {
+      "path": "runs/simple-baseline-2fsdgx0q/model.pt",
+      "sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa",
+      "historical_metrics": "results/pretraining-50m.json",
+      "historical_metrics_sha256": "3a5f8c3850c3a4c05b98756586affe924ac1b1fdfcbdbdf0c043bbcf91fc4f62",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 24415,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 5.252075612545013,
+        "perplexity": 190.96222097595276,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general",
+        "python",
+        "dolly"
+      ]
+    },
+    "general_94m_25m": {
+      "path": "runs/simple-baseline-korcrdq1/model.pt",
+      "sha256": "dd8fdf2ca938d3274fc1efc008594c97c14d7594fec61ab3c76c19fcfaa6e7e2",
+      "historical_metrics": "results/pretraining-25m.json",
+      "historical_metrics_sha256": "67f38b6feb880957e61b3544936e7834d6fefd2c6e42bc677777a227a1c21c69",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 12208,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 5.7170751094818115,
+        "perplexity": 304.0144123966086,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general"
+      ]
+    },
+    "general_59m_50m": {
+      "path": "runs/simple-baseline-ng4b6qq_/model.pt",
+      "sha256": "17cdca3242ed79805ab8e7b686995450816a1f2fc30671974d149499a206e65a",
+      "historical_metrics": "results/pretraining-59m-params-50m-tokens.json",
+      "historical_metrics_sha256": "50c851ad70ead12aa7cfb3a988af5b582beca31243a02dd93abd589070b68c2d",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 256,
+        "num_heads": 8,
+        "hidden_size": 1024,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 24415,
+      "parameter_count": 58948864,
+      "dev_control_expected": {
+        "loss": 5.389564618468285,
+        "perplexity": 219.1079692209567,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general"
+      ]
+    },
+    "python_94m": {
+      "path": "runs/simple-baseline-mxq_ot5k/model.pt",
+      "sha256": "751141c836aea9ff5f48af4727540ce448aefd7b07e4eadf243d1bef3ba5e35f",
+      "historical_metrics": "results/continued-python-5m.json",
+      "historical_metrics_sha256": "5c6472fe7d8f9574e54449384f48a13b0b2fd50d44d2abd2b3eb812881b98ea0",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 2443,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 5.706454962491989,
+        "perplexity": 300.80281863443025,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general",
+        "python"
+      ]
+    },
+    "dolly_94m": {
+      "path": "runs/sft-kw1rxok0/model.pt",
+      "sha256": "a917e25d1e71b343642adda688a483bee31de1eaad33319211f281975e17f1d6",
+      "historical_metrics": "results/sft-dolly-3k.json",
+      "historical_metrics_sha256": "b0d47c9c856a24b56f24138d26c2c29285d4ef30aa23ee7f6ee511ebc96a1b62",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 1125,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 5.76897856593132,
+        "perplexity": 320.21049164294,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general",
+        "dolly"
+      ]
+    },
+    "toy_sft_3e4": {
+      "path": "runs/sft-qrk4c22k/model.pt",
+      "sha256": "cc5d5f9060d3c207dcb1a66151242a21a397ce1d27d4d92a5298c1c45548d4e0",
+      "historical_metrics": "results/sft-diversity-64-64.json",
+      "historical_metrics_sha256": "d7bdf1c3eebc6e91db01f314e4a9b3defedb1b8e4d75ce980933d37120488a5b",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 400,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 7.4303726851940155,
+        "perplexity": 1686.4359659782533,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general"
+      ]
+    },
+    "toy_sft_1e4": {
+      "path": "runs/sft-duplqurm/model.pt",
+      "sha256": "44cbf4dbd40c74bd6896036e01f8efa6eff30df2de53c22ffd82ba2845e4e33c",
+      "historical_metrics": "results/sft-learning-rate-1e-4.json",
+      "historical_metrics_sha256": "41105f8638fa5e07e5c7bb95ddfe2aa84fae5a5105d8988a9c364d797cb0e0a0",
+      "model_config": {
+        "vocab_size": 100278,
+        "d_model": 384,
+        "num_heads": 8,
+        "hidden_size": 1536,
+        "num_layers": 8,
+        "rope_theta": 10000.0,
+        "num_kv_heads": 2,
+        "attention_backend": "sdpa"
+      },
+      "step": 400,
+      "parameter_count": 94124928,
+      "dev_control_expected": {
+        "loss": 5.674996197223663,
+        "perplexity": 291.48723008247134,
+        "scored_tokens": 32768
+      },
+      "holdouts": [
+        "general"
+      ]
+    }
+  },
+  "dev_control": {
+    "path": "data/pretraining-50m-v1/val.npy",
+    "tokens": 1000000,
+    "sha256": "20f301c8571cae55a8ba03fa6806d58bfee7d9a6f06c6cd6c02bee757b714def",
+    "windows": 128,
+    "loss_absolute_tolerance": 1e-06
+  }
+}

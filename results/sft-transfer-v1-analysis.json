@@ -1,0 +1,700 @@
+{
+  "initial": {
+    "control": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    },
+    "rephrase": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    },
+    "reorder": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    },
+    "new_values": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 0,
+          "stopped_at_eos": 0
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    }
+  },
+  "sft": {
+    "control": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 16,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 21,
+          "stopped_at_eos": 24
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 61,
+          "stopped_at_eos": 64
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 16,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 24,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 21,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 61,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 12
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 9
+        }
+      }
+    },
+    "rephrase": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 16,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 24,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 19,
+          "stopped_at_eos": 24
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 59,
+          "stopped_at_eos": 64
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 16,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 24,
+          "lost_correct_ids": [],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 19,
+          "lost_correct_ids": [
+            "val-name-28",
+            "val-name-54"
+          ],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 59,
+          "lost_correct_ids": [
+            "val-name-28",
+            "val-name-54"
+          ],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 12
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 7
+        }
+      }
+    },
+    "reorder": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 2,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 4,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 24
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 6,
+          "stopped_at_eos": 64
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 2,
+          "lost_correct_ids": [
+            "val-copy-02",
+            "val-copy-03",
+            "val-copy-04",
+            "val-copy-05",
+            "val-copy-06",
+            "val-copy-07",
+            "val-copy-08",
+            "val-copy-34",
+            "val-copy-35",
+            "val-copy-36",
+            "val-copy-37",
+            "val-copy-38",
+            "val-copy-39",
+            "val-copy-40"
+          ],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 4,
+          "lost_correct_ids": [
+            "val-color-09",
+            "val-color-10",
+            "val-color-11",
+            "val-color-12",
+            "val-color-14",
+            "val-color-15",
+            "val-color-16",
+            "val-color-17",
+            "val-color-18",
+            "val-color-19",
+            "val-color-20",
+            "val-color-41",
+            "val-color-42",
+            "val-color-43",
+            "val-color-44",
+            "val-color-46",
+            "val-color-47",
+            "val-color-49",
+            "val-color-50",
+            "val-color-52"
+          ],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [
+            "val-name-21",
+            "val-name-22",
+            "val-name-23",
+            "val-name-25",
+            "val-name-26",
+            "val-name-27",
+            "val-name-28",
+            "val-name-29",
+            "val-name-30",
+            "val-name-31",
+            "val-name-53",
+            "val-name-54",
+            "val-name-55",
+            "val-name-56",
+            "val-name-57",
+            "val-name-59",
+            "val-name-60",
+            "val-name-61",
+            "val-name-62",
+            "val-name-63",
+            "val-name-64"
+          ],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 6,
+          "lost_correct_ids": [
+            "val-copy-02",
+            "val-copy-03",
+            "val-copy-04",
+            "val-copy-05",
+            "val-copy-06",
+            "val-copy-07",
+            "val-copy-08",
+            "val-color-09",
+            "val-color-10",
+            "val-color-11",
+            "val-color-12",
+            "val-color-14",
+            "val-color-15",
+            "val-color-16",
+            "val-color-17",
+            "val-color-18",
+            "val-color-19",
+            "val-color-20",
+            "val-name-21",
+            "val-name-22",
+            "val-name-23",
+            "val-name-25",
+            "val-name-26",
+            "val-name-27",
+            "val-name-28",
+            "val-name-29",
+            "val-name-30",
+            "val-name-31",
+            "val-copy-34",
+            "val-copy-35",
+            "val-copy-36",
+            "val-copy-37",
+            "val-copy-38",
+            "val-copy-39",
+            "val-copy-40",
+            "val-color-41",
+            "val-color-42",
+            "val-color-43",
+            "val-color-44",
+            "val-color-46",
+            "val-color-47",
+            "val-color-49",
+            "val-color-50",
+            "val-color-52",
+            "val-name-53",
+            "val-name-54",
+            "val-name-55",
+            "val-name-56",
+            "val-name-57",
+            "val-name-59",
+            "val-name-60",
+            "val-name-61",
+            "val-name-62",
+            "val-name-63",
+            "val-name-64"
+          ],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    },
+    "new_values": {
+      "scores": {
+        "copy": {
+          "examples": 16,
+          "exact_matches": 0,
+          "stopped_at_eos": 16
+        },
+        "color": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 24
+        },
+        "name": {
+          "examples": 24,
+          "exact_matches": 0,
+          "stopped_at_eos": 24
+        },
+        "total": {
+          "examples": 64,
+          "exact_matches": 0,
+          "stopped_at_eos": 64
+        }
+      },
+      "paired_vs_control": {
+        "copy": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [
+            "val-copy-01",
+            "val-copy-02",
+            "val-copy-03",
+            "val-copy-04",
+            "val-copy-05",
+            "val-copy-06",
+            "val-copy-07",
+            "val-copy-08",
+            "val-copy-33",
+            "val-copy-34",
+            "val-copy-35",
+            "val-copy-36",
+            "val-copy-37",
+            "val-copy-38",
+            "val-copy-39",
+            "val-copy-40"
+          ],
+          "gained_correct_ids": []
+        },
+        "color": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [
+            "val-color-09",
+            "val-color-10",
+            "val-color-11",
+            "val-color-12",
+            "val-color-13",
+            "val-color-14",
+            "val-color-15",
+            "val-color-16",
+            "val-color-17",
+            "val-color-18",
+            "val-color-19",
+            "val-color-20",
+            "val-color-41",
+            "val-color-42",
+            "val-color-43",
+            "val-color-44",
+            "val-color-45",
+            "val-color-46",
+            "val-color-47",
+            "val-color-48",
+            "val-color-49",
+            "val-color-50",
+            "val-color-51",
+            "val-color-52"
+          ],
+          "gained_correct_ids": []
+        },
+        "name": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [
+            "val-name-21",
+            "val-name-22",
+            "val-name-23",
+            "val-name-25",
+            "val-name-26",
+            "val-name-27",
+            "val-name-28",
+            "val-name-29",
+            "val-name-30",
+            "val-name-31",
+            "val-name-53",
+            "val-name-54",
+            "val-name-55",
+            "val-name-56",
+            "val-name-57",
+            "val-name-59",
+            "val-name-60",
+            "val-name-61",
+            "val-name-62",
+            "val-name-63",
+            "val-name-64"
+          ],
+          "gained_correct_ids": []
+        },
+        "total": {
+          "correct_in_both": 0,
+          "lost_correct_ids": [
+            "val-copy-01",
+            "val-copy-02",
+            "val-copy-03",
+            "val-copy-04",
+            "val-copy-05",
+            "val-copy-06",
+            "val-copy-07",
+            "val-copy-08",
+            "val-color-09",
+            "val-color-10",
+            "val-color-11",
+            "val-color-12",
+            "val-color-13",
+            "val-color-14",
+            "val-color-15",
+            "val-color-16",
+            "val-color-17",
+            "val-color-18",
+            "val-color-19",
+            "val-color-20",
+            "val-name-21",
+            "val-name-22",
+            "val-name-23",
+            "val-name-25",
+            "val-name-26",
+            "val-name-27",
+            "val-name-28",
+            "val-name-29",
+            "val-name-30",
+            "val-name-31",
+            "val-copy-33",
+            "val-copy-34",
+            "val-copy-35",
+            "val-copy-36",
+            "val-copy-37",
+            "val-copy-38",
+            "val-copy-39",
+            "val-copy-40",
+            "val-color-41",
+            "val-color-42",
+            "val-color-43",
+            "val-color-44",
+            "val-color-45",
+            "val-color-46",
+            "val-color-47",
+            "val-color-48",
+            "val-color-49",
+            "val-color-50",
+            "val-color-51",
+            "val-color-52",
+            "val-name-53",
+            "val-name-54",
+            "val-name-55",
+            "val-name-56",
+            "val-name-57",
+            "val-name-59",
+            "val-name-60",
+            "val-name-61",
+            "val-name-62",
+            "val-name-63",
+            "val-name-64"
+          ],
+          "gained_correct_ids": []
+        }
+      },
+      "paired_contexts": {
+        "color": {
+          "contexts": 12,
+          "both_correct": 0
+        },
+        "name": {
+          "contexts": 12,
+          "both_correct": 0
+        }
+      }
+    }
+  }
+}

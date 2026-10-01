@@ -174,6 +174,15 @@ supérieure aux **184,21** du modèle initial. C’est un meilleur compromis
 sur ce diagnostic structuré, à confirmer sur des consignes plus variées ;
 les holdouts restent réservés.
 
+Le [diagnostic de transfert](results/sft-transfer-v1.md), réalisé le
+1er octobre 2026 sans nouvel entraînement, précise cette limite :
+**59/64** avec les questions reformulées, **6/64** après inversion des
+phrases, **0/64** avec de nouveaux mots, couleurs et prénoms. Dans ce
+dernier cas, les 64 sorties restent dans le vocabulaire des réponses
+apprises. La prochaine amélioration devra diversifier les valeurs et
+équilibrer leurs positions dans les contextes. Les deux checkpoints et
+leurs sorties de référence ont été vérifiés, avec 37 tests ciblés réussis.
+
 ### Jalon 7 — Faire des ablations
 
 - retirer ou modifier certains mécanismes ;

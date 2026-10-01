@@ -6,6 +6,11 @@ réponses. Le meilleur modèle du petit diagnostic obtient
 gabarits et un vocabulaire partagés entre train et dev. Nous mesurons ici
 sa sensibilité à trois changements séparés.
 
+**Bilan du 1er octobre 2026 :** [59/64 en reformulation, 6/64 en ordre
+inversé, 0/64 avec les nouvelles valeurs](../results/sft-transfer-v1.md).
+Ce lien a été ajouté après l’exécution et l’audit ; le protocole ci-dessous
+était fixé au commit `64a00a5` avant toute nouvelle génération.
+
 ## Plan fixé avant la mesure
 
 Deux checkpoints gelés : le généraliste 94 M préentraîné sur 50 M tokens

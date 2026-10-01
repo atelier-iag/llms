@@ -1,0 +1,5214 @@
+{
+  "initial": {
+    "control": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "control-val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "control-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "rephrase": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "rephrase-val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "rephrase-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "reorder": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "reorder-val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "reorder-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "new_values": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "new_values-val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        },
+        {
+          "source_id": "new_values-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": false,
+          "generated_tokens": 8,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0.0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 0.0,
+      "mean_repeated_4gram_fraction": 0.0
+    }
+  },
+  "sft": {
+    "control": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "control-val-copy-01",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-02",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-03",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-04",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-05",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-06",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-07",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-08",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-09",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-10",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-11",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-12",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-13",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-14",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-15",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-16",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-17",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-18",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-19",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-20",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-21",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-22",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-23",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-25",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-26",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-27",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-28",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-29",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-30",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-31",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-33",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-34",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-35",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-36",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-37",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-38",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-39",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-copy-40",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-41",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-42",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-43",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-44",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-45",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-46",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-47",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-48",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-49",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-50",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-51",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-color-52",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-53",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-54",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-55",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-56",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-57",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-59",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-60",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-61",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-62",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-63",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "control-val-name-64",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 61,
+      "exact_match_rate": 0.953125,
+      "mean_token_f1": 0.953125,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "rephrase": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "rephrase-val-copy-01",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-02",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-03",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-04",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-05",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-06",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-07",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-08",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-09",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-10",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-11",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-12",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-13",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-14",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-15",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-16",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-17",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-18",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-19",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-20",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-21",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-22",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-23",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-25",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-26",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-27",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-29",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-30",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-31",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-33",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-34",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-35",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-36",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-37",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-38",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-39",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-copy-40",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-41",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-42",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-43",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-44",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-45",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-46",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-47",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-48",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-49",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-50",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-51",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-color-52",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-53",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-55",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-56",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-57",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-59",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-60",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-61",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-62",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-63",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "rephrase-val-name-64",
+          "category": "name",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 59,
+      "exact_match_rate": 0.921875,
+      "mean_token_f1": 0.921875,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "reorder": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "reorder-val-copy-01",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-13",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-33",
+          "category": "copy",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-45",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-48",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-51",
+          "category": "color",
+          "exact_match": true,
+          "token_f1": 1.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "reorder-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 6,
+      "exact_match_rate": 0.09375,
+      "mean_token_f1": 0.09375,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    },
+    "new_values": {
+      "examples": 64,
+      "records": [
+        {
+          "source_id": "new_values-val-copy-01",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-02",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-03",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-04",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-05",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-06",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-07",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-08",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-09",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-10",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-11",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-12",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-13",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-14",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-15",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-16",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-17",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-18",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-19",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-20",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-21",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-22",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-23",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-24",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-25",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-26",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-27",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-28",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-29",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-30",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-31",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-32",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-33",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-34",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-35",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-36",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-37",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-38",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-39",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-copy-40",
+          "category": "copy",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-41",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-42",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-43",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-44",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-45",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-46",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-47",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-48",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-49",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-50",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-51",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-color-52",
+          "category": "color",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-53",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-54",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-55",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-56",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-57",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-58",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-59",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-60",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-61",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-62",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-63",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 3,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        },
+        {
+          "source_id": "new_values-val-name-64",
+          "category": "name",
+          "exact_match": false,
+          "token_f1": 0.0,
+          "stopped_at_eos": true,
+          "generated_tokens": 2,
+          "generation_budget": 8,
+          "repeated_4gram_fraction": 0
+        }
+      ],
+      "method": "greedy",
+      "exact_matches": 0,
+      "exact_match_rate": 0.0,
+      "mean_token_f1": 0.0,
+      "eos_rate": 1.0,
+      "mean_repeated_4gram_fraction": 0.0
+    }
+  }
+}

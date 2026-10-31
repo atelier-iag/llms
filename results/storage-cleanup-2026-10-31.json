@@ -1,0 +1,694 @@
+{
+  "started": "2026-10-31T13:04:05.064312+00:00",
+  "delete": [
+    {
+      "path": "runs/sft-duplqurm/recovery.pt",
+      "bytes": 1129752183,
+      "allocated_bytes": 1129758720,
+      "sha256": "87f80fd142fc89a46970d84bb1d6ad9c5ec6c7c81b08196643cfd1074ae04672"
+    },
+    {
+      "path": "runs/sft-gi30rb8x/recovery.pt",
+      "bytes": 1129738103,
+      "allocated_bytes": 1129742336,
+      "sha256": "64e0c7d40bc5a7280e885a73c2634b821f2a9d53caa601b91d48880e2cc97a81"
+    },
+    {
+      "path": "runs/sft-qrk4c22k/recovery.pt",
+      "bytes": 1129752183,
+      "allocated_bytes": 1129758720,
+      "sha256": "761fbdb99796ed703a689873aef2069a4877229b4d9d4365e2586ab31dd41e16"
+    },
+    {
+      "path": "runs/simple-baseline-2fsdgx0q/recovery.pt",
+      "bytes": 1129718775,
+      "allocated_bytes": 1129725952,
+      "sha256": "aa7cbaed79399db3ef4ae5d027b57d23312a4aa50308f3566b13a9f9f4505e2a"
+    },
+    {
+      "path": "runs/simple-baseline-34yq5mdv/recovery.pt",
+      "bytes": 1151048567,
+      "allocated_bytes": 1151053824,
+      "sha256": "5e6bfa60ff627e169d5a6bf067f1ee476e26de795faf883a4fa0535f9bfa1e2e"
+    },
+    {
+      "path": "runs/simple-baseline-6aay3x5v/recovery.pt",
+      "bytes": 1129702199,
+      "allocated_bytes": 1129709568,
+      "sha256": "cce1c54f32be6ce170696bac89e0402df9018cb6e1ec8db87dbb747f5d3d9511"
+    },
+    {
+      "path": "runs/simple-baseline-hm0xav7w/recovery.pt",
+      "bytes": 1129710967,
+      "allocated_bytes": 1129717760,
+      "sha256": "26b95892663985ca783c6dea4970ef2fc178a82f2887e5a2f0114879c0c3f715"
+    },
+    {
+      "path": "runs/simple-baseline-korcrdq1/recovery.pt",
+      "bytes": 1129705719,
+      "allocated_bytes": 1129713664,
+      "sha256": "458a3b66750e981ff799b69bb1a239f2216e39660c754d913adbdd82a61d78b5"
+    },
+    {
+      "path": "runs/simple-baseline-mxq_ot5k/recovery.pt",
+      "bytes": 1129699127,
+      "allocated_bytes": 1129705472,
+      "sha256": "1988b469059323d8351362d8e0398b199fa356f94bfb24f50117e61294d95020"
+    },
+    {
+      "path": "runs/simple-baseline-ng4b6qq_/recovery.pt",
+      "bytes": 707606071,
+      "allocated_bytes": 707612672,
+      "sha256": "2cc8936ea6194b95508d10ff32187b821efa015bd4cb22c84fe2e4cd855b97ec"
+    },
+    {
+      "path": "runs/simple-baseline-r5x189so/recovery.pt",
+      "bytes": 1151052663,
+      "allocated_bytes": 1151057920,
+      "sha256": "222baa701fb20a71ccf58484bb390732cf1bde8023c5855dad7a740a7f3337d4"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/.metadata.json",
+      "bytes": 40,
+      "allocated_bytes": 4096,
+      "sha256": "df9fb5e233eb41b450e40f0a49367aea51650d816523afb2869ec260d8504803"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/config.json",
+      "bytes": 5866,
+      "allocated_bytes": 8192,
+      "sha256": "7a78a2ce026e4db2a8cd3b90e459cc67c8ba3a1a9447fbeeaf29eb534520dbb2"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/data_paths.txt",
+      "bytes": 64,
+      "allocated_bytes": 4096,
+      "sha256": "8a2722e28b3d05c793c7d8892249ea1c8a22d4dc9ecec22b70cd1c5bbd7759ea"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/.metadata",
+      "bytes": 192815,
+      "allocated_bytes": 196608,
+      "sha256": "a78e7e434039b8296cb28ea810128ace42019e288c000575d9d6eba466478542"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_0.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "1aecd73e6dbb4ac065c2f362ffcef7cdda7e34f3921573414ffd29d221d7c8f9"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_1.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "afb5d17f16a7382de8bf7b3593cb08f44649f4b1aa73a365c97c11a51cf0e4e2"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_10.distcp",
+      "bytes": 37937928,
+      "allocated_bytes": 37941248,
+      "sha256": "3022d67d911fa7523a7da5ac0dad387dd6ddb350873c4de3826160fbc707f9e0"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_11.distcp",
+      "bytes": 37936667,
+      "allocated_bytes": 37937152,
+      "sha256": "67ac76432c81b3f2b4e943f306ce54bcb074478e761376dc0342ed7f90b6ee26"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_2.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "b5002b79499492ffe44d1727fa237f5c1ff9061b5a15048604053a1a15c7e537"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_3.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154193920,
+      "sha256": "a87cd7fb2d9ada8c535cfdec593800cd6221dc681765ac32ca6f2466161ae5b7"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_4.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "ca9e236b4022bb27d4b8522a404fff95b6ec99804bf72731eb27166fba3c1a1a"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_5.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "cd6451679fcd4302608c03d0b26da40e42e7d9f55abd647ff3e765e6030236ab"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_6.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "9432268e521c6a009b38097bc8e2182edfd0c9ae5ff4153c15a862859e601137"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_7.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "5d2e7de4ab1381d71414796857f41f73307f59aa2b4fd196752841942f9f2542"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_8.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "a6e98b3c3b9d56647cca122cf6528c4cbd8bcaf825c6a1368f98de6e17349161"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/model_and_optim/__0_9.distcp",
+      "bytes": 37939505,
+      "allocated_bytes": 37941248,
+      "sha256": "967f2026f405270954c60dd548d4a98f015993389bee6996cdb624dcbab8405c"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step0/train/rank0.pt",
+      "bytes": 15381,
+      "allocated_bytes": 16384,
+      "sha256": "31ad772432d3e920328e96cea96d7c6507d43795c0830d5de3f22022462d73a1"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/.metadata.json",
+      "bytes": 40,
+      "allocated_bytes": 4096,
+      "sha256": "df9fb5e233eb41b450e40f0a49367aea51650d816523afb2869ec260d8504803"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/config.json",
+      "bytes": 6150,
+      "allocated_bytes": 8192,
+      "sha256": "ec040d8613d6301c01f067d79e827bc94144a1dcc4051668feec449a72c9c8ce"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/data_paths.txt",
+      "bytes": 92,
+      "allocated_bytes": 4096,
+      "sha256": "698a1bd9af4540e4c56783b2018887164fd38c5eec8553709ee51bd999d3ac43"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/.metadata",
+      "bytes": 192867,
+      "allocated_bytes": 196608,
+      "sha256": "685b5d3e6313225fb35dfeab5d71918c84850119feb205091eabfbb5a44a1532"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_0.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154193920,
+      "sha256": "1aecd73e6dbb4ac065c2f362ffcef7cdda7e34f3921573414ffd29d221d7c8f9"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_1.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "afb5d17f16a7382de8bf7b3593cb08f44649f4b1aa73a365c97c11a51cf0e4e2"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_10.distcp",
+      "bytes": 37937928,
+      "allocated_bytes": 37941248,
+      "sha256": "3022d67d911fa7523a7da5ac0dad387dd6ddb350873c4de3826160fbc707f9e0"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_11.distcp",
+      "bytes": 37936667,
+      "allocated_bytes": 37937152,
+      "sha256": "67ac76432c81b3f2b4e943f306ce54bcb074478e761376dc0342ed7f90b6ee26"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_2.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "b5002b79499492ffe44d1727fa237f5c1ff9061b5a15048604053a1a15c7e537"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_3.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "a87cd7fb2d9ada8c535cfdec593800cd6221dc681765ac32ca6f2466161ae5b7"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_4.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "ca9e236b4022bb27d4b8522a404fff95b6ec99804bf72731eb27166fba3c1a1a"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_5.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "cd6451679fcd4302608c03d0b26da40e42e7d9f55abd647ff3e765e6030236ab"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_6.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "9432268e521c6a009b38097bc8e2182edfd0c9ae5ff4153c15a862859e601137"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_7.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "5d2e7de4ab1381d71414796857f41f73307f59aa2b4fd196752841942f9f2542"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_8.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "a6e98b3c3b9d56647cca122cf6528c4cbd8bcaf825c6a1368f98de6e17349161"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_9.distcp",
+      "bytes": 37939505,
+      "allocated_bytes": 37941248,
+      "sha256": "967f2026f405270954c60dd548d4a98f015993389bee6996cdb624dcbab8405c"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step0/train/rank0.pt",
+      "bytes": 15445,
+      "allocated_bytes": 16384,
+      "sha256": "c8427ea31a2045ce5f5ffe1fe83b1d7f336053e34c1f0b3ea5eace7c86b44a35"
+    }
+  ],
+  "keep": [
+    {
+      "path": "runs/reimplementation-corpus-xosapju_/model.pt",
+      "bytes": 51880622,
+      "allocated_bytes": 51884032,
+      "sha256": "ee0eb81f89933bff4c93ae0edb6a43ec78771bd63d51fd89662ce081ed8fb5ab"
+    },
+    {
+      "path": "runs/sft-duplqurm/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376553472,
+      "sha256": "44cbf4dbd40c74bd6896036e01f8efa6eff30df2de53c22ffd82ba2845e4e33c"
+    },
+    {
+      "path": "runs/sft-gi30rb8x/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376553472,
+      "sha256": "9b4ec27c2afe1eb140315a8a02eeaf824d1912df67c5943b271b296287106ba6"
+    },
+    {
+      "path": "runs/sft-kw1rxok0/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376553472,
+      "sha256": "a917e25d1e71b343642adda688a483bee31de1eaad33319211f281975e17f1d6"
+    },
+    {
+      "path": "runs/sft-qrk4c22k/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376553472,
+      "sha256": "cc5d5f9060d3c207dcb1a66151242a21a397ce1d27d4d92a5298c1c45548d4e0"
+    },
+    {
+      "path": "runs/simple-baseline-2fsdgx0q/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376553472,
+      "sha256": "ef66cbd88ef6239279ef21d29e3129cf88c400a0a384df063dd61f94aab2dffa"
+    },
+    {
+      "path": "runs/simple-baseline-34yq5mdv/model.pt",
+      "bytes": 383656153,
+      "allocated_bytes": 383660032,
+      "sha256": "584f5e3117974dfa923d1a8619c1f17efca1962cf0436850daa8b52a20de00cb"
+    },
+    {
+      "path": "runs/simple-baseline-6aay3x5v/model.pt",
+      "bytes": 376546649,
+      "allocated_bytes": 376549376,
+      "sha256": "c35e1082df713217ad69f0d0a0f56dc089f8dd0098e8a49de3ee9f9e510238f6"
+    },
+    {
+      "path": "runs/simple-baseline-hm0xav7w/model.pt",
+      "bytes": 376546649,
+      "allocated_bytes": 376553472,
+      "sha256": "d557714b9548d08582cfe11ae413a9f092fdb72ee7f6eeedb1e2b5b7ce0220a8"
+    },
+    {
+      "path": "runs/simple-baseline-korcrdq1/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376549376,
+      "sha256": "dd8fdf2ca938d3274fc1efc008594c97c14d7594fec61ab3c76c19fcfaa6e7e2"
+    },
+    {
+      "path": "runs/simple-baseline-mxq_ot5k/model.pt",
+      "bytes": 376546713,
+      "allocated_bytes": 376549376,
+      "sha256": "751141c836aea9ff5f48af4727540ce448aefd7b07e4eadf243d1bef3ba5e35f"
+    },
+    {
+      "path": "runs/simple-baseline-ng4b6qq_/model.pt",
+      "bytes": 235842457,
+      "allocated_bytes": 235843584,
+      "sha256": "17cdca3242ed79805ab8e7b686995450816a1f2fc30671974d149499a206e65a"
+    },
+    {
+      "path": "runs/simple-baseline-r5x189so/model.pt",
+      "bytes": 383656217,
+      "allocated_bytes": 383664128,
+      "sha256": "eb23050f340c2fcf3eb3f97495f59ae213601540aafaa237726c95562bf5ea9c"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/.metadata.json",
+      "bytes": 40,
+      "allocated_bytes": 4096,
+      "sha256": "df9fb5e233eb41b450e40f0a49367aea51650d816523afb2869ec260d8504803"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/config.json",
+      "bytes": 5866,
+      "allocated_bytes": 8192,
+      "sha256": "7a78a2ce026e4db2a8cd3b90e459cc67c8ba3a1a9447fbeeaf29eb534520dbb2"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/data_paths.txt",
+      "bytes": 64,
+      "allocated_bytes": 4096,
+      "sha256": "8a2722e28b3d05c793c7d8892249ea1c8a22d4dc9ecec22b70cd1c5bbd7759ea"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/.metadata",
+      "bytes": 192817,
+      "allocated_bytes": 196608,
+      "sha256": "3d77e3822e971244a81d0bb854a7d9f2124c56817ee8406c18bf24c4eead3f51"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_0.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "6020fe2f52cb11453f9a30ab8f3d9df680a32d1a413b28526d2f2ade752ce3bb"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_1.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "691d48ad4fa6a64ec46cc8cbd4546aee58c9ba78c2ba6a7479a5d90f595efc74"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_10.distcp",
+      "bytes": 37937928,
+      "allocated_bytes": 37945344,
+      "sha256": "4eb699aaba310084bac4f5ebbfb4a609afdfc4367d427264e810ecb9cc84ed53"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_11.distcp",
+      "bytes": 37936667,
+      "allocated_bytes": 37937152,
+      "sha256": "08e34fbf0cf214fa278a02deee145a8655e807785438c6dd55af5d126e82685e"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_2.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154193920,
+      "sha256": "7310fba30d1af339a63e35d880f6ad95ceeed806b60ff1880cbb9ad957f3dab2"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_3.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "86a3543c2526d8fc097e6eab443195f81ea87f57269dc8e1a273de1ac2eb91e1"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_4.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154193920,
+      "sha256": "2bc3361270c52eac167c9e4ecd2dc50174a6b1590f534fb11aeef96d40af6fda"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_5.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "0f9f10243bbaef76933ee680e3b730269cc04f4b5056f45587f67a9d8bdaa60a"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_6.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "312a68aa7938934592ecea5420a5f9c1b9293763a10550c34e5ad1190052f2dc"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_7.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "059dc99859cc355acc1bf9f2655789e9f86bf5855d6283cf154414e2d928cd2b"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_8.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37900288,
+      "sha256": "516999f41769a67566952ff624ccfe8bd4af3227a6b8d277cef29166a82bc238"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/model_and_optim/__0_9.distcp",
+      "bytes": 37939505,
+      "allocated_bytes": 37941248,
+      "sha256": "1a8a7025c6e15d13aa54463cda9eb441eae3f3e83bef73908a6fffcf023704d6"
+    },
+    {
+      "path": "runs/olmo3-60m-valtest/step100/train/rank0.pt",
+      "bytes": 15381,
+      "allocated_bytes": 16384,
+      "sha256": "7b5922909df48a0ab68529b2944b66fa2d6c011760d0b8e1ea9146c4583aa0a6"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/.metadata.json",
+      "bytes": 40,
+      "allocated_bytes": 4096,
+      "sha256": "df9fb5e233eb41b450e40f0a49367aea51650d816523afb2869ec260d8504803"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/config.json",
+      "bytes": 6150,
+      "allocated_bytes": 8192,
+      "sha256": "ec040d8613d6301c01f067d79e827bc94144a1dcc4051668feec449a72c9c8ce"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/data_paths.txt",
+      "bytes": 92,
+      "allocated_bytes": 4096,
+      "sha256": "698a1bd9af4540e4c56783b2018887164fd38c5eec8553709ee51bd999d3ac43"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/.metadata",
+      "bytes": 192869,
+      "allocated_bytes": 196608,
+      "sha256": "0674e19988790aa45c81a210c6d1e165d02d9297eefe041eaeda5145469b0865"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_0.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "888c5601ff62a9a4ecd6381affb531a5827947f5498ca0c768c1b4d4e360a12b"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_1.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "7498a29f884d35f0cc0dfbcc705804cd52e043a5e318ea202fe4932e2eeab824"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_10.distcp",
+      "bytes": 37937928,
+      "allocated_bytes": 37941248,
+      "sha256": "8a9be05e8c677acf9951f0ddfa7e32b334ed1c21c8238e5947b3adcedb4107fb"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_11.distcp",
+      "bytes": 37936667,
+      "allocated_bytes": 37937152,
+      "sha256": "621a76659a2726805651a2b438edadd404acc7f239df8a7348a9765fa59c0ac1"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_2.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "919ffa26604a161f29e369740080f7a7da4ef4a01f90b57c6be442b821182552"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_3.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "cd0eb8acbfdd4677e222955407be384c2b42426537e6a087f15c120e5062d322"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_4.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "59bb4b24c8aa2146331e44a6f9cfd697d8e854aa31a10429104cedd3e777fd94"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_5.distcp",
+      "bytes": 154190167,
+      "allocated_bytes": 154198016,
+      "sha256": "6f7b553aa21f72fa3e44dded203a0d1da6934c8f0598bd310e34e2c6fa75003d"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_6.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "f594fe3408a748a6dfdc6af50597cfe8acfb3d954150438c604142115c9d1681"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_7.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "0a7b00137370f697f974e1939d845ff02d233a7476e5a81b904b4ed8ad38cc0a"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_8.distcp",
+      "bytes": 37893731,
+      "allocated_bytes": 37896192,
+      "sha256": "ffb3d68aa7285d8e6bb1f660159eef80b797e016b695058a56c98a625ae50c5b"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/model_and_optim/__0_9.distcp",
+      "bytes": 37939505,
+      "allocated_bytes": 37941248,
+      "sha256": "b39dae0e904c4c3f3565d6b9b768e6bdcf22beeb0df1605fe6686aa5cb0236d9"
+    },
+    {
+      "path": "runs/diagnostic-python-e253k41r/python-fixed/step100/train/rank0.pt",
+      "bytes": 15445,
+      "allocated_bytes": 16384,
+      "sha256": "7bb8110cd4a5ed1523748ebf633327cf77b20f8eb88a74a1b920c74e888cd2d0"
+    }
+  ],
+  "comparisons": [
+    {
+      "run": "sft-duplqurm",
+      "step": 400,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "sft-gi30rb8x",
+      "step": 400,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "sft-qrk4c22k",
+      "step": 400,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-2fsdgx0q",
+      "step": 24415,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-34yq5mdv",
+      "step": 9279,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-6aay3x5v",
+      "step": 9279,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-hm0xav7w",
+      "step": 9279,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-korcrdq1",
+      "step": 12208,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-mxq_ot5k",
+      "step": 2443,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-ng4b6qq_",
+      "step": 24415,
+      "all_model_tensors_equal": true
+    },
+    {
+      "run": "simple-baseline-r5x189so",
+      "step": 9279,
+      "all_model_tensors_equal": true
+    }
+  ],
+  "deleted": [
+    "runs/sft-duplqurm/recovery.pt",
+    "runs/sft-gi30rb8x/recovery.pt",
+    "runs/sft-qrk4c22k/recovery.pt",
+    "runs/simple-baseline-2fsdgx0q/recovery.pt",
+    "runs/simple-baseline-34yq5mdv/recovery.pt",
+    "runs/simple-baseline-6aay3x5v/recovery.pt",
+    "runs/simple-baseline-hm0xav7w/recovery.pt",
+    "runs/simple-baseline-korcrdq1/recovery.pt",
+    "runs/simple-baseline-mxq_ot5k/recovery.pt",
+    "runs/simple-baseline-ng4b6qq_/recovery.pt",
+    "runs/simple-baseline-r5x189so/recovery.pt",
+    "runs/olmo3-60m-valtest/step0/.metadata.json",
+    "runs/olmo3-60m-valtest/step0/config.json",
+    "runs/olmo3-60m-valtest/step0/data_paths.txt",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/.metadata",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_0.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_1.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_10.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_11.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_2.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_3.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_4.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_5.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_6.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_7.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_8.distcp",
+    "runs/olmo3-60m-valtest/step0/model_and_optim/__0_9.distcp",
+    "runs/olmo3-60m-valtest/step0/train/rank0.pt",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/.metadata.json",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/config.json",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/data_paths.txt",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/.metadata",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_0.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_1.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_10.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_11.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_2.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_3.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_4.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_5.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_6.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_7.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_8.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/model_and_optim/__0_9.distcp",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0/train/rank0.pt"
+  ],
+  "approved_roots": [
+    "runs/sft-duplqurm/recovery.pt",
+    "runs/sft-gi30rb8x/recovery.pt",
+    "runs/sft-qrk4c22k/recovery.pt",
+    "runs/simple-baseline-2fsdgx0q/recovery.pt",
+    "runs/simple-baseline-34yq5mdv/recovery.pt",
+    "runs/simple-baseline-6aay3x5v/recovery.pt",
+    "runs/simple-baseline-hm0xav7w/recovery.pt",
+    "runs/simple-baseline-korcrdq1/recovery.pt",
+    "runs/simple-baseline-mxq_ot5k/recovery.pt",
+    "runs/simple-baseline-ng4b6qq_/recovery.pt",
+    "runs/simple-baseline-r5x189so/recovery.pt",
+    "runs/olmo3-60m-valtest/step0",
+    "runs/diagnostic-python-e253k41r/python-fixed/step0"
+  ],
+  "allocated_bytes_to_free": 14353399808,
+  "audit_complete": true,
+  "finished": "2026-10-31T13:06:02.866297+00:00",
+  "retained_files_unchanged": true,
+  "windows_compaction": {
+    "started": "2026-10-31T13:06:38.5039550Z",
+    "disk": "C:\\Users\\RANDOM\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc\\LocalState\\ext4.vhdx",
+    "success": true,
+    "before_file_bytes": 91980038144,
+    "before_free_bytes": 13796061184,
+    "phase": "finished",
+    "after_file_bytes": 75889639424,
+    "after_free_bytes": 29859921920,
+    "finished": "2026-10-31T13:08:58.6496365Z"
+  },
+  "post_compaction_verified_files": 47
+}

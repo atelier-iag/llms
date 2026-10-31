@@ -21,6 +21,10 @@ L’[évaluation finale](results/final-holdout-v1.md) couvre sept checkpoints
 figés sur les jeux réservés général, Python et Dolly, sans nouvel entraînement.
 Les **225 tests passent** ; les checkpoints et les données restent intacts.
 
+Maintenance du 31 octobre 2026 : les modèles finaux sont conservés et vérifiés.
+Onze sauvegardes de reprise et deux checkpoints initiaux ont été supprimés
+pour récupérer de l’espace ; voir le [journal de nettoyage](results/storage-cleanup-2026-10-31.md).
+
 Le modèle généraliste 94 M / 50 M tokens reste la référence. Le laboratoire
 est terminé dans son périmètre pédagogique ; ses modèles restent limités
 en génération et en suivi de consignes. Les approfondissements SFT et les
